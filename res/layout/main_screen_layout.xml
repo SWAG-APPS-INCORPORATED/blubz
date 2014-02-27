@@ -2,32 +2,58 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent" >
+
     <ImageView android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
-               android:scaleType="centerCrop"
-               android:src="@drawable/background1"/>
-    <TextView android:layout_width="wrap_content"
+               android:scaleType="fitXY"
+               android:src="@drawable/background4"/>
+<!--    <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/title"
               android:layout_alignParentTop="true"
               android:layout_centerHorizontal="true"
               android:layout_marginTop="100dp"
-              android:textSize="50dp"/>
-    <Button android:layout_width="wrap_content"
+              android:textSize="50dp"/>-->
+<!--    <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="170dp"
+            android:layout_marginBottom="60dp"
             android:onClick="goToMessage"
-            android:text="@string/add_message"/>
-    <Button android:layout_width="wrap_content"
+            android:text="@string/add_message"/>-->
+  <!--  <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="170dp"
+            android:layout_marginBottom="60dp"
             android:onClick="goToPicture"
-            android:text="@string/add_picture"/>
+            android:text="@string/add_picture" android:id="@+id/button"/>-->
+
+    <!--message button-->
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:src="@drawable/write5"
+            android:clickable="true"
+            android:onClick="goToMessage"
+            android:scaleType="centerCrop"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="60dp"/>
+
+    <!--camera button-->
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton2"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/imageButton"
+            android:scaleType="centerCrop"
+            android:src="@drawable/camera8"
+            android:onClick="goToPicture"
+            />
 
 </RelativeLayout>

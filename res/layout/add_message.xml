@@ -9,37 +9,97 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="centerCrop"
-               android:src="@drawable/background2"/>
-    <EditText android:layout_width="match_parent"
-              android:layout_height="150dp"
+               android:src="@drawable/blubs3"/>
+    <EditText android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_marginTop="28dp"
+              android:layout_marginLeft="20dp"
+              android:id="@+id/date"
+              android:hint="@string/date"
+              android:textColor="#ffffff"
+              android:textColorHint="#ffffff"
+              android:textSize="20dp"/>
+
+    <EditText android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
               android:layout_centerHorizontal="true"
               android:layout_alignParentTop="true"
-              android:layout_marginTop="150dp"
+              android:layout_marginTop="140dp"
+              android:layout_marginLeft="40dp"
               android:id="@+id/message"
-              android:hint="@string/hint"/>
-    <Button android:layout_width="wrap_content"
+              android:hint="@string/hint"
+              android:textColor="#ffffff"
+              android:textColorHint="#ffffff"
+              android:textSize="25dp"/>
+
+    <!--view messages button-->
+    <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:id="@+id/imageButton"
+            android:layout_marginBottom="55dp"
+            android:src="@drawable/view"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="100dp"
-            android:id="@+id/add"
-            android:text="Add Message"
-            android:onClick="addMessage"/>
-    <Button android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:onClick="viewMessages"
+            />
+
+    <!--clear messages button-->
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:layout_marginBottom="55dp"
+            android:src="@drawable/clear1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="clearMessages"
+            />
+
+    <!--add messages button-->
+    <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:id="@+id/imageButton"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/add1"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
-            android:id="@+id/view"
-            android:text="View Messages"
-            android:onClick="viewMessages"/>
-    <Button android:layout_width="wrap_content"
+            android:onClick="addMessage"
+            />
+    <EditText
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="100dp"
-            android:id="@+id/clear"
-            android:text="Clear Messages"
-            android:onClick="clearMessages" />
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/date"
+            android:layout_marginTop="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/message"/>
+    <!--    <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="100dp"
+                android:id="@+id/add"
+                android:text="Add Message"
+                android:onClick="addMessage"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"
+                android:id="@+id/view"
+                android:text="View Messages"
+                android:onClick="viewMessages"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="100dp"
+                android:id="@+id/clear"
+                android:text="Clear Messages"
+                android:onClick="clearMessages" />-->
 
 </RelativeLayout>

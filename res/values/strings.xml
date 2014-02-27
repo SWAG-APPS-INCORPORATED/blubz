@@ -4,7 +4,7 @@
     <string name="hint">Type your fucking blub right here...</string>
     <string name="add">Add a Journal</string>
     <string name="add_message">Add Message</string>
-    <string name="date">Today's Date</string>
+    <string name="date">Today\'s Date</string>
     <string name="add_picture">Add Picture</string>
     <string name="title">BLUBZ</string>
     <string name="view_message"> Your Messages:</string>

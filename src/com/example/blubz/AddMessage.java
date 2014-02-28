@@ -36,8 +36,8 @@ public class AddMessage extends Activity {
         datasource.open();
 
 
-        editText = (EditText) findViewById(R.id.message);
-        button = (Button) findViewById(R.id.add);
+        //editText = (EditText) findViewById(R.id.message);
+        //button = (Button) findViewById(R.id.addButton);
 
 
         if(!datasource.isEmpty()){

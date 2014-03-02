@@ -8,4 +8,5 @@
     <string name="add_picture">Add Picture</string>
     <string name="title">BLUBZ</string>
     <string name="view_message"> Your Messages:</string>
+    <string name="action_settings">Settings</string>
 </resources>

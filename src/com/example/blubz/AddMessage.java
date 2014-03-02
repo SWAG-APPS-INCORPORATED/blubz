@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -25,7 +27,8 @@ public class AddMessage extends Activity {
     private CommentsDataSource datasource;
     public final static String INTENT_MESSAGE = "com.example.DatabaseTest.MESSAGE";
     private EditText editText;
-    private Button button;
+    private ImageButton button;
+    private TextView dateText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,9 +39,11 @@ public class AddMessage extends Activity {
         datasource.open();
 
 
-        //editText = (EditText) findViewById(R.id.message);
-        //button = (Button) findViewById(R.id.addButton);
+        dateText = (TextView) findViewById(R.id.date);
+        editText = (EditText) findViewById(R.id.messageEditText);
+        button = (ImageButton) findViewById(R.id.addButton);
 
+        setDateText();
 
         if(!datasource.isEmpty()){
             long timestamp = datasource.getMostRecentTimestamp();
@@ -92,5 +97,20 @@ public class AddMessage extends Activity {
 
         return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
 
+    }
+
+    private void setDateText(){
+        long dateInMillis = System.currentTimeMillis();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(dateInMillis);
+
+        String day = Integer.toString(calendar.get(Calendar.DATE));
+        String month = Integer.toString(calendar.get(Calendar.MONTH)+1);
+        String year = Integer.toString(calendar.get(Calendar.YEAR));
+
+        String date = month.concat("/").concat(day).concat("/").concat(year);
+
+        dateText.setText(date);
     }
 }

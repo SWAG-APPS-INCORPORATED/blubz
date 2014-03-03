@@ -29,6 +29,11 @@ public class MainScreen extends Activity {
         // Add camera stuff here
     }
 
+    public void goToContent(View view) {
+        Intent intent = new Intent(this, ReturnContent.class);
+        startActivity(intent);
+    }
+
     //Code below from android tutorial on action bar http://developer.android.com/training/basics/actionbar/setting-up.html
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar

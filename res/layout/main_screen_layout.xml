@@ -55,5 +55,16 @@
             android:src="@drawable/camera8"
             android:onClick="goToPicture"
             />
+    <!--return content button-->
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Returned Content"
+            android:id="@+id/imageButton3"
+            android:layout_below="@+id/imageButton2"
+            android:layout_centerHorizontal="true"
+            android:onClick="goToContent"
+            android:visibility="invisible"
+            />
 
 </RelativeLayout>

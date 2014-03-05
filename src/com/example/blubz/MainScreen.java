@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
+import java.util.Calendar;
 
 /**
  * Created by macalester on 2/19/14.
@@ -18,6 +21,7 @@ public class MainScreen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
+        secretButtonCheck();
     }
 
     public void goToMessage(View view) {
@@ -61,5 +65,19 @@ public class MainScreen extends Activity {
         startActivity(intent);
 
 
+    }
+
+    private void secretButtonCheck(){
+        long currentTime = System.currentTimeMillis();
+
+        Button secretButton = (Button)findViewById(R.id.secretButton);
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTimeInMillis(currentTime);
+
+        if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY){
+            secretButton.setVisibility(View.VISIBLE);
+
+        }
     }
 }

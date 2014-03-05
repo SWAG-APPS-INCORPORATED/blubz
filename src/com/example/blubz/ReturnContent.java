@@ -11,7 +11,7 @@ import android.os.CountDownTimer;
  */
 
 public class ReturnContent extends Activity{
-    Button resetButton=(Button)findViewById(R.id.imageButton3);
+    Button resetButton=(Button)findViewById(R.id.secretButton);
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.returned_content);

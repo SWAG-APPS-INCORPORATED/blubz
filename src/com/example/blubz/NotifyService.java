@@ -25,7 +25,7 @@ public class NotifyService extends Service {
 
 
         NotificationManager mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        Notification notification = new Notification(R.drawable.icon1, message, System.currentTimeMillis());
+        Notification notification = new Notification(R.drawable.iconRec, message, System.currentTimeMillis());
         Intent intent = new Intent(this , AddMessage.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
         notification.setLatestEventInfo(this, title, message, contentIntent);

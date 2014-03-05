@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:weightSum="1">
@@ -8,22 +8,42 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" android:id="@+id/linearLayout">
     </LinearLayout>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true"
+            android:src="@drawable/blubsplain"/>
     <TextView
             android:layout_width="328dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Enter Daily Notification Time"
-            android:id="@+id/textView" android:layout_weight="0.05"/>
+            android:id="@+id/textView"
+            android:layout_weight="0"
+            android:textSize="25dp"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
     <TimePicker
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/notifTime"/>
+            android:id="@+id/notifTime"
+            android:layout_above="@+id/button"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="30dp"/>
+
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ENTER"
             android:id="@+id/button"
-            android:onClick="setNotification"/>
-</LinearLayout>
+            android:onClick="setNotification"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

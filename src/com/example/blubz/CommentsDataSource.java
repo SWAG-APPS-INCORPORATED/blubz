@@ -59,13 +59,10 @@ public class CommentsDataSource {
     public List<Comment> getAllComments(){
         List<Comment> comments = new ArrayList<Comment>();
 
-        /**
+
         Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
                 allColumns, null, null, null, null, null);
-        **/
-        String query = "Select * FROM " + MySQLiteHelper.TABLE_COMMENTS;
 
-        Cursor cursor = database.rawQuery(query, null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){

@@ -22,13 +22,18 @@ public class MainScreen extends Activity {
     private CommentsDataSource datasource;
     public long NotificationTime;
     private Random random;
-    Button secretButton;
+    private Button secretButton;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
         secretButton = (Button)findViewById(R.id.secretButton);
         secretButtonCheck();
+
+        datasource = new CommentsDataSource(this);
+        datasource.open();
+
+        random = new Random();
     }
 
     public void goToMessage(View view) {
@@ -42,14 +47,26 @@ public class MainScreen extends Activity {
 
     public void goToContent(View view) {
         Intent intent = new Intent(this, ReturnContent.class);
+
         List<Comment> allMessages = datasource.getAllComments();
-        if (allMessages == null) {
+
+
+
+        //if (allMessages == null) {
+        if(0 ==1){
             // TODO: add empty string notification
         } else {
+
             int rand = random.nextInt(allMessages.size());
+
+            //String message = Integer.toString(allMessages.size());
+
+
             String message = allMessages.get(rand).getComment();
+
             intent.putExtra(INTENT_MESSAGE, message);
             secretButton.setVisibility(View.GONE);
+
             startActivity(intent);
         }
     }
@@ -82,6 +99,8 @@ public class MainScreen extends Activity {
     }
 
     private void secretButtonCheck(){
+
+
         long currentTime = System.currentTimeMillis();
 
         Calendar calendar = Calendar.getInstance();
@@ -90,6 +109,7 @@ public class MainScreen extends Activity {
 
         if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY){
             secretButton.setVisibility(View.VISIBLE);
+
         }
     }
 }

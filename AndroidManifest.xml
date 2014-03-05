@@ -20,6 +20,9 @@
         <activity android:name=".SettingsActivity"
                   android:label="Settings"
                   android:parentActivityName=".MainScreen"/>
+        <activity android:name=".ReturnContent"
+                  android:label="ReturnContent"
+                  android:parentActivityName=".MainScreen"/>
         <service android:name=".NotifyService" android:label="NotifyService"/>
     </application>
 </manifest>

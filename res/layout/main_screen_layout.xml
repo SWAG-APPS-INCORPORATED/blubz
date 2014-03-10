@@ -36,25 +36,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton"
-            android:src="@drawable/write5"
+            android:src="@drawable/reformatwrite3"
             android:clickable="true"
             android:onClick="goToMessage"
             android:scaleType="centerCrop"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="60dp"/>
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="75dp"/>
 
     <!--camera button-->
-    <ImageButton
+<!--    <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton2"
             android:layout_alignParentRight="true"
             android:layout_alignBottom="@+id/imageButton"
             android:scaleType="centerCrop"
-            android:src="@drawable/camera8"
+            android:src="@drawable/reformatcamera3"
             android:onClick="goToPicture"
-            />
+            />-->
     <!--return content button-->
     <Button
             android:layout_width="wrap_content"

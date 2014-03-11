@@ -38,14 +38,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/blubz/Content.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/blubz/ContentDataSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/blubz/ContentSQLiteHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/example/blubz/MySQLiteHelper.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/CommentSQLiteHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/Comment.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/Comment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/CommentsDataSource.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/CommentsDataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -113,7 +105,7 @@
       <file leaf-file-name="MainScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="51" selection-start="2507" selection-end="2507" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1965">
+            <state line="79" column="51" selection-start="2507" selection-end="2507" vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="2145">
               <folding />
             </state>
           </provider>
@@ -125,10 +117,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="14" selection-start="1281" selection-end="1281" vertical-scroll-proportion="-8.196078" vertical-offset="32" max-vertical-offset="615">
-              <folding>
-                <element signature="e#822#836#0" expanded="true" />
-              </folding>
+            <state line="30" column="14" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="615">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,7 +126,7 @@
       <file leaf-file-name="ReturnContent.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/ReturnContent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="34" selection-start="762" selection-end="762" vertical-scroll-proportion="0.49920762" vertical-offset="0" max-vertical-offset="735">
+            <state line="25" column="34" selection-start="762" selection-end="762" vertical-scroll-proportion="0.3364929" vertical-offset="102" max-vertical-offset="735">
               <folding />
             </state>
           </provider>
@@ -145,10 +135,8 @@
       <file leaf-file-name="ContentSQLiteHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/ContentSQLiteHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="51" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="750">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="22" column="51" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="750">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -229,7 +217,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -300,6 +287,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -629,7 +617,8 @@
       <workItem from="1394425104573" duration="594000" />
       <workItem from="1394427976738" duration="110000" />
       <workItem from="1394464353022" duration="760000" />
-      <workItem from="1394568844248" duration="4491000" />
+      <workItem from="1394568844248" duration="4660000" />
+      <workItem from="1394579879193" duration="46000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -655,11 +644,15 @@
       <created>1394427665975</created>
       <updated>1394427665975</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added a database for the secret button and fixed the&#10;ReturnContent activity **maybe**">
+      <created>1394573395992</created>
+      <updated>1394573395992</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79478000" />
+    <option name="totallyTimeSpent" value="79693000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -683,15 +676,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1282" height="781" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23039216" sideWeight="0.49872988" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28640777" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.49957663" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -701,30 +692,32 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3969697" sideWeight="0.49693787" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22376543" sideWeight="0.49622357" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19628432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19628432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16935484" sideWeight="0.49693787" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28640777" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3969697" sideWeight="0.49693787" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23039216" sideWeight="0.49872988" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2630719" sideWeight="0.5030211" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19628432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -742,8 +735,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3969697" sideWeight="0.49693787" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22376543" sideWeight="0.49622357" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -766,7 +759,8 @@
     <MESSAGE value="Cleaned up Returned Content class" />
     <MESSAGE value="Made the &quot;secret button&quot; appear on Wednesday" />
     <MESSAGE value="rounded icon added&#10;settings and returned content screens modified&#10;main screen icon resolution improved&#10;camera icon removed from main screen&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="rounded icon added&#10;settings and returned content screens modified&#10;main screen icon resolution improved&#10;camera icon removed from main screen&#10;" />
+    <MESSAGE value="Added a database for the secret button and fixed the&#10;ReturnContent activity **maybe**" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a database for the secret button and fixed the&#10;ReturnContent activity **maybe**" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1127,9 +1121,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/ContentSQLiteHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="51" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="750">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,16 +1137,14 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="14" selection-start="1281" selection-end="1281" vertical-scroll-proportion="-8.196078" vertical-offset="32" max-vertical-offset="615">
-          <folding>
-            <element signature="e#822#836#0" expanded="true" />
-          </folding>
+        <state line="30" column="14" selection-start="1281" selection-end="1281" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="615">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/ReturnContent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="34" selection-start="762" selection-end="762" vertical-scroll-proportion="0.49920762" vertical-offset="0" max-vertical-offset="735">
+        <state line="25" column="34" selection-start="762" selection-end="762" vertical-scroll-proportion="0.3364929" vertical-offset="102" max-vertical-offset="735">
           <folding />
         </state>
       </provider>

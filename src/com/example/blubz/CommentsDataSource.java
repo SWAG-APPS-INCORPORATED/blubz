@@ -17,12 +17,12 @@ public class CommentsDataSource {
 
     // Database fields
     private SQLiteDatabase database;
-    private MySQLiteHelper dbHelper;
-    private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_COMMENT, MySQLiteHelper.COLUMN_TIMESTAMP};
+    private CommentSQLiteHelper dbHelper;
+    private String[] allColumns = { CommentSQLiteHelper.COLUMN_ID,
+            CommentSQLiteHelper.COLUMN_COMMENT, CommentSQLiteHelper.COLUMN_TIMESTAMP};
 
     public CommentsDataSource(Context context){
-        dbHelper = new MySQLiteHelper(context);
+        dbHelper = new CommentSQLiteHelper(context);
     }
 
     public void open() throws SQLException {
@@ -35,13 +35,13 @@ public class CommentsDataSource {
 
     public Comment createComment(String comment, long timestamp){
         ContentValues values = new ContentValues();
-        values.put(MySQLiteHelper.COLUMN_COMMENT, comment);
-        values.put(MySQLiteHelper.COLUMN_TIMESTAMP, timestamp);
-        long insertId = database.insert(MySQLiteHelper.TABLE_COMMENTS, null,
+        values.put(CommentSQLiteHelper.COLUMN_COMMENT, comment);
+        values.put(CommentSQLiteHelper.COLUMN_TIMESTAMP, timestamp);
+        long insertId = database.insert(CommentSQLiteHelper.TABLE_COMMENTS, null,
                 values);
 
-        /*Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
-                allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
+        /*Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
+                allColumns, CommentSQLiteHelper.COLUMN_ID + " = " + insertId, null,
                 null, null, null);*/
 
         Comment newComment = new Comment();// = cursorToComment(cursor);
@@ -52,7 +52,7 @@ public class CommentsDataSource {
     public void deleteComment(Comment comment){
         long id = comment.getId();
         System.out.println("Comment deleted with id: " + id);
-        database.delete(MySQLiteHelper.TABLE_COMMENTS, MySQLiteHelper.COLUMN_ID +
+        database.delete(CommentSQLiteHelper.TABLE_COMMENTS, CommentSQLiteHelper.COLUMN_ID +
                 " = " + id, null);
     }
 
@@ -60,7 +60,7 @@ public class CommentsDataSource {
         List<Comment> comments = new ArrayList<Comment>();
 
 
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
+        Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
                 allColumns, null, null, null, null, null);
 
 
@@ -78,7 +78,7 @@ public class CommentsDataSource {
     }
 
     public long getMostRecentTimestamp(){
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
+        Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
                 allColumns, null, null, null, null, null);
         cursor.moveToLast();
         Comment comment = cursorToComment(cursor);
@@ -87,7 +87,7 @@ public class CommentsDataSource {
     }
 
     public boolean isEmpty(){
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
+        Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
                allColumns, null, null, null, null, null);
         return(cursor.getCount() == 0);
         //return(cursor.getCount()); //TODO: make a better implementation

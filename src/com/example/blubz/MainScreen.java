@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
@@ -18,8 +19,10 @@ import java.util.Random;
  */
 public class MainScreen extends Activity {
 
-    public final static String INTENT_MESSAGE = "com.example.DatabaseTest.MESSAGE";
-    private CommentsDataSource datasource;
+    public final static String INTENT_MESSAGE = "com.example.blubz.MESSAGE";
+    public final static String INTENT_DATE = "com.example.blubz.DATE";
+    private CommentsDataSource commentdatasource;
+    private ContentDataSource contentdatasource;
     public long NotificationTime;
     private Random random;
     private Button secretButton;
@@ -27,11 +30,15 @@ public class MainScreen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
+
+        commentdatasource = new CommentsDataSource(this);
+        commentdatasource.open();
+
+        contentdatasource = new ContentDataSource(this);
+        contentdatasource.open();
+
         secretButton = (Button)findViewById(R.id.secretButton);
         secretButtonCheck();
-
-        datasource = new CommentsDataSource(this);
-        datasource.open();
 
         random = new Random();
     }
@@ -48,7 +55,7 @@ public class MainScreen extends Activity {
     public void goToContent(View view) {
         Intent intent = new Intent(this, ReturnContent.class);
 
-        List<Comment> allMessages = datasource.getAllComments();
+        List<Comment> allMessages = commentdatasource.getAllComments();
 
 
 
@@ -61,11 +68,24 @@ public class MainScreen extends Activity {
 
             //String message = Integer.toString(allMessages.size());
 
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+            Comment randComment = allMessages.get(rand);
+            String intentMessage = randComment.getComment();
+            long timestamp = randComment.getTimestamp();
+            Calendar timestampCalendar = Calendar.getInstance();
+            timestampCalendar.setTimeInMillis(timestamp);
+            String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
 
-            String message = allMessages.get(rand).getComment();
-
-            intent.putExtra(INTENT_MESSAGE, message);
+            intent.putExtra(INTENT_MESSAGE, intentMessage);
+            intent.putExtra(INTENT_DATE, intentDate);
             secretButton.setVisibility(View.GONE);
+
+            long currentTime = System.currentTimeMillis();
+            Calendar currentCalendar = Calendar.getInstance();
+            currentCalendar.setTimeInMillis(currentTime);
+            String date = simpleDateFormat.format(currentCalendar.getTime());
+
+            contentdatasource.createContent(date, currentTime);
 
             startActivity(intent);
         }
@@ -102,14 +122,17 @@ public class MainScreen extends Activity {
 
 
         long currentTime = System.currentTimeMillis();
+        long timestampTime = contentdatasource.getMostRecentTimestamp();
 
-        Calendar calendar = Calendar.getInstance();
+        Calendar currentCalendar = Calendar.getInstance();
+        Calendar timestampCalendar = Calendar.getInstance();
 
-        calendar.setTimeInMillis(currentTime);
+        currentCalendar.setTimeInMillis(currentTime);
+        timestampCalendar.setTimeInMillis(timestampTime);
 
-        if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY){
+        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY)
+                && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
-
         }
     }
 }

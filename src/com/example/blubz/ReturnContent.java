@@ -1,11 +1,9 @@
 package com.example.blubz;
 
-import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -18,15 +16,19 @@ public class ReturnContent extends Activity{
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.returned_content);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(AddMessage.INTENT_MESSAGE);
+        String message = intent.getStringExtra(MainScreen.INTENT_MESSAGE);
+        String date = intent.getStringExtra(MainScreen.INTENT_DATE);
 
-        TextView textView = new TextView(this);
-        textView.setTextSize(20);
-        textView.setText(message);
+        TextView textView = (TextView) findViewById(R.id.date);
+        textView.setText(date);
 
-        setContentView(textView);
+        EditText editText = (EditText) findViewById(R.id.messageEditText);
+        editText.setText(message);
+
+
         // Wait an minute until let button reappear
 /*        new CountDownTimer(60000, 1) {
             public void onTick(long millisUntilFinished) {

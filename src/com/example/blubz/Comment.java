@@ -30,9 +30,6 @@ public class Comment {
 
     public void setTimestamp(long timestamp) {this.timestamp = timestamp;}
 
-
-
-    // Will be used by the ArrayAdapter in the ListView
     @Override
     public String toString(){
         return comment;

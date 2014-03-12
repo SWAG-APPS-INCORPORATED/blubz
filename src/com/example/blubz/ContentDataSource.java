@@ -16,8 +16,8 @@ public class ContentDataSource {
 
     private SQLiteDatabase database;
     private ContentSQLiteHelper dbHelper;
-    private String[] allColumns = { ContentSQLiteHelper.COLUMN_NAME,
-            ContentSQLiteHelper.COLUMN_TIMESTAMP, ContentSQLiteHelper.COLUMN_ID};
+    private String[] allColumns = {ContentSQLiteHelper.COLUMN_ID, ContentSQLiteHelper.COLUMN_NAME,
+            ContentSQLiteHelper.COLUMN_TIMESTAMP};
 
     public ContentDataSource(Context context){
         dbHelper = new ContentSQLiteHelper(context);
@@ -35,7 +35,7 @@ public class ContentDataSource {
         ContentValues values = new ContentValues();
         values.put(ContentSQLiteHelper.COLUMN_NAME, name);
         values.put(ContentSQLiteHelper.COLUMN_TIMESTAMP, timestamp);
-        long insertId = database.insert(CommentSQLiteHelper.TABLE_COMMENTS, null,
+        long insertId = database.insert(ContentSQLiteHelper.TABLE_CONTENT, null,
                 values);
 
         /*Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
@@ -50,7 +50,7 @@ public class ContentDataSource {
     public void deleteContent(Content content){
         long id = content.getId();
         System.out.println("Content deleted with id: " + id);
-        database.delete(ContentSQLiteHelper.TABLE_CONTENT, CommentSQLiteHelper.COLUMN_ID +
+        database.delete(ContentSQLiteHelper.TABLE_CONTENT, ContentSQLiteHelper.COLUMN_ID +
                 " = " + id, null);
     }
 

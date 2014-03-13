@@ -25,23 +25,9 @@ public class ReturnContent extends Activity{
         TextView textView = (TextView) findViewById(R.id.date);
         textView.setText(date);
 
-        EditText editText = (EditText) findViewById(R.id.messageEditText);
-        editText.setText(message);
+        TextView textView2 = (TextView) findViewById(R.id.messageTextView);
+        textView2.setText(message);
 
-
-        // Wait an minute until let button reappear
-/*        new CountDownTimer(60000, 1) {
-            public void onTick(long millisUntilFinished) {
-                if(resetButton.getVisibility() == View.GONE)
-                    resetButton.setVisibility(View.VISIBLE);
-                else
-                    resetButton.setVisibility(View.GONE);
-            }
-
-            public void onFinish() {
-                start();
-            }
-        };*/
     }
 }
 

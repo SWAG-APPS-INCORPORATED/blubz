@@ -38,8 +38,10 @@ public class MainScreen extends Activity {
         contentdatasource.open();
 
         secretButton = (Button)findViewById(R.id.secretButton);
-        secretButtonCheck();
 
+        if(!commentdatasource.isEmpty()){
+            secretButtonCheck();
+        }
         random = new Random();
     }
 
@@ -120,10 +122,12 @@ public class MainScreen extends Activity {
 
     private void secretButtonCheck(){
 
-
+        long timestampTime = 0;
         long currentTime = System.currentTimeMillis();
-        long timestampTime = contentdatasource.getMostRecentTimestamp();
 
+        if(!contentdatasource.isEmpty()){
+            timestampTime = contentdatasource.getMostRecentTimestamp();
+        }
         Calendar currentCalendar = Calendar.getInstance();
         Calendar timestampCalendar = Calendar.getInstance();
 

@@ -63,7 +63,7 @@ public class AddMessage extends Activity {
         long timestamp = System.currentTimeMillis();
         datasource.createComment(message, timestamp);
         editText.setText(null);
-        editText.setHint("Message added!");
+        editText.setHint("Your Blub has been stored! See you tomorrow!");
         button.setEnabled(false);
 
     }
@@ -109,7 +109,7 @@ public class AddMessage extends Activity {
         String month = Integer.toString(calendar.get(Calendar.MONTH)+1);
         String year = Integer.toString(calendar.get(Calendar.YEAR));
 
-        String date = month.concat("/").concat(day).concat("/").concat(year);
+        String date = month.concat(".").concat(day).concat(".").concat(year);
 
         dateText.setText(date);
     }

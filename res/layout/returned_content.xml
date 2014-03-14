@@ -15,7 +15,7 @@
               android:layout_height="wrap_content"
               android:layout_alignParentTop="true"
               android:layout_marginTop="40dp"
-              android:layout_marginLeft="22dp"
+              android:layout_marginLeft="37dp"
               android:id="@+id/date"
               android:text="@string/date"
               android:textColor="#ffffff"

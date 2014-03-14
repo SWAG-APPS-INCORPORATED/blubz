@@ -38,31 +38,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/addblub.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/addblub2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/await.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/await2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/await3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/await4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/await5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/backgroundstars2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/backgroundstars3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/backgroundstars4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blubshadow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blubshadow2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blubshadow3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blubshadow4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/ready.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returnedcontent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returnedcontent2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returnedcontent3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returnedcontent4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returnedcontent5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/AddMessage.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/AddMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/add_message.xml" afterPath="$PROJECT_DIR$/res/layout/add_message.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/add1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/add3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/addblub.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/addblub2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/await.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/await2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/await3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/await5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/background3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundgradient.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundgreen.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundlight.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundstars.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundstars2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundstars3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubs.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubs2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubs3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubs4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubshadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubshadow2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubshadow3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/camera7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/clear.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/clear1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/clear4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/reformatcamera.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/reformatcamera2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/reformatwrite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/reformatwrite2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/returnedcontent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/returnedcontent2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/returnedcontent3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/returnedcontent4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/returnedcontent5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/view.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/view2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/view3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/view5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/write1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/write2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/write3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/write4.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main_screen_layout.xml" afterPath="$PROJECT_DIR$/res/layout/main_screen_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/returned_content.xml" afterPath="$PROJECT_DIR$/res/layout/returned_content.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/settings.xml" afterPath="$PROJECT_DIR$/res/layout/settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -127,14 +155,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main_screen_layout.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main_screen_layout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="0" selection-start="3518" selection-end="3518" vertical-scroll-proportion="2.1895425" vertical-offset="0" max-vertical-offset="1095">
+            <state line="83" column="40" selection-start="3508" selection-end="3508" vertical-scroll-proportion="-15.865385" vertical-offset="0" max-vertical-offset="960">
               <folding>
                 <element signature="e#477#818#0" expanded="false" />
                 <element signature="e#819#1162#0" expanded="false" />
-                <element signature="e#1165#1532#0" expanded="false" />
+                <element signature="e#1165#1544#0" expanded="false" />
+                <element signature="e#2538#2942#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -143,55 +172,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <folding>
-                <element signature="e#252#270#0" expanded="true" />
-                <element signature="e#350#368#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainscreen_actions.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/menu/mainscreen_actions.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="7" selection-start="351" selection-end="351" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="225">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_message.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/view_message.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="4" selection-start="267" selection-end="267" vertical-scroll-proportion="-0.0" vertical-offset="105" max-vertical-offset="645">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/settings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="-3.4615386" vertical-offset="0" max-vertical-offset="840">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_message.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="add_message.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="42" selection-start="611" selection-end="611" vertical-scroll-proportion="-4.0384617" vertical-offset="0" max-vertical-offset="960">
+            <state line="19" column="41" selection-start="842" selection-end="842" vertical-scroll-proportion="0.57" vertical-offset="0" max-vertical-offset="960">
               <folding>
                 <element signature="e#1478#1887#0" expanded="false" />
                 <element signature="e#1922#2336#0" expanded="false" />
@@ -201,27 +185,6 @@
           </provider>
           <provider editor-type-id="android-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="returned_content.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/returned_content.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="39" selection-start="918" selection-end="918" vertical-scroll-proportion="-6.0576925" vertical-offset="0" max-vertical-offset="600">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="43" selection-start="493" selection-end="493" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="270">
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -257,18 +220,18 @@
         <option value="$PROJECT_DIR$/src/com/example/blubz/ReturnContent.java" />
         <option value="$PROJECT_DIR$/res/layout/returned_content.xml" />
         <option value="$PROJECT_DIR$/res/layout/settings.xml" />
-        <option value="$PROJECT_DIR$/res/layout/add_message.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/AddMessage.java" />
         <option value="$PROJECT_DIR$/res/layout/main_screen_layout.xml" />
+        <option value="$PROJECT_DIR$/res/layout/add_message.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
-    <option name="y" value="31" />
-    <option name="width" value="1241" />
-    <option name="height" value="752" />
+    <option name="x" value="9" />
+    <option name="y" value="22" />
+    <option name="width" value="1100" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -298,7 +261,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,9 +308,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blubz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blubz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -667,7 +648,8 @@
       <workItem from="1394673128778" duration="15000" />
       <workItem from="1394673456987" duration="1553000" />
       <workItem from="1394748858108" duration="3312000" />
-      <workItem from="1394753038359" duration="9374000" />
+      <workItem from="1394753038359" duration="10186000" />
+      <workItem from="1394820919007" duration="2540000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -685,11 +667,15 @@
       <created>1393802413856</created>
       <updated>1393802413856</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="secret button image added, improved image resolutions">
+      <created>1394776800774</created>
+      <updated>1394776800774</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70458000" />
+    <option name="totallyTimeSpent" value="73810000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -712,13 +698,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="31" width="1241" height="752" extended-state="0" />
-    <editor active="true" />
+    <frame x="9" y="22" width="1100" height="728" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23076923" sideWeight="0.49872988" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3358396" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.49957663" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -726,7 +712,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09667674" sideWeight="0.50125104" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07053292" sideWeight="0.50125104" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -736,7 +722,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20634921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23390152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17156863" sideWeight="0.49773413" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -748,13 +734,13 @@
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23156342" sideWeight="0.49872988" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32692307" sideWeight="0.50042266" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32692307" sideWeight="0.50042266" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20710059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -772,8 +758,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40088758" sideWeight="0.49788672" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32692307" sideWeight="0.49957734" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -792,7 +778,8 @@
     <MESSAGE value="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest." />
     <MESSAGE value="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.&#10;" />
     <MESSAGE value="Fixed view id bugs and added settings and notifications." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed view id bugs and added settings and notifications." />
+    <MESSAGE value="secret button image added, improved image resolutions" />
+    <option name="LAST_COMMIT_MESSAGE" value="secret button image added, improved image resolutions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -802,54 +789,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="5" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="51" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="799">
-          <folding>
-            <element signature="e#477#818#0" expanded="false" />
-            <element signature="e#819#1162#0" expanded="false" />
-            <element signature="e#1165#1532#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="10" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1717">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/CommentsDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1904" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/view_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="510">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -863,9 +810,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="16" selection-start="1483" selection-end="1483" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1853">
           <folding>
@@ -874,6 +818,9 @@
             <element signature="e#2876#4446#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Comment.java">
@@ -896,27 +843,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="76" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="705">
           <folding>
             <element signature="e#477#818#0" expanded="false" />
             <element signature="e#819#1162#0" expanded="false" />
-            <element signature="e#1165#1532#0" expanded="false" />
+            <element signature="e#1165#1544#0" expanded="false" />
+            <element signature="e#2538#2942#0" expanded="false" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/view_message.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/view_message.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="450">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -930,9 +878,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="16" selection-start="4331" selection-end="4331" vertical-scroll-proportion="0.0" vertical-offset="1545" max-vertical-offset="1635">
           <folding>
@@ -941,6 +886,9 @@
             <element signature="e#2876#4446#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
@@ -951,17 +899,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="48" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="570">
           <folding>
             <element signature="e#477#818#0" expanded="false" />
             <element signature="e#819#1162#0" expanded="false" />
-            <element signature="e#1165#1532#0" expanded="false" />
+            <element signature="e#1165#1544#0" expanded="false" />
+            <element signature="e#2538#2942#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddMessage.java">
@@ -994,9 +943,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="33" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="750">
           <folding>
@@ -1006,19 +952,23 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="51" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="646">
           <folding>
             <element signature="e#477#818#0" expanded="false" />
             <element signature="e#819#1162#0" expanded="false" />
-            <element signature="e#1165#1532#0" expanded="false" />
+            <element signature="e#1165#1544#0" expanded="false" />
+            <element signature="e#2538#2942#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddMessage.java">
@@ -1051,9 +1001,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="39" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="850">
           <folding>
@@ -1063,25 +1010,26 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="49" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="646">
           <folding>
             <element signature="e#477#818#0" expanded="false" />
             <element signature="e#819#1162#0" expanded="false" />
-            <element signature="e#1165#1532#0" expanded="false" />
+            <element signature="e#1165#1544#0" expanded="false" />
+            <element signature="e#2538#2942#0" expanded="false" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="49" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="850">
           <folding>
@@ -1091,9 +1039,7 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/view5.png">
-      <provider selected="true" editor-type-id="images">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
@@ -1121,9 +1067,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/NotifyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="61" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="629">
-          <folding />
-        </state>
+        <state line="29" column="61" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="629" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
@@ -1138,11 +1082,6 @@
         <state line="29" column="0" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/returnedcontent.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
@@ -1169,45 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="42" selection-start="611" selection-end="611" vertical-scroll-proportion="-4.0384617" vertical-offset="0" max-vertical-offset="960">
-          <folding>
-            <element signature="e#1478#1887#0" expanded="false" />
-            <element signature="e#1922#2336#0" expanded="false" />
-            <element signature="e#2876#4446#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/await.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/view_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="4" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/settings.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="-3.4615386" vertical-offset="0" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/mainscreen_actions.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="7" selection-start="351" selection-end="351" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="225">
@@ -1215,28 +1115,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/returned_content.xml">
-      <provider editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/res/drawable/ready.png">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="39" selection-start="918" selection-end="918" vertical-scroll-proportion="-6.0576925" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/icon1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="3518" selection-end="3518" vertical-scroll-proportion="2.1895425" vertical-offset="0" max-vertical-offset="1095">
+        <state line="83" column="40" selection-start="3508" selection-end="3508" vertical-scroll-proportion="-15.865385" vertical-offset="0" max-vertical-offset="960">
           <folding>
             <element signature="e#477#818#0" expanded="false" />
             <element signature="e#819#1162#0" expanded="false" />
-            <element signature="e#1165#1532#0" expanded="false" />
+            <element signature="e#1165#1544#0" expanded="false" />
+            <element signature="e#2538#2942#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/blubsstars.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/settings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/view_message.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="4" selection-start="267" selection-end="267" vertical-scroll-proportion="0.22012578" vertical-offset="0" max-vertical-offset="495">
+          <folding>
+            <element signature="e#263#698#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/returned_content.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="39" selection-start="918" selection-end="918" vertical-scroll-proportion="0.6603774" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/add_message.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="41" selection-start="842" selection-end="842" vertical-scroll-proportion="0.57" vertical-offset="0" max-vertical-offset="960">
+          <folding>
+            <element signature="e#1478#1887#0" expanded="false" />
+            <element signature="e#1922#2336#0" expanded="false" />
+            <element signature="e#2876#4446#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

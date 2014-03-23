@@ -8,79 +8,94 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="fitXY"
-               android:src="@drawable/backgroundstars4"/>
-<!--    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/title"
-              android:layout_alignParentTop="true"
-              android:layout_centerHorizontal="true"
-              android:layout_marginTop="100dp"
-              android:textSize="50dp"/>-->
-<!--    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="60dp"
-            android:onClick="goToMessage"
-            android:text="@string/add_message"/>-->
-  <!--  <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="60dp"
-            android:onClick="goToPicture"
-            android:text="@string/add_picture"
-            android:id="@+id/button"/>-->
+               android:src="@drawable/ready4"/>
 
-    <!--message button-->
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@drawable/lets4"
+        android:clickable="true"
+        android:onClick="goToMessage"
+        android:scaleType="fitCenter"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="40dp"
+        android:background="@null"
+        />
+
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton"
-            android:src="@drawable/reformatwrite3"
+            android:src="@drawable/question"
             android:clickable="true"
             android:onClick="goToMessage"
             android:scaleType="fitCenter"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="125dp"
-/>
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="40dp"
+            android:background="@null"
+            />
 
-    <!--camera button-->
-<!--    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
-            android:layout_alignParentRight="true"
-            android:layout_alignBottom="@+id/imageButton"
-            android:scaleType="centerCrop"
-            android:src="@drawable/reformatcamera3"
-            android:onClick="goToPicture"
-            />-->
-    <!--return content button-->
-<!--    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Returned Content"
-            android:id="@+id/secretButton"
-            android:layout_below="@+id/imageButton2"
-            android:layout_centerHorizontal="true"
-            android:onClick="goToContent"
-            android:visibility="visible"
-            />-->
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/secretButton"
             android:src="@drawable/await4"
             android:clickable="true"
-            android:onClick="goToContent"
+            android:onClick="goToMessage"
             android:scaleType="centerCrop"
             android:layout_marginTop="256dp"
             android:layout_centerHorizontal="true"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:scaleX="1.2"
             android:scaleY="1.2"
             android:background="@null"/>
+
+    <!--    <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/title"
+                  android:layout_alignParentTop="true"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="100dp"
+                  android:textSize="50dp"/>-->
+    <!--    <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="60dp"
+                android:onClick="goToMessage"
+                android:text="@string/add_message"/>-->
+    <!--  <Button android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_alignParentRight="true"
+              android:layout_marginBottom="60dp"
+              android:onClick="goToPicture"
+              android:text="@string/add_picture"
+              android:id="@+id/button"/>-->
+    <!--camera button-->
+    <!--    <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@+id/imageButton"
+                android:scaleType="centerCrop"
+                android:src="@drawable/reformatcamera3"
+                android:onClick="goToPicture"
+                />-->
+    <!--return content button-->
+    <!--    <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Returned Content"
+                android:id="@+id/secretButton"
+                android:layout_below="@+id/imageButton2"
+                android:layout_centerHorizontal="true"
+                android:onClick="goToContent"
+                android:visibility="visible"
+                />-->
 
 </RelativeLayout>

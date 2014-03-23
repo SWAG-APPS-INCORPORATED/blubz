@@ -68,6 +68,7 @@ public class AddMessage extends Activity {
 
     }
 
+
     public void viewMessages(View view){
         Intent intent = new Intent(this, ViewMessage.class);
         List<Comment> allMessages = datasource.getAllComments();

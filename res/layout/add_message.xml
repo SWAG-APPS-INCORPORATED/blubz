@@ -33,6 +33,19 @@
               android:textColorHint="#ffffff"
               android:textSize="25dp"/>
 
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addButton"
+            android:src="@drawable/blubshadow4"
+            android:onClick="addMessage"
+            android:background="@null"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:layout_marginTop="190dp"
+            android:layout_below="@+id/messageEditText"
+            android:layout_alignParentLeft="true"/>
+
     <!--view messages button-->
 <!--    <ImageButton
             android:layout_width="wrap_content"
@@ -58,18 +71,7 @@
             />-->
 
     <!--add messages button-->
-    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/addButton"
-            android:src="@drawable/blubshadow4"
-            android:onClick="addMessage"
-            android:background="@null"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:layout_marginTop="190dp"
-            android:layout_below="@+id/messageEditText"
-            android:layout_alignParentLeft="true"/>
+
 
 
     <!-- EditText

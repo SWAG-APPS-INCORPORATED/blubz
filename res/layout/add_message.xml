@@ -31,7 +31,8 @@
               android:hint="@string/hint"
               android:textColor="#ffffff"
               android:textColorHint="#ffffff"
-              android:textSize="25dp"/>
+              android:textSize="25dp"
+              android:maxLength="140"/>
 
     <ImageButton
             android:layout_width="wrap_content"

@@ -14,7 +14,7 @@
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
+            android:id="@+id/writeButton"
             android:src="@drawable/write4"
             android:clickable="true"
             android:onClick="goToMessage"

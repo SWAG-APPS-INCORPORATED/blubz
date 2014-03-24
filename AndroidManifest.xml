@@ -13,7 +13,7 @@
         </activity>
         <activity android:name=".AddMessage"
                   android:label="@string/add"
-                  android:parentActivityName=".MainScreen"/>
+                  android:parentActivityName=".BlubChoiceActivity"/>
         <activity android:name=".ViewMessage"
                   android:label="@string/view_message"
                   android:parentActivityName=".AddMessage"/>
@@ -22,6 +22,9 @@
                   android:parentActivityName=".MainScreen"/>
         <activity android:name=".ReturnContent"
                   android:label="ReturnContent"
+                  android:parentActivityName=".MainScreen"/>
+        <activity android:name=".BlubChoiceActivity"
+                  android:label="Choose Blub Type"
                   android:parentActivityName=".MainScreen"/>
         <service android:name=".NotifyService" android:label="NotifyService"/>
     </application>

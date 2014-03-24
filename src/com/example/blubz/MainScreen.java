@@ -45,8 +45,9 @@ public class MainScreen extends Activity {
         random = new Random();
     }
 
-    public void goToMessage(View view) {
-        Intent intent = new Intent(this, AddMessage.class);
+    public void goToBlubChoice(View view) {
+        Intent intent = new Intent(this, BlubChoiceActivity.class);
+
         startActivity(intent);
     }
 

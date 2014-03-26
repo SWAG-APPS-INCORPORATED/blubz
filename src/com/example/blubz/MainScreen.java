@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,7 +26,7 @@ public class MainScreen extends Activity {
     private ContentDataSource contentdatasource;
     public long NotificationTime;
     private Random random;
-    private Button secretButton;
+    private ImageButton secretButton;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class MainScreen extends Activity {
         contentdatasource = new ContentDataSource(this);
         contentdatasource.open();
 
-        secretButton = (Button)findViewById(R.id.secretButton);
+        secretButton = (ImageButton)findViewById(R.id.secretButton);
 
         if(!commentdatasource.isEmpty()){
             secretButtonCheck();
@@ -135,7 +136,7 @@ public class MainScreen extends Activity {
         currentCalendar.setTimeInMillis(currentTime);
         timestampCalendar.setTimeInMillis(timestampTime);
 
-        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY)
+        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY)
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
         }

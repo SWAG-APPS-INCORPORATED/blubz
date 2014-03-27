@@ -2,7 +2,9 @@ package com.example.blubz;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -46,12 +48,14 @@ public class AddMessage extends Activity {
         setDateText();
 
         if(!datasource.isEmpty()){
-            long timestamp = datasource.getMostRecentTimestamp();
-            if(isSameDay(timestamp,System.currentTimeMillis())){
+            long lastTimestamp = datasource.getMostRecentTimestamp();
+            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+                editText.setHint("See you tomorrow!");
 
-                button.setEnabled(false);
             }
         }
+
+
 
 
     }
@@ -61,11 +65,27 @@ public class AddMessage extends Activity {
     public void addMessage(View view){
         String message = editText.getText().toString();
         long timestamp = System.currentTimeMillis();
-        datasource.createComment(message, timestamp);
-        editText.setText(null);
-        editText.setHint("Your Blub has been stored! See you tomorrow!");
-        button.setEnabled(false);
 
+        if(message.isEmpty()){
+            showDialogBox("Empty blub!", "Please enter something real in your blub, bub.");
+        }else{
+
+            if(!datasource.isEmpty()){
+                long lastTimestamp = datasource.getMostRecentTimestamp();
+                if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+                    showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
+                    return;
+
+                }
+            }
+
+            datasource.createComment(message, timestamp);
+
+            editText.setText(null);
+            editText.setHint("Your Blub has been stored! See you tomorrow!");
+
+            //button.setEnabled(false);
+        }
     }
 
 
@@ -113,5 +133,20 @@ public class AddMessage extends Activity {
         String date = month.concat(".").concat(day).concat(".").concat(year);
 
         dateText.setText(date);
+    }
+
+    private void showDialogBox(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+        AlertDialog dialog = builder.create();
+
+        dialog.show();
+
     }
 }

@@ -7,6 +7,8 @@ import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,8 @@ public class AddMessage extends Activity {
     private EditText editText;
     private ImageButton button;
     private TextView dateText;
+    private TextView characterView;
+    private EditText characterText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,10 @@ public class AddMessage extends Activity {
 
         setDateText();
 
+        characterText=(EditText)findViewById(R.id.messageEditText);
+        characterView=(TextView)findViewById(R.id.characters);
+        characterText.addTextChangedListener(mTextEditorWatcher);
+
         if(!datasource.isEmpty()){
             long lastTimestamp = datasource.getMostRecentTimestamp();
             if(isSameDay(lastTimestamp,System.currentTimeMillis())){
@@ -59,8 +67,6 @@ public class AddMessage extends Activity {
 
 
     }
-
-
 
     public void addMessage(View view){
         String message = editText.getText().toString();
@@ -134,6 +140,16 @@ public class AddMessage extends Activity {
 
         dateText.setText(date);
     }
+
+    private final TextWatcher mTextEditorWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            characterView.setText(String.valueOf(140 - s.length()));
+        }
+        public void afterTextChanged(Editable s) {
+        }
+    };
 
     private void showDialogBox(String title, String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

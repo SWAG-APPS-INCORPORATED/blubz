@@ -47,6 +47,13 @@
             android:layout_below="@+id/messageEditText"
             android:layout_alignParentLeft="true"/>
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="140"
+            android:id="@+id/characters" android:layout_toRightOf="@+id/date"
+            android:layout_marginLeft="66dp" android:layout_alignTop="@+id/addButton"/>
+
     <!--view messages button-->
 <!--    <ImageButton
             android:layout_width="wrap_content"

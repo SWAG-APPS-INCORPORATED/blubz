@@ -103,19 +103,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AddMessage.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AddMessage.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="9" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.0" vertical-offset="1355" max-vertical-offset="2907">
+            <state line="23" column="13" selection-start="586" selection-end="586" vertical-scroll-proportion="0.21024735" vertical-offset="0" max-vertical-offset="2873">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="28" selection-start="570" selection-end="570" vertical-scroll-proportion="0.4409222" vertical-offset="34" max-vertical-offset="714">
+            <state line="3" column="39" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="714">
               <folding />
             </state>
           </provider>
@@ -678,7 +678,7 @@
       <workItem from="1395775134233" duration="8858000" />
       <workItem from="1395900928130" duration="2100000" />
       <workItem from="1395945257464" duration="5389000" />
-      <workItem from="1395960149811" duration="210000" />
+      <workItem from="1395960149811" duration="825000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -712,11 +712,15 @@
       <created>1395901516423</created>
       <updated>1395901516423</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Touching outside EditText removes softkeyboard">
+      <created>1395960369063</created>
+      <updated>1395960369063</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86783000" />
+    <option name="totallyTimeSpent" value="87398000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -754,10 +758,10 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3512195" sideWeight="0.5022659" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967373" sideWeight="0.49621785" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3572594" sideWeight="0.49773413" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3572594" sideWeight="0.49773413" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -822,7 +826,8 @@
     <MESSAGE value="Fixed empty database bugs" />
     <MESSAGE value="New path through app works" />
     <MESSAGE value="Fixed portrait view and included character ticker in Add Message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed portrait view and included character ticker in Add Message" />
+    <MESSAGE value="Touching outside EditText removes softkeyboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Touching outside EditText removes softkeyboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1203,16 +1208,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddMessage.java">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="9" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.0" vertical-offset="1355" max-vertical-offset="2907">
+        <state line="3" column="39" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="714">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="28" selection-start="570" selection-end="570" vertical-scroll-proportion="0.4409222" vertical-offset="34" max-vertical-offset="714">
+        <state line="23" column="13" selection-start="586" selection-end="586" vertical-scroll-proportion="0.21024735" vertical-offset="0" max-vertical-offset="2873">
           <folding />
         </state>
       </provider>

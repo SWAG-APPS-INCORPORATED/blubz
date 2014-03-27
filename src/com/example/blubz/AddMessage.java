@@ -34,8 +34,6 @@ public class AddMessage extends Activity {
     private TextView dateText;
     private TextView characterView;
     private EditText characterText;
-    private EditText getEditText;
-    private LinearLayout getLinearLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

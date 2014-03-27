@@ -13,19 +13,24 @@
         </activity>
         <activity android:name=".AddMessage"
                   android:label="@string/add"
-                  android:parentActivityName=".BlubChoiceActivity"/>
+                  android:parentActivityName=".BlubChoiceActivity"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".ViewMessage"
                   android:label="@string/view_message"
-                  android:parentActivityName=".AddMessage"/>
+                  android:parentActivityName=".AddMessage"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".SettingsActivity"
                   android:label="Settings"
-                  android:parentActivityName=".MainScreen"/>
+                  android:parentActivityName=".MainScreen"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".ReturnContent"
                   android:label="ReturnContent"
-                  android:parentActivityName=".MainScreen"/>
+                  android:parentActivityName=".MainScreen"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".BlubChoiceActivity"
                   android:label="Choose Blub Type"
-                  android:parentActivityName=".MainScreen"/>
+                  android:parentActivityName=".MainScreen"
+                  android:screenOrientation="portrait"/>
         <service android:name=".NotifyService" android:label="NotifyService"/>
     </application>
 </manifest>

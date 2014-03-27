@@ -4,16 +4,15 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.view.*;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.*;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -35,6 +34,8 @@ public class AddMessage extends Activity {
     private TextView dateText;
     private TextView characterView;
     private EditText characterText;
+    private EditText getEditText;
+    private LinearLayout getLinearLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,10 +63,6 @@ public class AddMessage extends Activity {
 
             }
         }
-
-
-
-
     }
 
     public void addMessage(View view){
@@ -91,9 +88,30 @@ public class AddMessage extends Activity {
             editText.setHint("Your Blub has been stored! See you tomorrow!");
 
             //button.setEnabled(false);
+
         }
     }
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        View view = getCurrentFocus();
+        boolean ret = super.dispatchTouchEvent(event);
 
+        if (view instanceof EditText) {
+            View w = getCurrentFocus();
+            int scrcoords[] = new int[2];
+            w.getLocationOnScreen(scrcoords);
+            float x = event.getRawX() + w.getLeft() - scrcoords[0];
+            float y = event.getRawY() + w.getTop() - scrcoords[1];
+
+            if (event.getAction() == MotionEvent.ACTION_UP
+                    && (x < w.getLeft() || x >= w.getRight()
+                    || y < w.getTop() || y > w.getBottom()) ) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getWindow().getCurrentFocus().getWindowToken(), 0);
+            }
+        }
+        return ret;
+    }
 
     public void viewMessages(View view){
         Intent intent = new Intent(this, ViewMessage.class);

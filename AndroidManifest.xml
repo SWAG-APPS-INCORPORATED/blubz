@@ -31,6 +31,10 @@
                   android:label="Choose Blub Type"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
+        <activity android:name=".AboutActivity"
+                  android:label="About Blubz"
+                  android:parentActivityName=".MainScreen"
+                  android:screenOrientation="portrait"/>
         <service android:name=".NotifyService" android:label="NotifyService"/>
     </application>
 </manifest>

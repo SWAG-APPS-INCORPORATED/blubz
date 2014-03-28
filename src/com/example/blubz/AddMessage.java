@@ -67,27 +67,28 @@ public class AddMessage extends Activity {
         String message = editText.getText().toString();
         long timestamp = System.currentTimeMillis();
 
+
+        if(!datasource.isEmpty()){
+            long lastTimestamp = datasource.getMostRecentTimestamp();
+            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
+                editText.setHint("See you tomorrow!");
+                return;
+
+            }
+        }
         if(message.isEmpty()){
             showDialogBox("Empty blub!", "Please enter something real in your blub, bub.");
-        }else{
+            return;
+        }
 
-            if(!datasource.isEmpty()){
-                long lastTimestamp = datasource.getMostRecentTimestamp();
-                if(isSameDay(lastTimestamp,System.currentTimeMillis())){
-                    showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
-                    return;
+        datasource.createComment(message, timestamp);
 
-                }
-            }
-
-            datasource.createComment(message, timestamp);
-
-            editText.setText(null);
-            editText.setHint("Your Blub has been stored! See you tomorrow!");
+        editText.setText(null);
+        editText.setHint("Your Blub has been stored! See you tomorrow!");
 
             //button.setEnabled(false);
 
-        }
     }
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {

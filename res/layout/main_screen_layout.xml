@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:scaleType="fitXY"
-        android:src="@drawable/mainscreen"
+        android:src="@drawable/lowresmainscreen"
         />
 
 
@@ -24,6 +24,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="40dp"
+        android:src="@drawable/lets4"
         />
 
     <ImageButton
@@ -31,11 +32,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/AboutButton"
             android:clickable="true"
-            android:onClick="goToBlubChoice"
+            android:onClick="goToAbout"
             android:scaleType="fitCenter"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_marginBottom="40dp"
+            android:src="@drawable/question"
             />
 
     <ImageButton
@@ -49,7 +51,8 @@
             android:layout_centerHorizontal="true"
             android:visibility="invisible"
             android:scaleX="1.2"
-            android:scaleY="1.2"/>
+            android:scaleY="1.2"
+            android:src="@drawable/await4"/>
 
 
 

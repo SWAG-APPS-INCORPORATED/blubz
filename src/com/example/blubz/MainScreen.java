@@ -95,6 +95,11 @@ public class MainScreen extends Activity {
         }
     }
 
+    public void goToAbout(View view){
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
     //Code below from android tutorial on action bar http://developer.android.com/training/basics/actionbar/setting-up.html
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -136,7 +141,7 @@ public class MainScreen extends Activity {
         currentCalendar.setTimeInMillis(currentTime);
         timestampCalendar.setTimeInMillis(timestampTime);
 
-        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY)
+        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY)
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
         }

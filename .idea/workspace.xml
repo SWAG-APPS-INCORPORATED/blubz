@@ -37,9 +37,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="Citing source of code and fixing portrait view for initial layout">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/AddMessage.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/AddMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+    <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -684,7 +682,7 @@
       <workItem from="1395945257464" duration="5389000" />
       <workItem from="1395960149811" duration="948000" />
       <workItem from="1396032459555" duration="829000" />
-      <workItem from="1396034129361" duration="499000" />
+      <workItem from="1396034129361" duration="550000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -730,11 +728,15 @@
       <created>1396034603016</created>
       <updated>1396034603016</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Citing source of code, fixing portrait view for initial layout and moved character ticker box">
+      <created>1396034665401</created>
+      <updated>1396034665401</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88849000" />
+    <option name="totallyTimeSpent" value="88900000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -843,7 +845,8 @@
     <MESSAGE value="Touching outside EditText removes softkeyboard" />
     <MESSAGE value="Just deleting some unused variables I forgot" />
     <MESSAGE value="Cited source of code, fixed portrait view for initial layout and moved character ticker box" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cited source of code, fixed portrait view for initial layout and moved character ticker box" />
+    <MESSAGE value="Citing source of code, fixing portrait view for initial layout and moved character ticker box" />
+    <option name="LAST_COMMIT_MESSAGE" value="Citing source of code, fixing portrait view for initial layout and moved character ticker box" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

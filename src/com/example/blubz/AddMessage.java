@@ -90,6 +90,8 @@ public class AddMessage extends Activity {
             //button.setEnabled(false);
 
     }
+
+//Source: http://akashkubavat.wordpress.com/2012/06/08/hide-virtual-keyboard-when-touch-out-side-edittext-in-android/
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         View view = getCurrentFocus();
@@ -157,7 +159,7 @@ public class AddMessage extends Activity {
 
         dateText.setText(date);
     }
-
+//Source: http://stackoverflow.com/questions/3013791/live-character-count-for-edittext-android
     private final TextWatcher mTextEditorWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }

@@ -7,9 +7,9 @@
 
     <ImageView android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:layout_centerInParent="true"
                android:scaleType="centerCrop"
-               android:src="@drawable/blubs5"/>
+               android:src="@drawable/blubs5" android:layout_alignParentTop="true"
+               android:layout_alignParentLeft="true"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
@@ -52,9 +52,7 @@
             android:layout_height="wrap_content"
             android:text="140"
             android:id="@+id/characters"
-            android:layout_toRightOf="@+id/date"
-            android:layout_marginLeft="66dp"
-            android:layout_alignTop="@+id/addButton"/>
+            android:layout_alignTop="@+id/messageEditText" android:layout_toRightOf="@+id/messageEditText"/>
 
     <!--view messages button-->
 <!--    <ImageButton

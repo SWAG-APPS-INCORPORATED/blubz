@@ -46,7 +46,7 @@ public class AddMessage extends Activity {
 
         dateText = (TextView) findViewById(R.id.date);
         editText = (EditText) findViewById(R.id.messageEditText);
-        button = (ImageButton) findViewById(R.id.addButton);
+        button = (ImageButton) findViewById(R.id.addBlubButton);
 
         setDateText();
 

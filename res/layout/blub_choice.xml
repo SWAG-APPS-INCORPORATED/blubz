@@ -9,7 +9,7 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="fitXY"
-               android:src="@drawable/backgroundstars"/>
+               android:src="@drawable/lowrestoday"/>
 
     <ImageButton
             android:layout_width="wrap_content"
@@ -28,10 +28,10 @@
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
+            android:id="@+id/cameraButton"
             android:src="@drawable/camera"
             android:clickable="true"
-            android:onClick="goToMessage"
+            android:onClick="goToPicture"
             android:scaleType="fitCenter"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"

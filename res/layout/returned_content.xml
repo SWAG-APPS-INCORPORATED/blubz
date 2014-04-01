@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <ImageView android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
-               android:scaleType="centerCrop"
-               android:src="@drawable/backgroundstars"/>
+               android:scaleType="fitXY"
+               android:src="@drawable/lowrescontent"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_alignParentTop="true"
               android:layout_marginTop="40dp"
-              android:layout_marginLeft="37dp"
+              android:layout_marginLeft="25dp"
+              android:layout_centerInParent="@+id/datebackground"
               android:id="@+id/date"
               android:text="@string/date"
               android:textColor="#ffffff"
-              android:textSize="21dp"/>
+              android:textSize="20.5dp"/>
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/datebackground"
+            android:id="@+id/datebackground"
+            android:background="@null"
+            android:scaleX="2.5"
+            android:scaleY="2.2"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"

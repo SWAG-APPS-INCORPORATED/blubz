@@ -9,17 +9,30 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="centerCrop"
-               android:src="@drawable/blubs5"/>
+               android:src="@drawable/blubhere"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_alignParentTop="true"
               android:layout_marginTop="40dp"
               android:layout_marginLeft="25dp"
+              android:layout_centerInParent="@+id/datebackground"
               android:id="@+id/date"
               android:text="@string/date"
               android:textColor="#ffffff"
               android:textSize="20.5dp"/>
+
+    <ImageButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentTop="true"
+               android:layout_marginTop="40dp"
+               android:layout_marginLeft="60dp"
+               android:src="@drawable/datebackground"
+               android:id="@+id/datebackground"
+               android:background="@null"
+               android:scaleX="2.5"
+               android:scaleY="2.2"/>
 
     <EditText android:layout_width="wrap_content"
               android:layout_height="wrap_content"
@@ -37,7 +50,7 @@
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/addButton"
+            android:id="@+id/addBlubButton"
             android:src="@drawable/blubshadow4"
             android:onClick="addMessage"
             android:background="@null"
@@ -51,8 +64,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="140"
-            android:id="@+id/characters" android:layout_toRightOf="@+id/date"
-            android:layout_marginLeft="66dp" android:layout_alignTop="@+id/addButton"/>
+            android:id="@+id/characters"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_alignTop="@+id/addButton"
+            android:layout_alignParentRight="true"
+            android:textColor="#ffffff"
+            android:textSize="26dp"
+            />
 
     <!--view messages button-->
 <!--    <ImageButton

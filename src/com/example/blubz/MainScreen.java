@@ -52,6 +52,11 @@ public class MainScreen extends Activity {
         startActivity(intent);
     }
 
+    public void goToAboutBlubs(View view) {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
     public void goToPicture(View view) {
         // Add camera stuff here
     }

@@ -37,34 +37,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="Touching outside EditText removes softkeyboard">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blubhere.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/datebackground.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lowresabout.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lowresawait4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lowrescontent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lowresmainscreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lowressecret.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/lowrestoday.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/blubz/AboutActivity.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/await4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundstars.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/backgroundstars4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/blubs5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/mainscreen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/ready.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/ready1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/ready4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/return11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/today.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/drawable/welcome3.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/AddMessage.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/AddMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/about_blubs.xml" afterPath="$PROJECT_DIR$/res/layout/about_blubs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/add_message.xml" afterPath="$PROJECT_DIR$/res/layout/add_message.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/blub_choice.xml" afterPath="$PROJECT_DIR$/res/layout/blub_choice.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main_screen_layout.xml" afterPath="$PROJECT_DIR$/res/layout/main_screen_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/returned_content.xml" afterPath="$PROJECT_DIR$/res/layout/returned_content.xml" />
+    <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -135,7 +108,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="20" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.66543436" vertical-offset="420" max-vertical-offset="1110">
+            <state line="52" column="20" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.66790354" vertical-offset="420" max-vertical-offset="1110">
               <folding>
                 <element signature="e#2006#2371#0" expanded="false" />
                 <element signature="e#2376#2743#0" expanded="false" />
@@ -649,7 +622,7 @@
       <workItem from="1395960149811" duration="825000" />
       <workItem from="1396023255629" duration="137000" />
       <workItem from="1396289751142" duration="753000" />
-      <workItem from="1396328717426" duration="3263000" />
+      <workItem from="1396328717426" duration="3395000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -687,11 +660,15 @@
       <created>1395960369063</created>
       <updated>1395960369063</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="gray box added to date and character counter formatted">
+      <created>1396333505625</created>
+      <updated>1396333505625</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91551000" />
+    <option name="totallyTimeSpent" value="91683000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -732,6 +709,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967373" sideWeight="0.49621785" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3572594" sideWeight="0.49773413" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -744,7 +722,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967373" sideWeight="0.49621785" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -798,7 +775,8 @@
     <MESSAGE value="New path through app works" />
     <MESSAGE value="Fixed portrait view and included character ticker in Add Message" />
     <MESSAGE value="Touching outside EditText removes softkeyboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Touching outside EditText removes softkeyboard" />
+    <MESSAGE value="gray box added to date and character counter formatted" />
+    <option name="LAST_COMMIT_MESSAGE" value="gray box added to date and character counter formatted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1206,7 +1184,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="20" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.66543436" vertical-offset="420" max-vertical-offset="1110">
+        <state line="52" column="20" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.66790354" vertical-offset="420" max-vertical-offset="1110">
           <folding>
             <element signature="e#2006#2371#0" expanded="false" />
             <element signature="e#2376#2743#0" expanded="false" />

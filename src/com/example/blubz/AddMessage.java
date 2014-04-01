@@ -67,28 +67,31 @@ public class AddMessage extends Activity {
         String message = editText.getText().toString();
         long timestamp = System.currentTimeMillis();
 
+
+        if(!datasource.isEmpty()){
+            long lastTimestamp = datasource.getMostRecentTimestamp();
+            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
+                editText.setHint("See you tomorrow!");
+                return;
+
+            }
+        }
         if(message.isEmpty()){
             showDialogBox("Empty blub!", "Please enter something real in your blub, bub.");
-        }else{
+            return;
+        }
 
-            if(!datasource.isEmpty()){
-                long lastTimestamp = datasource.getMostRecentTimestamp();
-                if(isSameDay(lastTimestamp,System.currentTimeMillis())){
-                    showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
-                    return;
+        datasource.createComment(message, timestamp);
 
-                }
-            }
-
-            datasource.createComment(message, timestamp);
-
-            editText.setText(null);
-            editText.setHint("Your Blub has been stored! See you tomorrow!");
+        editText.setText(null);
+        editText.setHint("Your Blub has been stored! See you tomorrow!");
 
             //button.setEnabled(false);
 
-        }
     }
+
+//Source: http://akashkubavat.wordpress.com/2012/06/08/hide-virtual-keyboard-when-touch-out-side-edittext-in-android/
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         View view = getCurrentFocus();
@@ -156,7 +159,7 @@ public class AddMessage extends Activity {
 
         dateText.setText(date);
     }
-
+//Source: http://stackoverflow.com/questions/3013791/live-character-count-for-edittext-android
     private final TextWatcher mTextEditorWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }

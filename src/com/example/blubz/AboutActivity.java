@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by carinalei on 3/26/14.
+ * Created by Nathan on 3/27/14.
  */
 public class AboutActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {

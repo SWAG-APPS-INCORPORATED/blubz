@@ -18,4 +18,9 @@ public class BlubChoiceActivity extends Activity {
         Intent intent = new Intent(this, AddMessage.class);
         startActivity(intent);
     }
+
+    public void goToPicture(View view) {
+        Intent intent = new Intent(this, AddPhoto.class);
+        startActivity(intent);
+    }
 }

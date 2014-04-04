@@ -10,4 +10,8 @@
     <string name="view_message"> Your Messages:</string>
     <string name="action_settings">Settings</string>
     <string name="your_content">Your Content</string>
+    <string name="camera_name">TakePhoto</string>
+    <string name="btnIntend">Take Picture</string>
+    <string name="cannot">Cannot</string>
+    <string name="album_name">CameraSample</string>
 </resources>

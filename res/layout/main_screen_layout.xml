@@ -34,7 +34,7 @@
             android:id="@+id/AboutButton"
             android:clickable="true"
             android:src="@drawable/question"
-            android:onClick="goToBlubChoice"
+            android:onClick="goToAboutBlubs"
             android:scaleType="fitCenter"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"

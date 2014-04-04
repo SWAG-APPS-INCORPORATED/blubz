@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">blubz</string>
-    <string name="hint">Type your blub right here...</string>
+    <string name="hint">Type your blub right here&#8230;</string>
     <string name="add">Add a Journal</string>
     <string name="add_message">Add Message</string>
     <string name="date">Today\'s Date</string>

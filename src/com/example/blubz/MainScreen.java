@@ -1,6 +1,8 @@
 package com.example.blubz;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -47,6 +49,17 @@ public class MainScreen extends Activity {
     }
 
     public void goToBlubChoice(View view) {
+
+        if(!commentdatasource.isEmpty()){
+            long lastTimestamp = commentdatasource.getMostRecentTimestamp();
+            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
+                return;
+
+            }
+        }
+
+
         Intent intent = new Intent(this, BlubChoiceActivity.class);
 
         startActivity(intent);
@@ -57,9 +70,7 @@ public class MainScreen extends Activity {
         startActivity(intent);
     }
 
-    public void goToPicture(View view) {
-        // Add camera stuff here
-    }
+
 
     public void goToContent(View view) {
         Intent intent = new Intent(this, ReturnContent.class);
@@ -98,11 +109,6 @@ public class MainScreen extends Activity {
 
             startActivity(intent);
         }
-    }
-
-    public void goToAbout(View view){
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
     }
 
     //Code below from android tutorial on action bar http://developer.android.com/training/basics/actionbar/setting-up.html
@@ -146,9 +152,35 @@ public class MainScreen extends Activity {
         currentCalendar.setTimeInMillis(currentTime);
         timestampCalendar.setTimeInMillis(timestampTime);
 
-        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY)
+        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY)
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
         }
+    }
+
+    private void showDialogBox(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+        AlertDialog dialog = builder.create();
+
+        dialog.show();
+
+    }
+
+    private boolean isSameDay(long timestamp1, long timestamp2){
+        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+
+        calendar1.setTimeInMillis(timestamp1);
+        calendar2.setTimeInMillis(timestamp2);
+
+        return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
+
     }
 }

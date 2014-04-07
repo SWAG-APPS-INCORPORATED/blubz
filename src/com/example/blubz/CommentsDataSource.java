@@ -40,12 +40,16 @@ public class CommentsDataSource {
         long insertId = database.insert(CommentSQLiteHelper.TABLE_COMMENTS, null,
                 values);
 
-        /*Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
+        /**
+        Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
                 allColumns, CommentSQLiteHelper.COLUMN_ID + " = " + insertId, null,
-                null, null, null);*/
+                null, null, null);
+         **/
 
-        Comment newComment = new Comment();// = cursorToComment(cursor);
+        Comment newComment = new Comment(); //cursorToComment(cursor);
+
         //cursor.close();
+
         return newComment;
     }
 

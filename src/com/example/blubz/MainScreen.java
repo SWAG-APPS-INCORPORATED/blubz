@@ -42,6 +42,11 @@ public class MainScreen extends Activity {
 
         secretButton = (ImageButton)findViewById(R.id.secretButton);
 
+        if(contentdatasource.isCount(0)){
+            //TO-DO: MAKE THE ABOUT BLUBZ PAGE SHOW UP
+            setInitialNotificationTime();
+        }
+
         if(!commentdatasource.isEmpty()){
             secretButtonCheck();
         }
@@ -143,7 +148,7 @@ public class MainScreen extends Activity {
         long timestampTime = 0;
         long currentTime = System.currentTimeMillis();
 
-        if(!contentdatasource.isEmpty()){
+        if(!contentdatasource.isCount(1)){
             timestampTime = contentdatasource.getMostRecentTimestamp();
         }
         Calendar currentCalendar = Calendar.getInstance();
@@ -152,10 +157,27 @@ public class MainScreen extends Activity {
         currentCalendar.setTimeInMillis(currentTime);
         timestampCalendar.setTimeInMillis(timestampTime);
 
-        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY)
+        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY)
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
         }
+    }
+
+    private void setInitialNotificationTime(){
+        /**
+        Calendar calendar = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        Integer currentDay = calendar.get(Calendar.DAY_OF_YEAR);
+
+        calendar2.setTimeInMillis(currentDay+1000*60*20);
+        **/
+        //SettingsActivity s1 = new SettingsActivity();
+        //s1.setNotificationTime(calendar2);
+
+        contentdatasource.createContent("notification",System.currentTimeMillis());
+
     }
 
     private void showDialogBox(String title, String message){

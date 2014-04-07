@@ -38,13 +38,24 @@ public class ContentDataSource {
         long insertId = database.insert(ContentSQLiteHelper.TABLE_CONTENT, null,
                 values);
 
-        /*Cursor cursor = database.query(CommentSQLiteHelper.TABLE_COMMENTS,
-                allColumns, CommentSQLiteHelper.COLUMN_ID + " = " + insertId, null,
-                null, null, null);*/
+        /**
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
+                allColumns, ContentSQLiteHelper.COLUMN_ID + " = " + insertId, null,
+                null, null, null);
+        **/
 
-        Content newContent = new Content();// = cursorToComment(cursor);
+        Content newContent = new Content(); //cursorToContent(cursor);
         //cursor.close();
         return newContent;
+    }
+
+    public Content getContent(String name){
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
+                allColumns, ContentSQLiteHelper.COLUMN_NAME + " = \'" + name + "\'", null,
+                null, null, null);
+        cursor.moveToLast();
+        return cursorToContent(cursor);
+
     }
 
     public void deleteContent(Content content){
@@ -84,10 +95,10 @@ public class ContentDataSource {
         return content.getTimestamp();
     }
 
-    public boolean isEmpty(){
+    public boolean isCount(Integer count){
         Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
                 allColumns, null, null, null, null, null);
-        return(cursor.getCount() == 0);
+        return(cursor.getCount() == count);
         //return(cursor.getCount()); //TODO: make a better implementation
         //return false;
     }

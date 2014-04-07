@@ -55,7 +55,6 @@ public class MainScreen extends Activity {
             if(isSameDay(lastTimestamp,System.currentTimeMillis())){
                 showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
                 return;
-
             }
         }
 

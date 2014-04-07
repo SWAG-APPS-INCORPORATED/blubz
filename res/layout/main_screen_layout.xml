@@ -12,8 +12,6 @@
         android:src="@drawable/lowresmainscreen"
         />
 
-
-
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,52 +53,5 @@
             android:visibility="invisible"
             android:background="@null"
             />
-
-
-
-    <!--    <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/title"
-                  android:layout_alignParentTop="true"
-                  android:layout_centerHorizontal="true"
-                  android:layout_marginTop="100dp"
-                  android:textSize="50dp"/>-->
-    <!--    <Button android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginBottom="60dp"
-                android:onClick="goToMessage"
-                android:text="@string/add_message"/>-->
-    <!--  <Button android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentRight="true"
-              android:layout_marginBottom="60dp"
-              android:onClick="goToPicture"
-              android:text="@string/add_picture"
-              android:id="@+id/button"/>-->
-    <!--camera button-->
-    <!--    <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton2"
-                android:layout_alignParentRight="true"
-                android:layout_alignBottom="@+id/imageButton"
-                android:scaleType="centerCrop"
-                android:src="@drawable/reformatcamera3"
-                android:onClick="goToPicture"
-                />-->
-    <!--return content button
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Returne Content"
-            android:id="@+id/secretButton"
-            android:layout_centerHorizontal="true"
-            android:onClick="goToContent"
-            android:visibility="visible"
-            />
-    -->
 
 </RelativeLayout>

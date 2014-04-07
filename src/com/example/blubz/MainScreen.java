@@ -163,19 +163,19 @@ public class MainScreen extends Activity {
     }
 
     private void setInitialNotificationTime(){
-        /**
+
         Calendar calendar = Calendar.getInstance();
-        Calendar calendar2 = Calendar.getInstance();
 
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        Integer currentDay = calendar.get(Calendar.DAY_OF_YEAR);
+        calendar.set(Calendar.HOUR_OF_DAY, 18);
+        calendar.set(Calendar.MINUTE, 0);
 
-        calendar2.setTimeInMillis(currentDay+1000*60*20);
+        /**
+        SettingsActivity s1 = new SettingsActivity();
+        s1.setNotificationTime(calendar);
         **/
-        //SettingsActivity s1 = new SettingsActivity();
-        //s1.setNotificationTime(calendar2);
 
-        contentdatasource.createContent("notification",System.currentTimeMillis());
+        contentdatasource.createContent("notification",calendar.getTimeInMillis());
+
 
     }
 

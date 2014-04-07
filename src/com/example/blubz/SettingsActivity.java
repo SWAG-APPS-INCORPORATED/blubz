@@ -16,6 +16,7 @@ import java.util.Calendar;
 
 
 public class SettingsActivity extends Activity {
+
     private ContentDataSource contentdatasource;
     private TimePicker timePicker;
 
@@ -55,18 +56,11 @@ public class SettingsActivity extends Activity {
 
         setNotificationTime(calendar);
 
-
-        //editText.setText(Integer.toString(calendar.get(Calendar.AM_PM)));
-
-
-
-
-
-
     }
 
     public void setNotificationTime(Calendar calendar){
         Intent intent = new Intent(this, NotifyService.class);
+        intent.putExtra("Calendar", calendar.getTimeInMillis());
 
 
         PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);

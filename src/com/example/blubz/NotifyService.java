@@ -1,21 +1,25 @@
 package com.example.blubz;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.Service;
+import android.app.*;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.IBinder;
+
+import java.util.Calendar;
 
 /**
  * Created by Nathan on 2/27/14.
  */
 public class NotifyService extends Service {
+
+    private ContentDataSource contentdatasource;
+
     public IBinder onBind(Intent intent) {
         return null;
     }
 
     public int onStartCommand (Intent myIntent, int flags, int startId) {
+
 
         // Get the message from the intent
         String message = "Time to enter a blub for the day!";

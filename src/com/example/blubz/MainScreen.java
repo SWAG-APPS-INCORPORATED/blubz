@@ -1,7 +1,9 @@
 package com.example.blubz;
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,7 +45,7 @@ public class MainScreen extends Activity {
         secretButton = (ImageButton)findViewById(R.id.secretButton);
 
         if(contentdatasource.isCount(0)){
-            //TO-DO: MAKE THE ABOUT BLUBZ PAGE SHOW UP
+            //TODO: MAKE THE ABOUT BLUBZ PAGE SHOW UP
             setInitialNotificationTime();
         }
 
@@ -169,13 +171,28 @@ public class MainScreen extends Activity {
         calendar.set(Calendar.HOUR_OF_DAY, 18);
         calendar.set(Calendar.MINUTE, 0);
 
-        /**
-        SettingsActivity s1 = new SettingsActivity();
-        s1.setNotificationTime(calendar);
-        **/
+        setNotificationTime(calendar);
+
+
+    }
+
+    public void setNotificationTime(Calendar calendar){
+        Intent intent = new Intent(this, NotifyService.class);
+        PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+
+        if(calendar.getTimeInMillis()-System.currentTimeMillis() < 0){
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()+1000 * 60 * 60 * 24,
+                    1000 * 60 * 60 * 24, pendingIntent);
+        }else{alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                1000 * 60 * 60 * 24, pendingIntent);
+        }
 
         contentdatasource.createContent("notification",calendar.getTimeInMillis());
 
+        Intent intent2 = new Intent(this, MainScreen.class);
+        startActivity(intent2);
 
     }
 
@@ -204,4 +221,6 @@ public class MainScreen extends Activity {
         return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
 
     }
+
+
 }

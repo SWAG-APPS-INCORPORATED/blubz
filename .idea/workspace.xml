@@ -40,7 +40,6 @@
     <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/NotifyService.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/NotifyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/SettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/SettingsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -120,7 +119,7 @@
       <file leaf-file-name="MainScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="8" selection-start="5382" selection-end="5382" vertical-scroll-proportion="0.0" vertical-offset="2693" max-vertical-offset="3281">
+            <state line="213" column="4" selection-start="7032" selection-end="7393" vertical-scroll-proportion="0.0" vertical-offset="3145" max-vertical-offset="3570">
               <folding />
             </state>
           </provider>
@@ -129,7 +128,7 @@
       <file leaf-file-name="SettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/SettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="8" selection-start="2498" selection-end="2573" vertical-scroll-proportion="0.0" vertical-offset="1292" max-vertical-offset="1530">
+            <state line="83" column="9" selection-start="1711" selection-end="2676" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1377">
               <folding />
             </state>
           </provider>
@@ -138,8 +137,32 @@
       <file leaf-file-name="NotifyService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/NotifyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="445" selection-end="445" vertical-scroll-proportion="0.8526646" vertical-offset="0" max-vertical-offset="697">
-              <folding />
+            <state line="37" column="10" selection-start="941" selection-end="941" vertical-scroll-proportion="1.7053292" vertical-offset="0" max-vertical-offset="1054">
+              <folding>
+                <element signature="e#673#698#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Content.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Content.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="13" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+              <folding>
+                <element signature="e#201#202#0" expanded="false" />
+                <element signature="e#229#230#0" expanded="false" />
+                <element signature="e#256#257#0" expanded="false" />
+                <element signature="e#281#282#0" expanded="false" />
+                <element signature="e#321#322#0" expanded="false" />
+                <element signature="e#353#354#0" expanded="false" />
+                <element signature="e#384#385#0" expanded="false" />
+                <element signature="e#411#412#0" expanded="false" />
+                <element signature="e#459#460#0" expanded="false" />
+                <element signature="e#501#502#0" expanded="false" />
+                <element signature="e#535#536#0" expanded="false" />
+                <element signature="e#567#568#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,18 +212,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blub_choice.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/blub_choice.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="49" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="833">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -239,8 +250,9 @@
         <option value="$PROJECT_DIR$/src/com/example/blubz/CommentsDataSource.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/ContentDataSource.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/SettingsActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blubz/NotifyService.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blubz/Notification.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blubz/NotifyService.java" />
       </list>
     </option>
   </component>
@@ -869,7 +881,7 @@
       <workItem from="1396641091157" duration="2599000" />
       <workItem from="1396826242601" duration="2598000" />
       <workItem from="1396888988669" duration="5385000" />
-      <workItem from="1396901137172" duration="695000" />
+      <workItem from="1396901137172" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -911,11 +923,15 @@
       <created>1396891515836</created>
       <updated>1396891515836</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Notification time is saved in database">
+      <created>1396905461519</created>
+      <updated>1396905461519</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106790000" />
+    <option name="totallyTimeSpent" value="109347000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -939,7 +955,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23076923" sideWeight="0.49872988" order="7" side_tool="false" content_ui="tabs" />
@@ -955,6 +971,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4003268" sideWeight="0.4954683" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4019608" sideWeight="0.49622357" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988167" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -962,13 +979,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20619336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12254902" sideWeight="0.49622357" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35457516" sideWeight="0.49622357" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2602118" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4003268" sideWeight="0.4954683" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1024,7 +1040,8 @@
     <MESSAGE value="Backgrounds have been updated" />
     <MESSAGE value="Popup occurs" />
     <MESSAGE value="Notification times are saved in the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Notification times are saved in the database" />
+    <MESSAGE value="Notification time is saved in database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Notification time is saved in database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1034,26 +1051,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="76" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/view_message.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="43" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="375">
@@ -1392,24 +1389,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Content.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <folding>
+            <element signature="e#201#202#0" expanded="false" />
+            <element signature="e#229#230#0" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
+            <element signature="e#281#282#0" expanded="false" />
+            <element signature="e#321#322#0" expanded="false" />
+            <element signature="e#353#354#0" expanded="false" />
+            <element signature="e#384#385#0" expanded="false" />
+            <element signature="e#411#412#0" expanded="false" />
+            <element signature="e#459#460#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#567#568#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="8" selection-start="2498" selection-end="2573" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="1377">
+        <state line="83" column="9" selection-start="1711" selection-end="2676" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1377">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="8" selection-start="5382" selection-end="5382" vertical-scroll-proportion="0.0" vertical-offset="2693" max-vertical-offset="3281">
+        <state line="213" column="4" selection-start="7032" selection-end="7393" vertical-scroll-proportion="0.0" vertical-offset="3145" max-vertical-offset="3570">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/NotifyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="445" selection-end="445" vertical-scroll-proportion="0.8526646" vertical-offset="0" max-vertical-offset="697">
-          <folding />
+        <state line="37" column="10" selection-start="941" selection-end="941" vertical-scroll-proportion="1.7053292" vertical-offset="0" max-vertical-offset="1054">
+          <folding>
+            <element signature="e#673#698#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

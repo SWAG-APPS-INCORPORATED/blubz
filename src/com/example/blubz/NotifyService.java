@@ -12,7 +12,8 @@ import java.util.Calendar;
  */
 public class NotifyService extends Service {
 
-    private ContentDataSource contentdatasource;
+    private CommentsDataSource commentsdatasource;
+
 
     public IBinder onBind(Intent intent) {
         return null;
@@ -20,13 +21,21 @@ public class NotifyService extends Service {
 
     public int onStartCommand (Intent myIntent, int flags, int startId) {
 
+        commentsdatasource = new CommentsDataSource(this);
+        commentsdatasource.open();
+
 
         // Get the message from the intent
         String message = "Time to enter a blub for the day!";
         String title = getString(R.string.title);
 
 
-
+        if(!commentsdatasource.isEmpty()){
+            long lastTimestamp = commentsdatasource.getMostRecentTimestamp();
+            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+                return 0;
+            }
+        }
 
         NotificationManager mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         Notification notification = new Notification(R.drawable.icon1, message, System.currentTimeMillis());
@@ -35,6 +44,18 @@ public class NotifyService extends Service {
         notification.setLatestEventInfo(this, title, message, contentIntent);
         mNM.notify(1, notification);
 
+
         return 0;
+    }
+
+    private boolean isSameDay(long timestamp1, long timestamp2){
+        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+
+        calendar1.setTimeInMillis(timestamp1);
+        calendar2.setTimeInMillis(timestamp2);
+
+        return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
+
     }
 }

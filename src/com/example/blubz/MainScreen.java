@@ -176,23 +176,19 @@ public class MainScreen extends Activity {
 
     }
 
-    public void setNotificationTime(Calendar calendar){
+    public void setNotificationTime(Calendar notificationTime){
         Intent intent = new Intent(this, NotifyService.class);
         PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-
-        if(calendar.getTimeInMillis()-System.currentTimeMillis() < 0){
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()+1000 * 60 * 60 * 24,
-                    1000 * 60 * 60 * 24, pendingIntent);
-        }else{alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                1000 * 60 * 60 * 24, pendingIntent);
+        long dailyNotificationTime = notificationTime.getTimeInMillis();
+        if(notificationTime.getTimeInMillis()-System.currentTimeMillis() < 0){
+            dailyNotificationTime += 1000 * 60 * 60 * 24;
         }
 
-        contentdatasource.createContent("notification",calendar.getTimeInMillis());
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, dailyNotificationTime, 1000 * 60 * 60 * 24, pendingIntent);
 
-        Intent intent2 = new Intent(this, MainScreen.class);
-        startActivity(intent2);
+        contentdatasource.createContent("notification",dailyNotificationTime);
 
     }
 

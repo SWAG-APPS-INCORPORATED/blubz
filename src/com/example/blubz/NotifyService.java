@@ -2,6 +2,8 @@ package com.example.blubz;
 
 import android.app.*;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.IBinder;
 
@@ -37,11 +39,21 @@ public class NotifyService extends Service {
             }
         }
 
-        NotificationManager mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        Notification notification = new Notification(R.drawable.icon1, message, System.currentTimeMillis());
         Intent intent = new Intent(this , AddMessage.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
-        notification.setLatestEventInfo(this, title, message, contentIntent);
+
+
+
+
+        NotificationManager mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        Notification notification = new Notification.Builder(this)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setSmallIcon(R.drawable.icon1)
+                .setContentIntent(contentIntent)
+                .build();
+
+
         mNM.notify(1, notification);
 
 

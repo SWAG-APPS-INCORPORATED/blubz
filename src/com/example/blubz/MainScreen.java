@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,8 +28,8 @@ public class MainScreen extends Activity {
     public final static String INTENT_MESSAGE = "com.example.blubz.MESSAGE";
     public final static String INTENT_DATE = "com.example.blubz.DATE";
     private CommentsDataSource commentdatasource;
-    private ContentDataSource contentdatasource;
-    public long NotificationTime;
+    private SharedPreferences sharedPrefs;
+
     private Random random;
     private ImageButton secretButton;
 
@@ -39,12 +40,11 @@ public class MainScreen extends Activity {
         commentdatasource = new CommentsDataSource(this);
         commentdatasource.open();
 
-        contentdatasource = new ContentDataSource(this);
-        contentdatasource.open();
+        sharedPrefs = getSharedPreferences("myPrefs",0);
 
         secretButton = (ImageButton)findViewById(R.id.secretButton);
 
-        if(contentdatasource.isCount(0)){
+        if(SharedPreferencesHelper.getValue(sharedPrefs, "notification")==0){
             //TODO: MAKE THE ABOUT BLUBZ PAGE SHOW UP
             setInitialNotificationTime();
         }
@@ -85,36 +85,29 @@ public class MainScreen extends Activity {
 
 
 
-        //if (allMessages == null) {
-        if(0 ==1){
-            // TODO: add empty string notification
-        } else {
 
-            int rand = random.nextInt(allMessages.size());
 
-            //String message = Integer.toString(allMessages.size());
+        int rand = random.nextInt(allMessages.size());
 
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-            Comment randComment = allMessages.get(rand);
-            String intentMessage = randComment.getComment();
-            long timestamp = randComment.getTimestamp();
-            Calendar timestampCalendar = Calendar.getInstance();
-            timestampCalendar.setTimeInMillis(timestamp);
-            String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
+        //String message = Integer.toString(allMessages.size());
 
-            intent.putExtra(INTENT_MESSAGE, intentMessage);
-            intent.putExtra(INTENT_DATE, intentDate);
-            secretButton.setVisibility(View.GONE);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Comment randComment = allMessages.get(rand);
+        String intentMessage = randComment.getComment();
+        long timestamp = randComment.getTimestamp();
+        Calendar timestampCalendar = Calendar.getInstance();
+        timestampCalendar.setTimeInMillis(timestamp);
+        String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
 
-            long currentTime = System.currentTimeMillis();
-            Calendar currentCalendar = Calendar.getInstance();
-            currentCalendar.setTimeInMillis(currentTime);
-            String date = simpleDateFormat.format(currentCalendar.getTime());
+        intent.putExtra(INTENT_MESSAGE, intentMessage);
+        intent.putExtra(INTENT_DATE, intentDate);
+        secretButton.setVisibility(View.GONE);
 
-            contentdatasource.createContent(date, currentTime);
+        long currentTime = System.currentTimeMillis();
+        SharedPreferencesHelper.setValue(sharedPrefs, "secretButton", currentTime);
 
-            startActivity(intent);
-        }
+        startActivity(intent);
+
     }
 
     //Code below from android tutorial on action bar http://developer.android.com/training/basics/actionbar/setting-up.html
@@ -146,19 +139,18 @@ public class MainScreen extends Activity {
 
     private void secretButtonCheck(){
 
-        long timestampTime = 0;
+
         long currentTime = System.currentTimeMillis();
 
-        if(!contentdatasource.isCount(1)){
-            timestampTime = contentdatasource.getMostRecentTimestamp();
-        }
+
+        long timestampTime = SharedPreferencesHelper.getValue(sharedPrefs, "secretButton");
         Calendar currentCalendar = Calendar.getInstance();
         Calendar timestampCalendar = Calendar.getInstance();
 
         currentCalendar.setTimeInMillis(currentTime);
         timestampCalendar.setTimeInMillis(timestampTime);
 
-        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY)
+        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY)
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
         }
@@ -177,6 +169,7 @@ public class MainScreen extends Activity {
     }
 
     public void setNotificationTime(Calendar notificationTime){
+
         Intent intent = new Intent(this, NotifyService.class);
         PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -188,7 +181,7 @@ public class MainScreen extends Activity {
         AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, dailyNotificationTime, 1000 * 60 * 60 * 24, pendingIntent);
 
-        contentdatasource.createContent("notification",dailyNotificationTime);
+        SharedPreferencesHelper.setValue(sharedPrefs, "notification", dailyNotificationTime);
 
     }
 

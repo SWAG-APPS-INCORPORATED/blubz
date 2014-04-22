@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,7 +18,7 @@ import java.util.Calendar;
 
 public class SettingsActivity extends Activity {
 
-    private ContentDataSource contentdatasource;
+    private SharedPreferences sharedPrefs;
     private TimePicker timePicker;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -25,13 +26,11 @@ public class SettingsActivity extends Activity {
         setContentView(R.layout.settings);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        contentdatasource = new ContentDataSource(this);
-        contentdatasource.open();
 
         timePicker = (TimePicker) findViewById(R.id.notifTime);
-        Content content = contentdatasource.getContent("notification");
+        sharedPrefs = getSharedPreferences("myPrefs", 0);
 
-        long currentNotif = content.getTimestamp();
+        long currentNotif = SharedPreferencesHelper.getValue(sharedPrefs,"notification");
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(currentNotif);
@@ -70,7 +69,7 @@ public class SettingsActivity extends Activity {
         AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, dailyNotificationTime, 1000 * 60 * 60 * 24, pendingIntent);
 
-        contentdatasource.createContent("notification",dailyNotificationTime);
+        SharedPreferencesHelper.setValue(sharedPrefs,"notification", dailyNotificationTime);
 
         Intent intent2 = new Intent(this, MainScreen.class);
         startActivity(intent2);

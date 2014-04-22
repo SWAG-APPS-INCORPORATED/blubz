@@ -47,6 +47,7 @@ public class NotifyService extends Service {
 
         NotificationManager mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         Notification notification = new Notification.Builder(this)
+                .setAutoCancel(true)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setSmallIcon(R.drawable.icon1)

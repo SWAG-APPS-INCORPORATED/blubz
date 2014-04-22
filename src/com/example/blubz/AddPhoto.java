@@ -191,6 +191,8 @@ public class AddPhoto extends Activity {
 				mTakePicOnClickListener,
 				MediaStore.ACTION_IMAGE_CAPTURE
 		);
+
+        mAlbumStorage = new BaseAlbum();
 	}
 //Get the thumbnail
 	@Override

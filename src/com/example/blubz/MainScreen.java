@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -32,10 +33,13 @@ public class MainScreen extends Activity {
 
     private Random random;
     private ImageButton secretButton;
+    Button button;
+    ImageView backgroundImage;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
+        changeLayout();
 
         commentdatasource = new CommentsDataSource(this);
         commentdatasource.open();
@@ -53,6 +57,37 @@ public class MainScreen extends Activity {
             secretButtonCheck();
         }
         random = new Random();
+    }
+
+    public void changeLayout() {
+
+        Calendar currentTime = Calendar.getInstance();
+
+        backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
+
+        if ((22 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 0)){
+            backgroundImage.setImageResource(R.drawable.mainscreenstars);
+        }
+
+        if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
+            backgroundImage.setImageResource(R.drawable.mainscreenstars);
+        }
+
+        if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
+            backgroundImage.setImageResource(R.drawable.mainscreensunrise);
+        }
+
+        if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
+            backgroundImage.setImageResource(R.drawable.mainscreenhills);
+        }
+
+        if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
+            backgroundImage.setImageResource(R.drawable.mainscreenwaves);
+        }
+
+        if ((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22)){
+            backgroundImage.setImageResource(R.drawable.mainscreensky);
+        }
     }
 
     public void goToBlubChoice(View view) {

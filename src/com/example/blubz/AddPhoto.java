@@ -33,9 +33,6 @@ public class AddPhoto extends Activity {
 	private ImageView mImageView;
 	private Bitmap mImageBitmap;
 
-	private static final String VIDEO_STORAGE_KEY = "viewvideo";
-	private Uri mVideoUri;
-
 	private String mCurrentPhotoPath;
 
 	private static final String JPEG_FILE_PREFIX = "IMG_";
@@ -122,7 +119,6 @@ public class AddPhoto extends Activity {
 		
 		/* Associate the Bitmap to the ImageView */
 		mImageView.setImageBitmap(bitmap);
-		mVideoUri = null;
 		mImageView.setVisibility(View.VISIBLE);
 	}
 
@@ -188,7 +184,6 @@ public class AddPhoto extends Activity {
 
 		mImageView = (ImageView) findViewById(R.id.imageView1);
 		mImageBitmap = null;
-		mVideoUri = null;
 
 		Button picBtn = (Button) findViewById(R.id.btnIntend);
 		setBtnListenerOrDisable( 
@@ -197,11 +192,7 @@ public class AddPhoto extends Activity {
 				MediaStore.ACTION_IMAGE_CAPTURE
 		);
 
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO) {
-			mAlbumStorage = new FroyoAlbum();
-		} else {
-			mAlbumStorage = new BaseAlbum();
-		}
+        mAlbumStorage = new BaseAlbum();
 	}
 //Get the thumbnail
 	@Override
@@ -222,7 +213,6 @@ public class AddPhoto extends Activity {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		outState.putParcelable(BITMAP_STORAGE_KEY, mImageBitmap);
-		outState.putParcelable(VIDEO_STORAGE_KEY, mVideoUri);
 		outState.putBoolean(IMAGEVIEW_VISIBILITY_STORAGE_KEY, (mImageBitmap != null) );
 		super.onSaveInstanceState(outState);
 	}
@@ -231,7 +221,6 @@ public class AddPhoto extends Activity {
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		super.onRestoreInstanceState(savedInstanceState);
 		mImageBitmap = savedInstanceState.getParcelable(BITMAP_STORAGE_KEY);
-		mVideoUri = savedInstanceState.getParcelable(VIDEO_STORAGE_KEY);
 		mImageView.setImageBitmap(mImageBitmap);
 		mImageView.setVisibility(
 				savedInstanceState.getBoolean(IMAGEVIEW_VISIBILITY_STORAGE_KEY) ? 

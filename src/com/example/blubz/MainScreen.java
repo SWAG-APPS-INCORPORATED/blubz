@@ -33,9 +33,9 @@ public class MainScreen extends Activity {
 
     private Random random;
     private ImageButton secretButton;
-    Button button;
     ImageView backgroundImage;
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
@@ -59,6 +59,12 @@ public class MainScreen extends Activity {
         random = new Random();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        changeLayout();
+    }
+
     public void changeLayout() {
 
         Calendar currentTime = Calendar.getInstance();
@@ -69,25 +75,27 @@ public class MainScreen extends Activity {
             backgroundImage.setImageResource(R.drawable.mainscreenstars);
         }
 
-        if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
+        else if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
             backgroundImage.setImageResource(R.drawable.mainscreenstars);
         }
 
-        if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
+        else if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
             backgroundImage.setImageResource(R.drawable.mainscreensunrise);
         }
 
-        if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
+        else if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
             backgroundImage.setImageResource(R.drawable.mainscreenhills);
         }
 
-        if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
+        else if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
             backgroundImage.setImageResource(R.drawable.mainscreenwaves);
         }
 
-        if ((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22)){
+        else {
             backgroundImage.setImageResource(R.drawable.mainscreensky);
         }
+
+        //((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22))
     }
 
     public void goToBlubChoice(View view) {

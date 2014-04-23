@@ -9,30 +9,28 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="fitXY"
-               android:src="@drawable/lowrescontent"/>
-
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentTop="true"
-              android:layout_marginTop="40dp"
-              android:layout_marginLeft="25dp"
-              android:layout_centerInParent="@+id/datebackground"
-              android:id="@+id/date"
-              android:text="@string/date"
-              android:textColor="#ffffff"
-              android:textSize="20.5dp"/>
+               android:src="@drawable/returncontent"/>
 
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginTop="34dip"
+            android:layout_marginLeft="24dip"
             android:src="@drawable/datebackground"
-            android:id="@+id/datebackground"
+            android:id="@+id/datebackground6"
             android:background="@null"
-            android:scaleX="2.5"
-            android:scaleY="2.2"/>
+            />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_marginTop="41dip"
+              android:layout_marginLeft="34dip"
+              android:id="@+id/date"
+              android:text="@string/date"
+              android:textColor="#ffffff"
+              android:textSize="25sp"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
@@ -41,8 +39,9 @@
               android:layout_marginTop="230dp"
               android:layout_marginLeft="40dp"
               android:id="@+id/messageTextView"
-              android:textColor="#ffffff"
+              android:textColor="#848484"
               android:textColorHint="#ffffff"
+              android:textAlignment="center"
               android:textSize="25dp"/>
 
 </RelativeLayout>

@@ -50,7 +50,7 @@ public class NotifyService extends Service {
                 .setAutoCancel(true)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setSmallIcon(R.drawable.icon1)
+                .setSmallIcon(R.drawable.blubiconsmall)
                 .setContentIntent(contentIntent)
                 .build();
 

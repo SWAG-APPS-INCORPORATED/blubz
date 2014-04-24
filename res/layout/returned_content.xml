@@ -15,33 +15,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="34dip"
+            android:layout_marginTop="15dip"
             android:layout_marginLeft="24dip"
             android:src="@drawable/datebackground"
             android:id="@+id/datebackground6"
             android:background="@null"
             />
 
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/blubbox"
+            android:src="@drawable/returncontentbox"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@null"
+            />
+
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_alignParentTop="true"
-              android:layout_marginTop="41dip"
-              android:layout_marginLeft="34dip"
+              android:layout_marginTop="25dip"
+              android:layout_marginLeft="38dip"
               android:id="@+id/date"
               android:text="@string/date"
               android:textColor="#ffffff"
-              android:textSize="25sp"/>
+              android:textSize="24sp"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_centerHorizontal="true"
               android:layout_alignParentTop="true"
               android:layout_marginTop="230dp"
-              android:layout_marginLeft="40dp"
-              android:id="@+id/messageTextView"
+              android:layout_marginLeft="20dip"
+              android:layout_marginRight="20dip"              android:id="@+id/messageTextView"
               android:textColor="#848484"
               android:textColorHint="#ffffff"
               android:textAlignment="center"
-              android:textSize="25dp"/>
+              android:textSize="22dp"/>
 
 </RelativeLayout>

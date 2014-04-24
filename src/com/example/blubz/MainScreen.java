@@ -17,9 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by macalester on 2/19/14.
@@ -33,13 +31,13 @@ public class MainScreen extends Activity {
 
     private Random random;
     private ImageButton secretButton;
+    Button button;
     ImageView backgroundImage;
 
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
-        changeLayout();
+        //changeLayout();
 
         commentdatasource = new CommentsDataSource(this);
         commentdatasource.open();
@@ -59,12 +57,6 @@ public class MainScreen extends Activity {
         random = new Random();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        changeLayout();
-    }
-
     public void changeLayout() {
 
         Calendar currentTime = Calendar.getInstance();
@@ -75,27 +67,36 @@ public class MainScreen extends Activity {
             backgroundImage.setImageResource(R.drawable.mainscreenstars);
         }
 
-        else if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
+        if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
             backgroundImage.setImageResource(R.drawable.mainscreenstars);
         }
 
-        else if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
+        if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
             backgroundImage.setImageResource(R.drawable.mainscreensunrise);
         }
 
-        else if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
+        if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
             backgroundImage.setImageResource(R.drawable.mainscreenhills);
         }
 
-        else if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
-            backgroundImage.setImageResource(R.drawable.mainscreenwaves);
+        if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
+            backgroundImage.setImageResource(R.drawable.mainscreenwaves1);
         }
 
-        else {
+        if ((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22)){
             backgroundImage.setImageResource(R.drawable.mainscreensky);
         }
 
-        //((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22))
+        List<Integer> backgroundList = Arrays.asList(R.drawable.mainscreenstars, R.drawable.mainscreensunrise,
+                R.drawable.mainscreenhills, R.drawable.mainscreenwaves, R.drawable.mainscreensky);
+
+        float divisor = 24/backgroundList.size();
+
+        int sectionOfDay = (int)(currentTime.get(Calendar.HOUR_OF_DAY) / divisor);
+
+
+        backgroundImage.setImageResource(backgroundList.get(sectionOfDay));
+
     }
 
     public void goToBlubChoice(View view) {

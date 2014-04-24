@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,7 +18,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by macalester on 2/19/14.
@@ -31,13 +34,13 @@ public class MainScreen extends Activity {
 
     private Random random;
     private ImageButton secretButton;
-    Button button;
     ImageView backgroundImage;
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
-        //changeLayout();
+        changeLayout();
 
         commentdatasource = new CommentsDataSource(this);
         commentdatasource.open();
@@ -57,46 +60,52 @@ public class MainScreen extends Activity {
         random = new Random();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        changeLayout();
+    }
+
     public void changeLayout() {
 
         Calendar currentTime = Calendar.getInstance();
 
         backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
 
+        Log.d("MainScreen", "--------------------------->");
+        Log.d("MainScreen", "--------------------------->");
+        Log.d("MainScreen", "--------------------------->");
+        Log.d("MainScreen", "--------------------------->");
+        Log.d("MainScreen", "--------------------------->");
+        Log.d("MainScreen", backgroundImage.toString());
+        Log.d("MainScreen", getResources().getDrawable(R.drawable.mainscreen).toString());
+
+
         if ((22 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 0)){
-            backgroundImage.setImageResource(R.drawable.mainscreenstars);
+            backgroundImage.setImageResource(R.drawable.stars);
         }
 
-        if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
-            backgroundImage.setImageResource(R.drawable.mainscreenstars);
+        else if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
+            backgroundImage.setImageResource(R.drawable.dawn);
         }
 
-        if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
-            backgroundImage.setImageResource(R.drawable.mainscreensunrise);
+        else if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
+            backgroundImage.setImageResource(R.drawable.sunrise);
         }
 
-        if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
-            backgroundImage.setImageResource(R.drawable.mainscreenhills);
+        else if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
+            backgroundImage.setImageResource(R.drawable.hills);
         }
 
-        if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
-            backgroundImage.setImageResource(R.drawable.mainscreenwaves1);
+        else if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
+            backgroundImage.setImageResource(R.drawable.waves);
         }
 
-        if ((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22)){
-            backgroundImage.setImageResource(R.drawable.mainscreensky);
+        else {
+            backgroundImage.setImageResource(R.drawable.sky);
         }
 
-        List<Integer> backgroundList = Arrays.asList(R.drawable.mainscreenstars, R.drawable.mainscreensunrise,
-                R.drawable.mainscreenhills, R.drawable.mainscreenwaves, R.drawable.mainscreensky);
-
-        float divisor = 24/backgroundList.size();
-
-        int sectionOfDay = (int)(currentTime.get(Calendar.HOUR_OF_DAY) / divisor);
-
-
-        backgroundImage.setImageResource(backgroundList.get(sectionOfDay));
-
+        //((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22))
     }
 
     public void goToBlubChoice(View view) {

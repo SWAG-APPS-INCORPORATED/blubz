@@ -53,8 +53,8 @@
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
             android:background="@null"
             />
 
@@ -64,6 +64,8 @@
               android:layout_centerHorizontal="true"
               android:layout_marginTop="140dip"
               android:layout_marginBottom="100dip"
+              android:layout_marginLeft="10dip"
+              android:layout_marginRight="10dip"
               android:hint="@string/hint"
               android:textColor="#ffffff"
               android:textColorHint="#ffffff"

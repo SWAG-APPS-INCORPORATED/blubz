@@ -16,7 +16,7 @@ public class ContentDataSource {
 
     private SQLiteDatabase database;
     private ContentSQLiteHelper dbHelper;
-    private String[] allColumns = {ContentSQLiteHelper.COLUMN_ID, ContentSQLiteHelper.COLUMN_NAME,
+    private String[] allColumns = {ContentSQLiteHelper.COLUMN_ID, ContentSQLiteHelper.COLUMN_IMAGE,
             ContentSQLiteHelper.COLUMN_TIMESTAMP};
 
     public ContentDataSource(Context context){
@@ -31,9 +31,9 @@ public class ContentDataSource {
         dbHelper.close();
     }
 
-    public Content createContent(String name, long timestamp) {
+    public Content createContent(byte[] imageArray, long timestamp) {
         ContentValues values = new ContentValues();
-        values.put(ContentSQLiteHelper.COLUMN_NAME, name);
+        values.put(ContentSQLiteHelper.COLUMN_IMAGE, imageArray);
         values.put(ContentSQLiteHelper.COLUMN_TIMESTAMP, timestamp);
         long insertId = database.insert(ContentSQLiteHelper.TABLE_CONTENT, null,
                 values);
@@ -49,14 +49,14 @@ public class ContentDataSource {
         return newContent;
     }
 
-    public Content getContent(String name){
+/*    public Content getContent(String name){
         Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                allColumns, ContentSQLiteHelper.COLUMN_NAME + " = \'" + name + "\'", null,
+                allColumns, ContentSQLiteHelper.COLUMN_IMAGE + " = \'" + name + "\'", null,
                 null, null, null);
         cursor.moveToLast();
         return cursorToContent(cursor);
 
-    }
+    }*/
 
     public void deleteContent(Content content){
         long id = content.getId();
@@ -106,7 +106,7 @@ public class ContentDataSource {
     private Content cursorToContent(Cursor cursor){
         Content content = new Content();
         content.setId(cursor.getLong(0));
-        content.setName(cursor.getString(1));
+        content.setName(cursor.getBlob(1));
         content.setTimestamp(cursor.getLong(2));
         return content;
     }

@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
         >
+
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_centerInParent="true"
+               android:scaleType="centerCrop"
+               android:src="@drawable/blubhere"/>
+
     <LinearLayout
+            android:id="@+id/cameraLayout"
             android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             >
-        <Button android:text="@string/btnIntend" android:id="@+id/btnIntend"
+        <Button android:text="@string/btnIntend"
+                android:id="@+id/btnIntend"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
                 android:layout_weight="1" />
+        <Button android:text="Blub!"
+                android:id="@+id/imageBlub"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:onClick="addPhoto"/>
     </LinearLayout>
     <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_above="@id/cameraLayout"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="120dp"
             android:visibility="visible"
             android:id="@+id/imageView1" />
-</LinearLayout>
+</RelativeLayout>

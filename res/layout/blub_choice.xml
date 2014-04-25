@@ -37,6 +37,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="170dp"
             android:background="@null"
+            android:visibility="invisible"
             />
 
 

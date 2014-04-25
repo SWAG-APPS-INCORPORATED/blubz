@@ -11,7 +11,7 @@ import android.util.Log;
 public class ContentSQLiteHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_CONTENT = "content";
-    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_IMAGE = "image";
     public static final String COLUMN_TIMESTAMP = "timestamp";
     public static final String COLUMN_ID = "id";
 
@@ -20,8 +20,8 @@ public class ContentSQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_CREATE = "create table "
             + TABLE_CONTENT + "(" + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_NAME
-            + " text not null, " + COLUMN_TIMESTAMP
+            + " integer primary key autoincrement, " + COLUMN_IMAGE
+            + " text, " + COLUMN_TIMESTAMP
             + " time)";
 
     public ContentSQLiteHelper(Context context) {

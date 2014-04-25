@@ -6,7 +6,7 @@ package com.example.blubz;
 public class Content {
 
     private long id;
-    private String name;
+    private byte[] imageArray;
     private long timestamp;
 
     public void setId(long id) {
@@ -17,12 +17,12 @@ public class Content {
         return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(byte[] imageArray) {
+        this.imageArray = imageArray;
     }
 
-    public String getName() {
-        return name;
+    public byte[] getName() {
+        return imageArray;
     }
 
     public void setTimestamp(long timestamp) {
@@ -33,8 +33,4 @@ public class Content {
         return timestamp;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }

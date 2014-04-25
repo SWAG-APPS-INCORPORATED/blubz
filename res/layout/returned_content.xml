@@ -9,40 +9,52 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="fitXY"
-               android:src="@drawable/lowrescontent"/>
-
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentTop="true"
-              android:layout_marginTop="40dp"
-              android:layout_marginLeft="25dp"
-              android:layout_centerInParent="@+id/datebackground"
-              android:id="@+id/date"
-              android:text="@string/date"
-              android:textColor="#ffffff"
-              android:textSize="20.5dp"/>
+               android:src="@drawable/returncontent"/>
 
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginTop="15dip"
+            android:layout_marginLeft="24dip"
             android:src="@drawable/datebackground"
-            android:id="@+id/datebackground"
+            android:id="@+id/datebackground6"
             android:background="@null"
-            android:scaleX="2.5"
-            android:scaleY="2.2"/>
+            />
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/blubbox"
+            android:src="@drawable/returncontentbox"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@null"
+            />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_marginTop="25dip"
+              android:layout_marginLeft="38dip"
+              android:id="@+id/date"
+              android:text="@string/date"
+              android:textColor="#ffffff"
+              android:textSize="24sp"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_centerHorizontal="true"
               android:layout_alignParentTop="true"
               android:layout_marginTop="230dp"
-              android:layout_marginLeft="40dp"
-              android:id="@+id/messageTextView"
-              android:textColor="#ffffff"
+              android:layout_marginLeft="20dip"
+              android:layout_marginRight="20dip"              android:id="@+id/messageTextView"
+              android:textColor="#848484"
               android:textColorHint="#ffffff"
-              android:textSize="25dp"/>
+              android:textAlignment="center"
+              android:textSize="22dp"/>
 
 </RelativeLayout>

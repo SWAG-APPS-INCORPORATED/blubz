@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:scaleType="fitXY"
-        android:src="@drawable/lowresmainscreen"
+        android:src="@drawable/stars"
         android:id="@+id/imageviewmain"
         />
 
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/goBlubButton"
         android:clickable="true"
-        android:src="@drawable/lets4"
+        android:src="@drawable/letsblubbutton"
         android:onClick="goToBlubChoice"
         android:scaleType="fitCenter"
         android:layout_alignParentBottom="true"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/secretButton"
             android:clickable="true"
-            android:src="@drawable/lowresawait4"
+            android:src="@drawable/secretbutton"
             android:onClick="goToContent"
             android:scaleType="centerCrop"
             android:layout_marginTop="256dp"

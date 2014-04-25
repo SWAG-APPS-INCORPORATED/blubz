@@ -17,7 +17,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
@@ -66,15 +65,29 @@ public class MainScreen extends Activity {
 
         backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
 
-        List<Integer> backgroundList = Arrays.asList(R.drawable.mainscreenstars, R.drawable.mainscreensunrise,
-                R.drawable.mainscreenhills, R.drawable.mainscreenwaves, R.drawable.mainscreensky);
+        if ((22 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 0)){
+            backgroundImage.setImageResource(R.drawable.mainscreenstars);
+        }
 
-        double divisor = 24.0/backgroundList.size();
-        int sectionOfDay = (int) (((double) currentTime.get(Calendar.HOUR_OF_DAY)) / divisor);
+        if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
+            backgroundImage.setImageResource(R.drawable.mainscreenstars);
+        }
 
+        if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
+            backgroundImage.setImageResource(R.drawable.mainscreensunrise);
+        }
 
-        backgroundImage.setImageResource(backgroundList.get(sectionOfDay));
+        if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
+            backgroundImage.setImageResource(R.drawable.mainscreenhills);
+        }
 
+        if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
+            backgroundImage.setImageResource(R.drawable.mainscreenwaves);
+        }
+
+        if ((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22)){
+            backgroundImage.setImageResource(R.drawable.mainscreensky);
+        }
     }
 
     public void goToBlubChoice(View view) {

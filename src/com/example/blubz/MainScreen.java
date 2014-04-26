@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,9 +33,9 @@ public class MainScreen extends Activity {
 
     private Random random;
     private ImageButton secretButton;
+    Button button;
     ImageView backgroundImage;
 
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
@@ -60,53 +59,48 @@ public class MainScreen extends Activity {
         random = new Random();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        changeLayout();
-    }
-
     public void changeLayout() {
 
         Calendar currentTime = Calendar.getInstance();
 
         backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
 
-        Log.d("MainScreen", "--------------------------->");
+        /*Log.d("MainScreen", "--------------------------->");
         Log.d("MainScreen", "--------------------------->");
         Log.d("MainScreen", "--------------------------->");
         Log.d("MainScreen", "--------------------------->");
         Log.d("MainScreen", "--------------------------->");
         Log.d("MainScreen", backgroundImage.toString());
-        Log.d("MainScreen", getResources().getDrawable(R.drawable.mainscreen).toString());
+        Log.d("MainScreen", getResources().getDrawable(R.drawable.mainscreen).toString());*/
 
 
         if ((22 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 0)){
-            backgroundImage.setImageResource(R.drawable.stars);
+            backgroundImage.setImageResource(R.drawable.whiteflower);
         }
 
         else if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
-            backgroundImage.setImageResource(R.drawable.dawn);
+            backgroundImage.setImageResource(R.drawable.pathway);
         }
 
         else if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
-            backgroundImage.setImageResource(R.drawable.sunrise);
+            backgroundImage.setImageResource(R.drawable.flowerfields);
         }
 
         else if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
-            backgroundImage.setImageResource(R.drawable.hills);
+            backgroundImage.setImageResource(R.drawable.purpleflower);
         }
 
         else if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
-            backgroundImage.setImageResource(R.drawable.waves);
+            backgroundImage.setImageResource(R.drawable.mosaic);
         }
 
         else {
-            backgroundImage.setImageResource(R.drawable.sky);
+            backgroundImage.setImageResource(R.drawable.cloudfield);
         }
 
         //((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22))
     }
+
 
     public void goToBlubChoice(View view) {
 

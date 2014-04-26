@@ -9,11 +9,22 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:scaleType="fitXY"
-        android:src="@drawable/stars"
+        android:src="@drawable/flowerfields"
         android:id="@+id/imageviewmain"
+        android:background="@null"
         />
 
     <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/letsblub"
+        android:scaleType="fitCenter"
+        android:id="@+id/goBlubButton"
+        android:onClick="goToBlubChoice"
+        android:background="@null"
+        />
+
+<!--    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goBlubButton"
@@ -39,7 +50,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginBottom="40dp"
             android:background="@null"
-            />
+            />-->
 
     <ImageButton
             android:layout_width="wrap_content"

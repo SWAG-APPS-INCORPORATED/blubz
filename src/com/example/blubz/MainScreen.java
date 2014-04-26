@@ -29,6 +29,7 @@ public class MainScreen extends Activity {
     public final static String INTENT_MESSAGE = "com.example.blubz.MESSAGE";
     public final static String INTENT_DATE = "com.example.blubz.DATE";
     private CommentsDataSource commentdatasource;
+    private ContentDataSource contentdatasource;
     private SharedPreferences sharedPrefs;
 
     private Random random;
@@ -44,6 +45,9 @@ public class MainScreen extends Activity {
         commentdatasource = new CommentsDataSource(this);
         commentdatasource.open();
 
+        contentdatasource = new ContentDataSource(this);
+        contentdatasource.open();
+
         sharedPrefs = getSharedPreferences("myPrefs",0);
 
         secretButton = (ImageButton)findViewById(R.id.secretButton);
@@ -54,7 +58,7 @@ public class MainScreen extends Activity {
 
         }
 
-        if(!commentdatasource.isEmpty()){
+        if(!commentdatasource.isEmpty() && !contentdatasource.isEmpty()){
             secretButtonCheck();
         }
         random = new Random();
@@ -105,9 +109,10 @@ public class MainScreen extends Activity {
 
     public void goToBlubChoice(View view) {
 
-        if(!commentdatasource.isEmpty()){
+        if(!commentdatasource.isEmpty() && !contentdatasource.isEmpty()){
             long lastTimestamp = commentdatasource.getMostRecentTimestamp();
-            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+            long lastPhotoTimeStamp = contentdatasource.getMostRecentTimestamp();
+            if(isSameDay(lastTimestamp,System.currentTimeMillis()) && isSameDay(lastPhotoTimeStamp,System.currentTimeMillis())){
                 showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
                 return;
             }
@@ -131,18 +136,14 @@ public class MainScreen extends Activity {
 
         List<Comment> allMessages = commentdatasource.getAllComments();
 
-
-
-
-
         int rand = random.nextInt(allMessages.size());
+        Comment randComment = allMessages.get(rand);
+        String intentMessage = randComment.getComment();
+        long timestamp = randComment.getTimestamp();
 
         //String message = Integer.toString(allMessages.size());
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        Comment randComment = allMessages.get(rand);
-        String intentMessage = randComment.getComment();
-        long timestamp = randComment.getTimestamp();
         Calendar timestampCalendar = Calendar.getInstance();
         timestampCalendar.setTimeInMillis(timestamp);
         String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
@@ -189,9 +190,8 @@ public class MainScreen extends Activity {
 
 
         long currentTime = System.currentTimeMillis();
-
-
         long timestampTime = SharedPreferencesHelper.getValue(sharedPrefs, "secretButton");
+
         Calendar currentCalendar = Calendar.getInstance();
         Calendar timestampCalendar = Calendar.getInstance();
 

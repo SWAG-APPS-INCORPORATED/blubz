@@ -1,7 +1,9 @@
 package com.example.blubz;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -10,9 +12,12 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -24,8 +29,11 @@ public class AddPhoto extends Activity {
 
 	private static final String BITMAP_STORAGE_KEY = "viewbitmap";
 	private static final String IMAGEVIEW_VISIBILITY_STORAGE_KEY = "imageviewvisibility";
-	private ImageView mImageView;
+	private ImageButton mImageView;
 	private Bitmap mImageBitmap;
+
+    private TextView dateText;
+    private boolean imageExists;
 
 	private String mCurrentPhotoPath;
 
@@ -34,63 +42,75 @@ public class AddPhoto extends Activity {
 
 	private AlbumStorage mAlbumStorage = null;
 
-	
-	/* Photo album for this application */
-/*	private String getAlbumName() {
-		return getString(R.string.album_name);
-	}*/
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.add_photo);
 
-	
-/*	private File getAlbumDir() {
-		File storageDir = null;
+        mImageView = (ImageButton) findViewById(R.id.imageBtn);
+        mImageView.setImageBitmap(null);
+        imageExists = false;
 
-		if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-			
-			storageDir = mAlbumStorage.getAlbumStorageDir(getAlbumName());
+        dateText = (TextView) findViewById(R.id.datePhoto);
 
-			if (storageDir != null) {
-				if (! storageDir.mkdirs()) {
-					if (! storageDir.exists()){
-						Log.d("CameraSample", "failed to create directory");
-						return null;
-					}
-				}
-			}
-			
-		} else {
-			Log.v(getString(R.string.camera_name), "External storage is not mounted READ/WRITE.");
-		}
-		
-		return storageDir;
-	}*/
+        datasource = new ContentDataSource(this);
+        datasource.open();
 
-/*	private File createImageFile() throws IOException {
-		// Create an image file name
-		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-		String imageFileName = JPEG_FILE_PREFIX + timeStamp + "_";
-		//File albumF = getAlbumDir();
-		//File imageF = File.createTempFile(imageFileName, JPEG_FILE_SUFFIX, albumF);
-		//return imageF;
-        return null;
-	}*/
+/*        Button picBtn = (Button) findViewById(R.id.btnIntend);
+        setBtnListenerOrDisable(
+                mImageView,
+                mTakePicOnClickListener,
+                MediaStore.ACTION_IMAGE_CAPTURE
+        );*/
 
-/*	private File setUpPhotoFile() throws IOException {
-		
-		//File f = createImageFile();
-		//mCurrentPhotoPath = f.getAbsolutePath();
-		
-		//return f;
-        return null;
-	}*/
+        setDateText();
+
+        //mAlbumStorage = new BaseAlbum();
+
+        dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
+
+    }
 
     public void addPhoto(View view) {
         long timestamp = System.currentTimeMillis();
+
+        if(!datasource.isEmpty()){
+            long lastTimestamp = datasource.getMostRecentTimestamp();
+            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id){
+                        Intent intent = new Intent(AddPhoto.this, MainScreen.class);
+                        startActivity(intent);
+
+                    }
+                });
+                return;
+            }
+        }
+
+        if(!imageExists){
+            showDialogBox("Empty blub!", "Please enter something real in your blub, bub.", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog,int id){
+                    //Do nothing
+                }
+            });
+            return;
+        }
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         mImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
         datasource.createContent(byteArray, timestamp);
+
+        showDialogBox("Thanks for blubbing", "Don't forget to blub again tomorrow!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,int id){
+                Intent intent = new Intent(AddPhoto.this, MainScreen.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
 	private void setPic() {
@@ -130,14 +150,6 @@ public class AddPhoto extends Activity {
 		/* Associate the Bitmap to the ImageView */
 	}
 
-/*	private void galleryAddPic() {
-		    Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
-			File f = new File(mCurrentPhotoPath);
-		    Uri contentUri = Uri.fromFile(f);
-		    mediaScanIntent.setData(contentUri);
-		    this.sendBroadcast(mediaScanIntent);
-	}*/
-
 //Take Photo Activity
 
 	private void dispatchTakePictureIntent(int actionCode) {
@@ -166,17 +178,9 @@ public class AddPhoto extends Activity {
 		startActivityForResult(takePictureIntent, actionCode);
 	}
 
-/*
-	private void handleBigCameraPhoto() {
-
-		if (mCurrentPhotoPath != null) {
-			setPic();
-			//galleryAddPic();
-			mCurrentPhotoPath = null;
-		}
-
-	}
-*/
+    public void takePhoto(View view) {
+        dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
+    }
 
 	Button.OnClickListener mTakePicOnClickListener = 
 		new Button.OnClickListener() {
@@ -186,29 +190,6 @@ public class AddPhoto extends Activity {
 		}
 	};
 
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.add_photo);
-
-		mImageView = (ImageView) findViewById(R.id.imageView1);
-		mImageBitmap = null;
-
-        datasource = new ContentDataSource(this);
-        datasource.open();
-
-		Button picBtn = (Button) findViewById(R.id.btnIntend);
-		setBtnListenerOrDisable( 
-				picBtn, 
-				mTakePicOnClickListener,
-				MediaStore.ACTION_IMAGE_CAPTURE
-		);
-
-        //mAlbumStorage = new BaseAlbum();
-
-        dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
-	}
 //Get the thumbnail
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -217,6 +198,7 @@ public class AddPhoto extends Activity {
 
                 Bundle bundle = data.getExtras();
                 mImageBitmap = (Bitmap) bundle.get("data");
+                imageExists = true;
                 setPic();
 			}
 
@@ -236,10 +218,25 @@ public class AddPhoto extends Activity {
 		mImageBitmap = savedInstanceState.getParcelable(BITMAP_STORAGE_KEY);
 		mImageView.setImageBitmap(mImageBitmap);
 		mImageView.setVisibility(
-				savedInstanceState.getBoolean(IMAGEVIEW_VISIBILITY_STORAGE_KEY) ? 
-						ImageView.VISIBLE : ImageView.INVISIBLE
-		);
+                savedInstanceState.getBoolean(IMAGEVIEW_VISIBILITY_STORAGE_KEY) ?
+                        ImageView.VISIBLE : ImageView.INVISIBLE
+        );
 	}
+
+    private void setDateText(){
+        long dateInMillis = System.currentTimeMillis();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(dateInMillis);
+
+        String day = Integer.toString(calendar.get(Calendar.DATE));
+        String month = Integer.toString(calendar.get(Calendar.MONTH)+1);
+        String year = Integer.toString(calendar.get(Calendar.YEAR));
+
+        String date = month.concat(".").concat(day).concat(".").concat(year);
+
+        dateText.setText(date);
+    }
 
 	/**
 	 * Indicates whether the specified action can be used as an intent. This
@@ -263,6 +260,29 @@ public class AddPhoto extends Activity {
 		return list.size() > 0;
 	}
 
+    private boolean isSameDay(long timestamp1, long timestamp2){
+        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+
+        calendar1.setTimeInMillis(timestamp1);
+        calendar2.setTimeInMillis(timestamp2);
+
+        return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
+
+    }
+
+    private void showDialogBox(String title, String message, DialogInterface.OnClickListener onClick){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setPositiveButton("OK", onClick);
+
+        AlertDialog dialog = builder.create();
+
+        dialog.show();
+
+    }
+
 	private void setBtnListenerOrDisable( 
 			Button btn, 
 			Button.OnClickListener onClickListener,
@@ -276,5 +296,73 @@ public class AddPhoto extends Activity {
 			btn.setClickable(false);
 		}
 	}
+
+    /*	private void galleryAddPic() {
+		    Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
+			File f = new File(mCurrentPhotoPath);
+		    Uri contentUri = Uri.fromFile(f);
+		    mediaScanIntent.setData(contentUri);
+		    this.sendBroadcast(mediaScanIntent);
+	}*/
+
+    /*
+	private void handleBigCameraPhoto() {
+
+		if (mCurrentPhotoPath != null) {
+			setPic();
+			//galleryAddPic();
+			mCurrentPhotoPath = null;
+		}
+
+	}
+*/
+
+    	/* Photo album for this application */
+/*	private String getAlbumName() {
+		return getString(R.string.album_name);
+	}*/
+
+
+/*	private File getAlbumDir() {
+		File storageDir = null;
+
+		if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+
+			storageDir = mAlbumStorage.getAlbumStorageDir(getAlbumName());
+
+			if (storageDir != null) {
+				if (! storageDir.mkdirs()) {
+					if (! storageDir.exists()){
+						Log.d("CameraSample", "failed to create directory");
+						return null;
+					}
+				}
+			}
+
+		} else {
+			Log.v(getString(R.string.camera_name), "External storage is not mounted READ/WRITE.");
+		}
+
+		return storageDir;
+	}*/
+
+/*	private File createImageFile() throws IOException {
+		// Create an image file name
+		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+		String imageFileName = JPEG_FILE_PREFIX + timeStamp + "_";
+		//File albumF = getAlbumDir();
+		//File imageF = File.createTempFile(imageFileName, JPEG_FILE_SUFFIX, albumF);
+		//return imageF;
+        return null;
+	}*/
+
+/*	private File setUpPhotoFile() throws IOException {
+
+		//File f = createImageFile();
+		//mCurrentPhotoPath = f.getAbsolutePath();
+
+		//return f;
+        return null;
+	}*/
 
 }

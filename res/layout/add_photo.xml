@@ -10,7 +10,40 @@
                android:scaleType="centerCrop"
                android:src="@drawable/blubhereback"/>
 
-    <LinearLayout
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="34dip"
+            android:layout_marginLeft="24dip"
+            android:src="@drawable/datebackground"
+            android:id="@+id/datebackground6"
+            android:background="@null"
+            />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_marginTop="41dip"
+              android:layout_marginLeft="34dip"
+              android:id="@+id/datePhoto"
+              android:text="@string/date"
+              android:textColor="#ffffff"
+              android:textSize="25sp"/>
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addBlubButton"
+            android:src="@drawable/blubbutton"
+            android:onClick="addPhoto"
+            android:background="@null"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dip"
+            />
+
+<!--    <LinearLayout
             android:orientation="horizontal"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -26,15 +59,18 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:onClick="addPhoto"/>
-    </LinearLayout>
-    <ImageView
+    </LinearLayout>-->
+
+    <ImageButton
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_centerInParent="true"
             android:layout_marginBottom="140dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="140dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
+            android:scaleType="fitCenter"
             android:visibility="visible"
-            android:id="@+id/imageView1" />
+            android:onClick="takePhoto"
+            android:id="@+id/imageBtn" />
 </RelativeLayout>

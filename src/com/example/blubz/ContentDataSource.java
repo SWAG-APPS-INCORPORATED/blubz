@@ -110,4 +110,12 @@ public class ContentDataSource {
         content.setTimestamp(cursor.getLong(2));
         return content;
     }
+
+    public boolean isEmpty(){
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
+                allColumns, null, null, null, null, null);
+        return(cursor.getCount() == 0);
+        //return(cursor.getCount()); //TODO: make a better implementation
+        //return false;
+    }
 }

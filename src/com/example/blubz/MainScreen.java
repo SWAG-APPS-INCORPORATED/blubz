@@ -49,8 +49,9 @@ public class MainScreen extends Activity {
         secretButton = (ImageButton)findViewById(R.id.secretButton);
 
         if(SharedPreferencesHelper.getValue(sharedPrefs, "notification")==0){
-            //TODO: MAKE THE ABOUT BLUBZ PAGE SHOW UP
             setInitialNotificationTime();
+            //TODO: MAKE THE ABOUT BLUBZ PAGE SHOW UP
+
         }
 
         if(!commentdatasource.isEmpty()){

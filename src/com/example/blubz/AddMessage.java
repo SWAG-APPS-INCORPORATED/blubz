@@ -71,21 +71,39 @@ public class AddMessage extends Activity {
         if(!datasource.isEmpty()){
             long lastTimestamp = datasource.getMostRecentTimestamp();
             if(isSameDay(lastTimestamp,System.currentTimeMillis())){
-                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
+                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id){
+                        Intent intent = new Intent(AddMessage.this, MainScreen.class);
+                        startActivity(intent);
+
+                    }
+                });
                 editText.setHint("See you tomorrow!");
                 return;
 
             }
         }
         if(message.isEmpty()){
-            showDialogBox("Empty blub!", "Please enter something real in your blub, bub.");
+            showDialogBox("Empty blub!", "Please enter something real in your blub, bub.", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog,int id){
+                //Do nothing
+                }
+            });
             return;
         }
 
         datasource.createComment(message, timestamp);
 
+        showDialogBox("Thanks for blubbing", "Don't forget to blub again tomorrow!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,int id){
+                Intent intent = new Intent(AddMessage.this, MainScreen.class);
+                startActivity(intent);
+
+            }
+        });
+
         editText.setText(null);
-        editText.setHint("Your Blub has been stored! See you tomorrow!");
+        editText.setHint("See you tomorrow!");
 
             //button.setEnabled(false);
 
@@ -170,15 +188,12 @@ public class AddMessage extends Activity {
         }
     };
 
-    private void showDialogBox(String title, String message){
+    private void showDialogBox(String title, String message, DialogInterface.OnClickListener onClick){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(title);
         builder.setMessage(message);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked OK button
-            }
-        });
+        builder.setPositiveButton("OK", onClick);
+
         AlertDialog dialog = builder.create();
 
         dialog.show();

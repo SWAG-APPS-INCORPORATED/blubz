@@ -21,6 +21,8 @@ import java.util.Calendar;
 import java.util.List;
 
 
+//A signifacnt amount of the following code was taken from the Andorid Developer website for camera implementation
+
 public class AddPhoto extends Activity {
 
 	private static final int ACTION_TAKE_PHOTO_B = 1;
@@ -39,8 +41,6 @@ public class AddPhoto extends Activity {
 
 	private static final String JPEG_FILE_PREFIX = "IMG_";
 	private static final String JPEG_FILE_SUFFIX = ".jpg";
-
-	private AlbumStorage mAlbumStorage = null;
 
     /** Called when the activity is first created. */
     @Override
@@ -65,8 +65,6 @@ public class AddPhoto extends Activity {
         );*/
 
         setDateText();
-
-        //mAlbumStorage = new BaseAlbum();
 
         dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
 

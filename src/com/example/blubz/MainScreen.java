@@ -175,6 +175,9 @@ public class MainScreen extends Activity {
             case R.id.action_settings:
                 openSettings();
                 return true;
+            case R.id.action_about:
+                openAbout();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -183,6 +186,12 @@ public class MainScreen extends Activity {
     public void openSettings(){
 
         Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openAbout(){
+
+        Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
 

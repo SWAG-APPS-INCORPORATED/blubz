@@ -15,6 +15,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import com.example.blubz.Database.Comment;
+import com.example.blubz.Database.CommentsDataSource;
+import com.example.blubz.Database.ContentDataSource;
+import com.example.blubz.Preferences.SettingsActivity;
+import com.example.blubz.ReturnContent.NotifyService;
+import com.example.blubz.ReturnContent.ReturnContent;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -1,9 +1,7 @@
-package com.example.blubz;
+package com.example.blubz.AddContent;
 
 import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,8 +11,11 @@ import android.text.TextWatcher;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
+import com.example.blubz.*;
+import com.example.blubz.Database.Comment;
+import com.example.blubz.Database.CommentsDataSource;
+import com.example.blubz.ReturnContent.ReturnContent;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 
@@ -133,7 +134,7 @@ public class AddMessage extends Activity {
     }
 
     public void viewMessages(View view){
-        Intent intent = new Intent(this, ViewMessage.class);
+        Intent intent = new Intent(this, ReturnContent.ViewMessage.class);
         List<Comment> allMessages = datasource.getAllComments();
         String fullMessage = "";
         for(Comment singleComment : allMessages){

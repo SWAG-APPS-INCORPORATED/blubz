@@ -1,10 +1,12 @@
-package com.example.blubz;
+package com.example.blubz.ReturnContent;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.example.blubz.MainScreen;
+import com.example.blubz.R;
 
 /**
  * Created by Danyshi on 3/2/14.

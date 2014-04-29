@@ -1,4 +1,4 @@
-package com.example.blubz;
+package com.example.blubz.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -14,23 +14,23 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AddMessage"
+        <activity android:name=".AddContent.AddMessage"
                   android:label="@string/add"
                   android:parentActivityName=".BlubChoiceActivity"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".AddPhoto"
+        <activity android:name=".AddContent.AddPhoto"
                   android:label="@string/add"
                   android:parentActivityName=".BlubChoiceActivity"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".ViewMessage"
+        <activity android:name=".ReturnContent.ViewMessage"
                   android:label="@string/view_message"
-                  android:parentActivityName=".AddMessage"
+                  android:parentActivityName=".AddContent.AddMessage"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".SettingsActivity"
+        <activity android:name=".Preferences.SettingsActivity"
                   android:label="Settings"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".ReturnContent"
+        <activity android:name=".ReturnContent.ReturnContent"
                   android:label="ReturnContent"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
@@ -42,6 +42,6 @@
                   android:label="About Blubz"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
-        <service android:name=".NotifyService" android:label="NotifyService"/>
+        <service android:name=".ReturnContent.NotifyService" android:label="NotifyService"/>
     </application>
 </manifest>

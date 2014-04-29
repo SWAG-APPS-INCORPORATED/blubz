@@ -1,4 +1,4 @@
-package com.example.blubz;
+package com.example.blubz.Database;
 
 import android.content.ContentValues;
 import android.content.Context;

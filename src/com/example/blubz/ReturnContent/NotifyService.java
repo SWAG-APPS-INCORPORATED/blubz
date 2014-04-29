@@ -1,11 +1,11 @@
-package com.example.blubz;
+package com.example.blubz.ReturnContent;
 
 import android.app.*;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.os.IBinder;
+import com.example.blubz.AddContent.AddMessage;
+import com.example.blubz.Database.CommentsDataSource;
+import com.example.blubz.R;
 
 import java.util.Calendar;
 

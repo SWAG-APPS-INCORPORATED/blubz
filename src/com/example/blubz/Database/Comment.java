@@ -1,4 +1,4 @@
-package com.example.blubz;
+package com.example.blubz.Database;
 
 /**
  * Created by macalester on 2/19/14.

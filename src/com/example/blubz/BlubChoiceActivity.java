@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import com.example.blubz.AddContent.AddMessage;
+import com.example.blubz.AddContent.AddPhoto;
 
 /**
  * Created by carinalei on 3/24/14.

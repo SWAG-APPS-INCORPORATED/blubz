@@ -1,4 +1,4 @@
-package com.example.blubz;
+package com.example.blubz.Preferences;
 
 /**
  * Created by Nathan on 2/27/14.
@@ -10,8 +10,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TimePicker;
+import com.example.blubz.MainScreen;
+import com.example.blubz.ReturnContent.NotifyService;
+import com.example.blubz.R;
+import com.example.blubz.SharedPreferencesHelper;
 
 import java.util.Calendar;
 
@@ -30,7 +33,7 @@ public class SettingsActivity extends Activity {
         timePicker = (TimePicker) findViewById(R.id.notifTime);
         sharedPrefs = getSharedPreferences("myPrefs", 0);
 
-        long currentNotif = SharedPreferencesHelper.getValue(sharedPrefs,"notification");
+        long currentNotif = SharedPreferencesHelper.getValue(sharedPrefs, "notification");
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(currentNotif);

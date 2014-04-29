@@ -1,4 +1,4 @@
-package com.example.blubz;
+package com.example.blubz.AddContent;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,6 +15,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.blubz.Database.ContentDataSource;
+import com.example.blubz.MainScreen;
+import com.example.blubz.R;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Calendar;

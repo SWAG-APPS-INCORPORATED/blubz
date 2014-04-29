@@ -1,9 +1,10 @@
-package com.example.blubz;
+package com.example.blubz.ReturnContent;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import com.example.blubz.AddContent.AddMessage;
 
 /**
  * Created by macalester on 2/19/14.

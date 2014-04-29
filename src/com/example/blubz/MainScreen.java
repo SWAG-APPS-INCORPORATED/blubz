@@ -54,7 +54,8 @@ public class MainScreen extends Activity {
 
         if(SharedPreferencesHelper.getValue(sharedPrefs, "notification")==0){
             setInitialNotificationTime();
-            //TODO: MAKE THE ABOUT BLUBZ PAGE SHOW UP
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
 
         }
 
@@ -123,13 +124,6 @@ public class MainScreen extends Activity {
 
         startActivity(intent);
     }
-
-    public void goToAboutBlubs(View view) {
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
-    }
-
-
 
     public void goToContent(View view) {
         Intent intent = new Intent(this, ReturnContent.class);

@@ -15,6 +15,7 @@ import com.example.blubz.*;
 import com.example.blubz.Database.Comment;
 import com.example.blubz.Database.CommentsDataSource;
 import com.example.blubz.ReturnContent.ReturnContent;
+import com.example.blubz.ReturnContent.ViewMessage;
 
 import java.util.Calendar;
 import java.util.List;
@@ -99,6 +100,7 @@ public class AddMessage extends Activity {
             public void onClick(DialogInterface dialog,int id){
                 Intent intent = new Intent(AddMessage.this, MainScreen.class);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -133,8 +135,26 @@ public class AddMessage extends Activity {
         return ret;
     }
 
+    @Override
+    public boolean dispatchKeyShortcutEvent(KeyEvent event){
+        boolean ret = super.dispatchKeyShortcutEvent(event);
+        if(event.getAction() == KeyEvent.KEYCODE_BACK){
+            editText.setText("poop");
+            return false;
+
+        }
+        return ret;
+
+    }
+
+    @Override
+    public void onBackPressed(){
+        editText.setText("poop");
+
+    }
+
     public void viewMessages(View view){
-        Intent intent = new Intent(this, ReturnContent.ViewMessage.class);
+        Intent intent = new Intent(this, ViewMessage.class);
         List<Comment> allMessages = datasource.getAllComments();
         String fullMessage = "";
         for(Comment singleComment : allMessages){

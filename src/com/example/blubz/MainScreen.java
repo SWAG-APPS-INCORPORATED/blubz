@@ -23,6 +23,7 @@ import com.example.blubz.ReturnContent.NotifyService;
 import com.example.blubz.ReturnContent.ReturnContent;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
@@ -85,7 +86,7 @@ public class MainScreen extends Activity {
         Log.d("MainScreen", backgroundImage.toString());
         Log.d("MainScreen", getResources().getDrawable(R.drawable.mainscreen).toString());*/
 
-
+        /**
         if ((22 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 0)){
             backgroundImage.setImageResource(R.drawable.whiteflower);
         }
@@ -109,6 +110,16 @@ public class MainScreen extends Activity {
         else {
             backgroundImage.setImageResource(R.drawable.cloudfield);
         }
+        **/
+
+        List<Integer> backgroundList = Arrays.asList(R.drawable.whiteflower,R.drawable.pathway,R.drawable.flowerfields,
+                R.drawable.purpleflower,R.drawable.mosaic,R.drawable.cloudfield);
+
+        double divisor = 24.0 / backgroundList.size();
+        double backgroundIndex = (double)currentTime.get(Calendar.HOUR_OF_DAY) / divisor;
+
+        backgroundImage.setImageResource(backgroundList.get((int)backgroundIndex));
+
 
         //((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22))
     }
@@ -116,14 +127,21 @@ public class MainScreen extends Activity {
 
     public void goToBlubChoice(View view) {
 
-        if(!commentdatasource.isEmpty() && !contentdatasource.isEmpty()){
-            long lastTimestamp = commentdatasource.getMostRecentTimestamp();
-            long lastPhotoTimeStamp = contentdatasource.getMostRecentTimestamp();
-            if(isSameDay(lastTimestamp,System.currentTimeMillis()) && isSameDay(lastPhotoTimeStamp,System.currentTimeMillis())){
-                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
-                return;
-            }
+        long lastTimestamp = 0;
+        if(!commentdatasource.isEmpty()){
+            lastTimestamp = commentdatasource.getMostRecentTimestamp();
         }
+
+        long lastPhotoTimeStamp = 0;
+        if(!contentdatasource.isEmpty()){
+            lastPhotoTimeStamp = contentdatasource.getMostRecentTimestamp();
+        }
+
+        if(isSameDay(lastTimestamp,System.currentTimeMillis()) || isSameDay(lastPhotoTimeStamp,System.currentTimeMillis())){
+            showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
+            return;
+        }
+
 
 
         Intent intent = new Intent(this, BlubChoiceActivity.class);
@@ -258,6 +276,12 @@ public class MainScreen extends Activity {
     }
 
     private boolean isSameDay(long timestamp1, long timestamp2){
+
+        if(timestamp1 == 0 || timestamp2 == 0){
+            return false;
+        }
+
+
         Calendar calendar1 = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
 

@@ -35,11 +35,11 @@
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
         <activity android:name=".BlubChoiceActivity"
-                  android:label="Choose Blub Type"
+                  android:label="choose blub type"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
         <activity android:name=".AboutActivity"
-                  android:label="About Blubz"
+                  android:label="about blubz"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
         <service android:name=".ReturnContent.NotifyService" android:label="NotifyService"/>

@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">blubz</string>
     <string name="hint">type your blub right here</string>
-    <string name="add">add a journal</string>
-    <string name="add_message">add message</string>
+    <string name="add">write a journal</string>
+    <string name="add_message">write a blub</string>
     <string name="date">today\'s date</string>
-    <string name="add_picture">add picture</string>
+    <string name="add_picture">capture a blub</string>
     <string name="title">BLUBZ</string>
     <string name="view_message"> your messages:</string>
     <string name="action_settings">settings</string>

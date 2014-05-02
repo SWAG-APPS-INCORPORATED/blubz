@@ -55,7 +55,7 @@ public class NotifyService extends Service {
         }else if(notifType.equals("secret")){
             message = "The portal to your past awaits";
             title = getString(R.string.title);
-            smallIcon = R.drawable.secretbutton;
+            smallIcon = R.drawable.secretbuttonsmall;
             intent = new Intent(this , MainScreen.class);
         }else{
             return 0;

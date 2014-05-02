@@ -24,34 +24,6 @@
         android:background="@null"
         />
 
-<!--    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/goBlubButton"
-        android:clickable="true"
-        android:src="@drawable/letsblubbutton"
-        android:onClick="goToBlubChoice"
-        android:scaleType="fitCenter"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="40dp"
-        android:background="@null"
-        />
-
-    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/AboutButton"
-            android:clickable="true"
-            android:src="@drawable/question"
-            android:onClick="goToAboutBlubs"
-            android:scaleType="fitCenter"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="40dp"
-            android:background="@null"
-            />-->
-
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

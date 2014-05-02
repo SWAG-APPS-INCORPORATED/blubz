@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.blubz.Content;
-import com.example.blubz.Database.ContentSQLiteHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -108,7 +106,7 @@ public class ContentDataSource {
     private Content cursorToContent(Cursor cursor){
         Content content = new Content();
         content.setId(cursor.getLong(0));
-        content.setName(cursor.getBlob(1));
+        content.setImage(cursor.getBlob(1));
         content.setTimestamp(cursor.getLong(2));
         return content;
     }

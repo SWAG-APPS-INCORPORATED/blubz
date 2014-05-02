@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import com.example.blubz.Database.Comment;
 import com.example.blubz.Database.CommentsDataSource;
+import com.example.blubz.Database.Content;
 import com.example.blubz.Database.ContentDataSource;
 import com.example.blubz.Preferences.SettingsActivity;
 import com.example.blubz.ReturnContent.NotifyService;
@@ -35,6 +36,8 @@ public class MainScreen extends Activity {
 
     public final static String INTENT_MESSAGE = "com.example.blubz.MESSAGE";
     public final static String INTENT_DATE = "com.example.blubz.DATE";
+    public final static String INTENT_BOOLEAN = "com.example.blubz.BOOLEAN";
+    public final static String INTENT_IMAGE = "com.example.blubz.IMAGE";
     private CommentsDataSource commentdatasource;
     private ContentDataSource contentdatasource;
     private SharedPreferences sharedPrefs;
@@ -66,7 +69,7 @@ public class MainScreen extends Activity {
 
         }
 
-        if(!commentdatasource.isEmpty() && !contentdatasource.isEmpty()){
+        if(!commentdatasource.isEmpty() || !contentdatasource.isEmpty()){
             secretButtonCheck();
         }
         random = new Random();
@@ -117,28 +120,78 @@ public class MainScreen extends Activity {
     public void goToContent(View view) {
         Intent intent = new Intent(this, ReturnContent.class);
 
-        List<Comment> allMessages = commentdatasource.getAllComments();
+        Calendar currentCalendar = Calendar.getInstance();
+        currentCalendar.setTimeInMillis(System.currentTimeMillis());
 
-        int rand = random.nextInt(allMessages.size());
-        Comment randComment = allMessages.get(rand);
-        String intentMessage = randComment.getComment();
-        long timestamp = randComment.getTimestamp();
+        if(currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+            List<Comment> allMessages = commentdatasource.getAllComments();
+            boolean isImage = false;
+
+            int rand = random.nextInt(allMessages.size());
+            Comment randComment = allMessages.get(rand);
+            String intentMessage = randComment.getComment();
+            long timestamp = randComment.getTimestamp();
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+            Calendar timestampCalendar = Calendar.getInstance();
+            timestampCalendar.setTimeInMillis(timestamp);
+            String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
+
+            intent.putExtra(INTENT_BOOLEAN, isImage);
+            intent.putExtra(INTENT_MESSAGE, intentMessage);
+            intent.putExtra(INTENT_DATE, intentDate);
+            secretButton.setVisibility(View.GONE);
+
+            long currentTime = System.currentTimeMillis();
+            SharedPreferencesHelper.setValue(sharedPrefs, "secretButton", currentTime);
+
+            startActivity(intent);
+        } else {
+            List<Content> allImages = contentdatasource.getAllContents();
+            boolean isImage = true;
+
+            int rand = random.nextInt(allImages.size());
+            Content randContent = allImages.get(rand);
+            byte[] intentImage = randContent.getImage();
+            long timestamp = randContent.getTimestamp();
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+            Calendar timestampCalendar = Calendar.getInstance();
+            timestampCalendar.setTimeInMillis(timestamp);
+            String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
+
+            intent.putExtra(INTENT_BOOLEAN, isImage);
+            intent.putExtra(INTENT_IMAGE, intentImage);
+            intent.putExtra(INTENT_DATE, intentDate);
+            secretButton.setVisibility(View.GONE);
+
+            long currentTime = System.currentTimeMillis();
+            SharedPreferencesHelper.setValue(sharedPrefs, "secretButton", currentTime);
+
+            startActivity(intent);
+        }
+
+
+//        int rand = random.nextInt(allMessages.size());
+//        Comment randComment = allMessages.get(rand);
+//        String intentMessage = randComment.getComment();
+//        long timestamp = randComment.getTimestamp();
 
         //String message = Integer.toString(allMessages.size());
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        Calendar timestampCalendar = Calendar.getInstance();
-        timestampCalendar.setTimeInMillis(timestamp);
-        String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
-
-        intent.putExtra(INTENT_MESSAGE, intentMessage);
-        intent.putExtra(INTENT_DATE, intentDate);
-        secretButton.setVisibility(View.GONE);
-
-        long currentTime = System.currentTimeMillis();
-        SharedPreferencesHelper.setValue(sharedPrefs, "secretButton", currentTime);
-
-        startActivity(intent);
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+//        Calendar timestampCalendar = Calendar.getInstance();
+//        timestampCalendar.setTimeInMillis(timestamp);
+//        String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
+//
+//        intent.putExtra(INTENT_MESSAGE, intentMessage);
+//        intent.putExtra(INTENT_DATE, intentDate);
+//        secretButton.setVisibility(View.GONE);
+//
+//        long currentTime = System.currentTimeMillis();
+//        SharedPreferencesHelper.setValue(sharedPrefs, "secretButton", currentTime);
+//
+//        startActivity(intent);
 
     }
 
@@ -190,7 +243,8 @@ public class MainScreen extends Activity {
         currentCalendar.setTimeInMillis(currentTime);
         timestampCalendar.setTimeInMillis(timestampTime);
 
-        if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY)
+        if(((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && !commentdatasource.isEmpty())
+                || (currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && !contentdatasource.isEmpty()))
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
             Intent intent = new Intent(this, NotifyService.class);

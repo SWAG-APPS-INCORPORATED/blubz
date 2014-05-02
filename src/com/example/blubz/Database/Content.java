@@ -1,4 +1,4 @@
-package com.example.blubz;
+package com.example.blubz.Database;
 
 /**
  * Created by veritoff on 3/11/14.
@@ -17,11 +17,11 @@ public class Content {
         return id;
     }
 
-    public void setName(byte[] imageArray) {
+    public void setImage(byte[] imageArray) {
         this.imageArray = imageArray;
     }
 
-    public byte[] getName() {
+    public byte[] getImage() {
         return imageArray;
     }
 

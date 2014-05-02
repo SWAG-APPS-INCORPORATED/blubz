@@ -60,4 +60,15 @@
               android:textAlignment="center"
               android:textSize="22dp"/>
 
+    <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="140dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/messageImageView"/>
+
 </RelativeLayout>

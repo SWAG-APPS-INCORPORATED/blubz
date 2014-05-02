@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.blubz.Database.ContentDataSource;
 import com.example.blubz.MainScreen;
 import com.example.blubz.R;
+import com.example.blubz.TimeHelper;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
@@ -78,11 +79,12 @@ public class AddPhoto extends Activity {
 
         if(!datasource.isEmpty()){
             long lastTimestamp = datasource.getMostRecentTimestamp();
-            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+            if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
                 showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id){
                         Intent intent = new Intent(AddPhoto.this, MainScreen.class);
                         startActivity(intent);
+                        finish();
 
                     }
                 });
@@ -109,6 +111,7 @@ public class AddPhoto extends Activity {
             public void onClick(DialogInterface dialog,int id){
                 Intent intent = new Intent(AddPhoto.this, MainScreen.class);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -260,17 +263,6 @@ public class AddPhoto extends Activity {
 					PackageManager.MATCH_DEFAULT_ONLY);
 		return list.size() > 0;
 	}
-
-    private boolean isSameDay(long timestamp1, long timestamp2){
-        Calendar calendar1 = Calendar.getInstance();
-        Calendar calendar2 = Calendar.getInstance();
-
-        calendar1.setTimeInMillis(timestamp1);
-        calendar2.setTimeInMillis(timestamp2);
-
-        return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
-
-    }
 
     private void showDialogBox(String title, String message, DialogInterface.OnClickListener onClick){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

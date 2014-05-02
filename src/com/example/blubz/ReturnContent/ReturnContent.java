@@ -31,5 +31,11 @@ public class ReturnContent extends Activity{
         textView2.setText(message);
 
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }
 

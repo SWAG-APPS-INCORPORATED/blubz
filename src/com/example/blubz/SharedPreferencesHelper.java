@@ -8,10 +8,6 @@ import android.content.SharedPreferences;
 public class SharedPreferencesHelper {
 
 
-    public SharedPreferencesHelper(SharedPreferences sharedPrefs){
-
-    }
-
     public static void setValue(SharedPreferences sharedPrefs, String name, long value){
 
         SharedPreferences.Editor editor = sharedPrefs.edit();

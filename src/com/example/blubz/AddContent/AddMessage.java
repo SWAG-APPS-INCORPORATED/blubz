@@ -58,7 +58,7 @@ public class AddMessage extends Activity {
 
         if(!datasource.isEmpty()){
             long lastTimestamp = datasource.getMostRecentTimestamp();
-            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+            if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
                 editText.setHint("See you tomorrow!");
 
             }
@@ -72,7 +72,7 @@ public class AddMessage extends Activity {
 
         if(!datasource.isEmpty()){
             long lastTimestamp = datasource.getMostRecentTimestamp();
-            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
+            if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
                 showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id){
                         Intent intent = new Intent(AddMessage.this, MainScreen.class);
@@ -135,54 +135,6 @@ public class AddMessage extends Activity {
         return ret;
     }
 
-    @Override
-    public boolean dispatchKeyShortcutEvent(KeyEvent event){
-        boolean ret = super.dispatchKeyShortcutEvent(event);
-        if(event.getAction() == KeyEvent.KEYCODE_BACK){
-            editText.setText("poop");
-            return false;
-
-        }
-        return ret;
-
-    }
-
-    @Override
-    public void onBackPressed(){
-        editText.setText("poop");
-
-    }
-
-    public void viewMessages(View view){
-        Intent intent = new Intent(this, ViewMessage.class);
-        List<Comment> allMessages = datasource.getAllComments();
-        String fullMessage = "";
-        for(Comment singleComment : allMessages){
-            fullMessage = fullMessage + " " + singleComment.getComment();
-        }
-        intent.putExtra(INTENT_MESSAGE, fullMessage);
-        startActivity(intent);
-    }
-
-    public void clearMessages(View view){
-        List<Comment> allMessages = datasource.getAllComments();
-        for(Comment singleComment : allMessages){
-            datasource.deleteComment(singleComment);
-        }
-        editText.setText(null);
-        editText.setHint("All messages deleted.");
-    }
-
-    private boolean isSameDay(long timestamp1, long timestamp2){
-        Calendar calendar1 = Calendar.getInstance();
-        Calendar calendar2 = Calendar.getInstance();
-
-        calendar1.setTimeInMillis(timestamp1);
-        calendar2.setTimeInMillis(timestamp2);
-
-        return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
-
-    }
 
     private void setDateText(){
         long dateInMillis = System.currentTimeMillis();

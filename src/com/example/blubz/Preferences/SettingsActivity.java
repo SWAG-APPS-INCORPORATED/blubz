@@ -62,6 +62,7 @@ public class SettingsActivity extends Activity {
 
     public void setNotificationTime(Calendar notificationTime){
         Intent intent = new Intent(this, NotifyService.class);
+        intent.putExtra("notifType", "daily");
         PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         long dailyNotificationTime = notificationTime.getTimeInMillis();

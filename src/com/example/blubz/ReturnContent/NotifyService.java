@@ -4,8 +4,11 @@ import android.app.*;
 import android.content.Intent;
 import android.os.IBinder;
 import com.example.blubz.AddContent.AddMessage;
+import com.example.blubz.BlubChoiceActivity;
 import com.example.blubz.Database.CommentsDataSource;
+import com.example.blubz.MainScreen;
 import com.example.blubz.R;
+import com.example.blubz.TimeHelper;
 
 import java.util.Calendar;
 
@@ -23,23 +26,44 @@ public class NotifyService extends Service {
 
     public int onStartCommand (Intent myIntent, int flags, int startId) {
 
-        commentsdatasource = new CommentsDataSource(this);
-        commentsdatasource.open();
 
 
-        // Get the message from the intent
-        String message = "Time to enter a blub for the day!";
-        String title = getString(R.string.title);
+        String notifType = myIntent.getStringExtra("notifType");
 
+        String message;
+        String title;
+        int smallIcon;
+        Intent intent;
 
-        if(!commentsdatasource.isEmpty()){
-            long lastTimestamp = commentsdatasource.getMostRecentTimestamp();
-            if(isSameDay(lastTimestamp,System.currentTimeMillis())){
-                return 0;
+        if(notifType.equals("daily")){
+            commentsdatasource = new CommentsDataSource(this);
+            commentsdatasource.open();
+
+            if(!commentsdatasource.isEmpty()){
+                long lastTimestamp = commentsdatasource.getMostRecentTimestamp();
+                if(TimeHelper.isSameDay(lastTimestamp, System.currentTimeMillis())){
+                    return 0;
+                }
             }
+
+            message = "Time to enter a blub for the day!";
+            title = getString(R.string.title);
+            smallIcon = R.drawable.blubiconsmall;
+            intent = new Intent(this , BlubChoiceActivity.class);
+
+
+        }else if(notifType.equals("secret")){
+            message = "The portal to your past awaits";
+            title = getString(R.string.title);
+            smallIcon = R.drawable.secretbutton;
+            intent = new Intent(this , MainScreen.class);
+        }else{
+            return 0;
         }
 
-        Intent intent = new Intent(this , AddMessage.class);
+
+
+
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
 
@@ -50,7 +74,7 @@ public class NotifyService extends Service {
                 .setAutoCancel(true)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setSmallIcon(R.drawable.blubiconsmall)
+                .setSmallIcon(smallIcon)
                 .setContentIntent(contentIntent)
                 .build();
 
@@ -61,14 +85,4 @@ public class NotifyService extends Service {
         return 0;
     }
 
-    private boolean isSameDay(long timestamp1, long timestamp2){
-        Calendar calendar1 = Calendar.getInstance();
-        Calendar calendar2 = Calendar.getInstance();
-
-        calendar1.setTimeInMillis(timestamp1);
-        calendar2.setTimeInMillis(timestamp2);
-
-        return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
-
-    }
 }

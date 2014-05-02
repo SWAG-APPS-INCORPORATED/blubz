@@ -78,40 +78,6 @@ public class MainScreen extends Activity {
 
         backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
 
-        /*Log.d("MainScreen", "--------------------------->");
-        Log.d("MainScreen", "--------------------------->");
-        Log.d("MainScreen", "--------------------------->");
-        Log.d("MainScreen", "--------------------------->");
-        Log.d("MainScreen", "--------------------------->");
-        Log.d("MainScreen", backgroundImage.toString());
-        Log.d("MainScreen", getResources().getDrawable(R.drawable.mainscreen).toString());*/
-
-        /**
-        if ((22 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 0)){
-            backgroundImage.setImageResource(R.drawable.whiteflower);
-        }
-
-        else if ((0 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 6)){
-            backgroundImage.setImageResource(R.drawable.pathway);
-        }
-
-        else if ((6 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 10)){
-            backgroundImage.setImageResource(R.drawable.flowerfields);
-        }
-
-        else if ((10 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 14)){
-            backgroundImage.setImageResource(R.drawable.purpleflower);
-        }
-
-        else if ((14 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 18)){
-            backgroundImage.setImageResource(R.drawable.mosaic);
-        }
-
-        else {
-            backgroundImage.setImageResource(R.drawable.cloudfield);
-        }
-        **/
-
         List<Integer> backgroundList = Arrays.asList(R.drawable.whiteflower,R.drawable.pathway,R.drawable.flowerfields,
                 R.drawable.purpleflower,R.drawable.mosaic,R.drawable.cloudfield);
 
@@ -120,8 +86,6 @@ public class MainScreen extends Activity {
 
         backgroundImage.setImageResource(backgroundList.get((int)backgroundIndex));
 
-
-        //((18 <= (currentTime.get(Calendar.HOUR_OF_DAY)) && (currentTime.get(Calendar.HOUR_OF_DAY)) < 22))
     }
 
 
@@ -137,7 +101,8 @@ public class MainScreen extends Activity {
             lastPhotoTimeStamp = contentdatasource.getMostRecentTimestamp();
         }
 
-        if(isSameDay(lastTimestamp,System.currentTimeMillis()) || isSameDay(lastPhotoTimeStamp,System.currentTimeMillis())){
+        if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis()) ||
+                TimeHelper.isSameDay(lastPhotoTimeStamp,System.currentTimeMillis())){
             showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
             return;
         }
@@ -228,6 +193,9 @@ public class MainScreen extends Activity {
         if((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY)
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
+            Intent intent = new Intent(this, NotifyService.class);
+            intent.putExtra("notifType", "secret");
+            startService(intent); 
         }
     }
 
@@ -246,6 +214,7 @@ public class MainScreen extends Activity {
     public void setNotificationTime(Calendar notificationTime){
 
         Intent intent = new Intent(this, NotifyService.class);
+        intent.putExtra("notifType", "daily");
         PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         long dailyNotificationTime = notificationTime.getTimeInMillis();
@@ -272,23 +241,6 @@ public class MainScreen extends Activity {
         AlertDialog dialog = builder.create();
 
         dialog.show();
-
-    }
-
-    private boolean isSameDay(long timestamp1, long timestamp2){
-
-        if(timestamp1 == 0 || timestamp2 == 0){
-            return false;
-        }
-
-
-        Calendar calendar1 = Calendar.getInstance();
-        Calendar calendar2 = Calendar.getInstance();
-
-        calendar1.setTimeInMillis(timestamp1);
-        calendar2.setTimeInMillis(timestamp2);
-
-        return(calendar1.get(Calendar.DAY_OF_YEAR) == calendar2.get(Calendar.DAY_OF_YEAR));
 
     }
 

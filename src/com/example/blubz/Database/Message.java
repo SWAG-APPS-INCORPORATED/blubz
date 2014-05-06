@@ -4,10 +4,10 @@ package com.example.blubz.Database;
  * Created by macalester on 2/19/14.
  */
 
-public class Comment {
+public class Message {
 
     private long id;
-    private String comment;
+    private String message;
     private long timestamp;
 
     public long getId(){
@@ -18,12 +18,12 @@ public class Comment {
         this.id = id;
     }
 
-    public String getComment(){
-        return comment;
+    public String getMessage(){
+        return message;
     }
 
-    public void setComment(String comment){
-        this.comment = comment;
+    public void setMessage(String message){
+        this.message = message;
     }
 
     public long getTimestamp() {return timestamp;}
@@ -32,6 +32,6 @@ public class Comment {
 
     @Override
     public String toString(){
-        return comment;
+        return message;
     }
 }

@@ -8,17 +8,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.*;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.*;
-import com.example.blubz.*;
-import com.example.blubz.Database.Comment;
-import com.example.blubz.Database.CommentsDataSource;
-import com.example.blubz.ReturnContent.ReturnContent;
-import com.example.blubz.ReturnContent.ViewMessage;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import com.example.blubz.Database.ContentDataSource;
+import com.example.blubz.MainScreen;
+import com.example.blubz.R;
+import com.example.blubz.TimeHelper;
 
 import java.util.Calendar;
-import java.util.List;
 
 /**
  * Created by macalester on 2/19/14.
@@ -29,7 +30,7 @@ public class AddMessage extends Activity {
     // can be used to control SQL Queries.
     // http://www.vogella.com/tutorials/AndroidSQLite/article.html
 
-    private CommentsDataSource datasource;
+    private ContentDataSource datasource;
     public final static String INTENT_MESSAGE = "com.example.DatabaseTest.MESSAGE";
     private EditText editText;
     private ImageButton button;
@@ -42,7 +43,7 @@ public class AddMessage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_message);
 
-        datasource = new CommentsDataSource(this);
+        datasource = new ContentDataSource(this);
         datasource.open();
 
 
@@ -56,12 +57,9 @@ public class AddMessage extends Activity {
         characterView=(TextView)findViewById(R.id.characters);
         characterText.addTextChangedListener(mTextEditorWatcher);
 
-        if(!datasource.isEmpty()){
-            long lastTimestamp = datasource.getMostRecentTimestamp();
-            if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
-                editText.setHint("See you tomorrow!");
-
-            }
+        long lastTimestamp = datasource.getMostRecentTimestamp();
+        if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
+            editText.setHint("See you tomorrow!");
         }
     }
 
@@ -70,20 +68,17 @@ public class AddMessage extends Activity {
         long timestamp = System.currentTimeMillis();
 
 
-        if(!datasource.isEmpty()){
-            long lastTimestamp = datasource.getMostRecentTimestamp();
-            if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
-                showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
+        long lastTimestamp = datasource.getMostRecentTimestamp();
+        if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
+            showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id){
-                        Intent intent = new Intent(AddMessage.this, MainScreen.class);
-                        startActivity(intent);
-
-                    }
+                    Intent intent = new Intent(AddMessage.this, MainScreen.class);
+                    startActivity(intent);
+                            }
                 });
-                editText.setHint("See you tomorrow!");
-                return;
+            editText.setHint("See you tomorrow!");
+            return;
 
-            }
         }
         if(message.isEmpty()){
             showDialogBox("Empty blub!", "Please enter something real in your blub, bub.", new DialogInterface.OnClickListener() {
@@ -94,7 +89,7 @@ public class AddMessage extends Activity {
             return;
         }
 
-        datasource.createComment(message, timestamp);
+        datasource.createMessageContent(message, timestamp);
 
         showDialogBox("Thanks for blubbing", "Don't forget to blub again tomorrow!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int id){

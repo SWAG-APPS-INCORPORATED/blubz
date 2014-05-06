@@ -60,7 +60,7 @@ public class AddPhoto extends Activity {
     public void addPhoto(View view) {
         long timestamp = System.currentTimeMillis();
 
-        if(!datasource.isEmpty()){
+        if(!datasource.isImagesEmpty()){
             long lastTimestamp = datasource.getMostRecentTimestamp();
             if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
                 showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
@@ -88,7 +88,7 @@ public class AddPhoto extends Activity {
         mImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
-        datasource.createContent(byteArray, timestamp);
+        datasource.createImageContent(byteArray, timestamp);
 
         showDialogBox("Thanks for blubbing", "Don't forget to blub again tomorrow!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int id){

@@ -3,7 +3,7 @@ package com.example.blubz.Database;
 /**
  * Created by veritoff on 3/11/14.
  */
-public class Content {
+public class Image {
 
     private long id;
     private byte[] imageArray;

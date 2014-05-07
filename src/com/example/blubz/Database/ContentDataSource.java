@@ -10,14 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by veritoff on 3/11/14.
+ * Created by Dan Voss on 3/11/14.
  */
 public class ContentDataSource {
 
     private SQLiteDatabase database;
     private ContentSQLiteHelper dbHelper;
-    private String[] allColumns = {ContentSQLiteHelper.COLUMN_ID, ContentSQLiteHelper.COLUMN_IMAGE,
+    private String[] imagesColumns = {ContentSQLiteHelper.COLUMN_ID, ContentSQLiteHelper.COLUMN_IMAGE,
             ContentSQLiteHelper.COLUMN_TIMESTAMP};
+    private String[] messagesColumns = {ContentSQLiteHelper.COLUMN_ID,
+            ContentSQLiteHelper.COLUMN_MESSAGE, ContentSQLiteHelper.COLUMN_TIMESTAMP};
 
     public ContentDataSource(Context context){
         dbHelper = new ContentSQLiteHelper(context);
@@ -31,91 +33,147 @@ public class ContentDataSource {
         dbHelper.close();
     }
 
-    public Content createContent(byte[] imageArray, long timestamp) {
+    public Image createImageContent(byte[] imageArray, long timestamp) {
         ContentValues values = new ContentValues();
         values.put(ContentSQLiteHelper.COLUMN_IMAGE, imageArray);
         values.put(ContentSQLiteHelper.COLUMN_TIMESTAMP, timestamp);
-        long insertId = database.insert(ContentSQLiteHelper.TABLE_CONTENT, null,
+        long insertId = database.insert(ContentSQLiteHelper.TABLE_IMAGES, null,
                 values);
 
         /**
         Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                allColumns, ContentSQLiteHelper.COLUMN_ID + " = " + insertId, null,
+                imagesColumns, ContentSQLiteHelper.COLUMN_ID + " = " + insertId, null,
                 null, null, null);
         **/
 
-        Content newContent = new Content(); //cursorToContent(cursor);
+        Image newImage = new Image(); //cursorToImage(cursor);
         //cursor.close();
-        return newContent;
+        return newImage;
     }
 
-/*    public Content getContent(String name){
+    public Image createMessageContent(String message, long timestamp) {
+        ContentValues values = new ContentValues();
+        values.put(ContentSQLiteHelper.COLUMN_MESSAGE, message);
+        values.put(ContentSQLiteHelper.COLUMN_TIMESTAMP, timestamp);
+        long insertId = database.insert(ContentSQLiteHelper.TABLE_MESSAGES, null,
+                values);
+
+        Image newImage = new Image();
+        return newImage;
+    }
+
+/*    public Image getContent(String name){
         Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                allColumns, ContentSQLiteHelper.COLUMN_IMAGE + " = \'" + name + "\'", null,
+                imagesColumns, ContentSQLiteHelper.COLUMN_IMAGE + " = \'" + name + "\'", null,
                 null, null, null);
         cursor.moveToLast();
-        return cursorToContent(cursor);
+        return cursorToImage(cursor);
 
     }*/
 
-    public void deleteContent(Content content){
+/*    public void deleteContent(Image content){
         long id = content.getId();
-        System.out.println("Content deleted with id: " + id);
+        System.out.println("Image deleted with id: " + id);
         database.delete(ContentSQLiteHelper.TABLE_CONTENT, ContentSQLiteHelper.COLUMN_ID +
                 " = " + id, null);
+    }*/
+
+    public List<Image> getAllImages(){
+        List<Image> images = new ArrayList<Image>();
+
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_IMAGES,
+                imagesColumns, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            Image image = cursorToImage(cursor);
+            images.add(image);
+            cursor.moveToNext();
+        }
+        // Make sure to close the cursor
+        cursor.close();
+
+        return images;
     }
 
-    public List<Content> getAllContents(){
-        List<Content> contents = new ArrayList<Content>();
+    public List<Message> getAllMessages(){
+        List<Message> messages = new ArrayList<Message>();
 
-
-        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                allColumns, null, null, null, null, null);
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_MESSAGES,
+                messagesColumns, null, null, null, null, null);
 
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            Content content = cursorToContent(cursor);
-            contents.add(content);
+            Message message = cursorToMessage(cursor);
+            messages.add(message);
             cursor.moveToNext();
         }
 
         // Make sure to close the cursor
         cursor.close();
 
-        return contents;
+        return messages;
     }
 
     public long getMostRecentTimestamp(){
-        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                allColumns, null, null, null, null, null);
-        cursor.moveToLast();
-        Content content = cursorToContent(cursor);
+        long imageTimeStamp = 0;
+        long messageTimeStamp = 0;
 
-        return content.getTimestamp();
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_IMAGES,
+                imagesColumns, null, null, null, null, null);
+        if (cursor.getCount() != 0) {
+            cursor.moveToLast();
+            Image image = cursorToImage(cursor);
+            imageTimeStamp = image.getTimestamp();
+        }
+        cursor = database.query(ContentSQLiteHelper.TABLE_MESSAGES,
+                messagesColumns, null, null, null, null, null);
+        if (cursor.getCount() != 0) {
+            cursor.moveToLast();
+            Message message = cursorToMessage(cursor);
+            messageTimeStamp = message.getTimestamp();
+        }
+
+        if (imageTimeStamp > messageTimeStamp)
+            return imageTimeStamp;
+        else
+            return messageTimeStamp;
     }
 
-    public boolean isCount(Integer count){
+ /*   public boolean isCount(Integer count){
         Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                allColumns, null, null, null, null, null);
+                imagesColumns, null, null, null, null, null);
         return(cursor.getCount() == count);
         //return(cursor.getCount()); //TODO: make a better implementation
         //return false;
+    }*/
+
+    private Image cursorToImage(Cursor cursor){
+        Image image = new Image();
+        image.setId(cursor.getLong(0));
+        image.setImage(cursor.getBlob(1));
+        image.setTimestamp(cursor.getLong(2));
+        return image;
     }
 
-    private Content cursorToContent(Cursor cursor){
-        Content content = new Content();
-        content.setId(cursor.getLong(0));
-        content.setImage(cursor.getBlob(1));
-        content.setTimestamp(cursor.getLong(2));
-        return content;
+    private Message cursorToMessage(Cursor cursor){
+        Message message = new Message();
+        message.setId(cursor.getLong(0));
+        message.setMessage(cursor.getString(1));
+        message.setTimestamp(cursor.getLong(2));
+        return message;
     }
 
-    public boolean isEmpty(){
-        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                allColumns, null, null, null, null, null);
+    public boolean isImagesEmpty(){
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_IMAGES,
+                imagesColumns, null, null, null, null, null);
         return(cursor.getCount() == 0);
-        //return(cursor.getCount()); //TODO: make a better implementation
-        //return false;
+    }
+
+    public boolean isMessagesEmpty(){
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_MESSAGES,
+                messagesColumns, null, null, null, null, null);
+        return(cursor.getCount() == 0);
     }
 }

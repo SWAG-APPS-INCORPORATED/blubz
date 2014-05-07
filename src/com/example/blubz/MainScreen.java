@@ -15,10 +15,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import com.example.blubz.Database.Comment;
-import com.example.blubz.Database.CommentsDataSource;
-import com.example.blubz.Database.Content;
 import com.example.blubz.Database.ContentDataSource;
+import com.example.blubz.Database.Image;
+import com.example.blubz.Database.Message;
 import com.example.blubz.Preferences.SettingsActivity;
 import com.example.blubz.ReturnContent.NotifyService;
 import com.example.blubz.ReturnContent.ReturnContent;
@@ -38,7 +37,6 @@ public class MainScreen extends Activity {
     public final static String INTENT_DATE = "com.example.blubz.DATE";
     public final static String INTENT_BOOLEAN = "com.example.blubz.BOOLEAN";
     public final static String INTENT_IMAGE = "com.example.blubz.IMAGE";
-    private CommentsDataSource commentdatasource;
     private ContentDataSource contentdatasource;
     private SharedPreferences sharedPrefs;
 
@@ -51,9 +49,6 @@ public class MainScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
         changeLayout();
-
-        commentdatasource = new CommentsDataSource(this);
-        commentdatasource.open();
 
         contentdatasource = new ContentDataSource(this);
         contentdatasource.open();
@@ -69,7 +64,7 @@ public class MainScreen extends Activity {
 
         }
 
-        if(!commentdatasource.isEmpty() || !contentdatasource.isEmpty()){
+        if(!contentdatasource.isMessagesEmpty() || !contentdatasource.isImagesEmpty()){
             secretButtonCheck();
         }
         random = new Random();
@@ -94,18 +89,9 @@ public class MainScreen extends Activity {
 
     public void goToBlubChoice(View view) {
 
-        long lastTimestamp = 0;
-        if(!commentdatasource.isEmpty()){
-            lastTimestamp = commentdatasource.getMostRecentTimestamp();
-        }
+        long lastTimestamp = contentdatasource.getMostRecentTimestamp();
 
-        long lastPhotoTimeStamp = 0;
-        if(!contentdatasource.isEmpty()){
-            lastPhotoTimeStamp = contentdatasource.getMostRecentTimestamp();
-        }
-
-        if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis()) ||
-                TimeHelper.isSameDay(lastPhotoTimeStamp,System.currentTimeMillis())){
+        if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
             showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
             return;
         }
@@ -124,13 +110,13 @@ public class MainScreen extends Activity {
         currentCalendar.setTimeInMillis(System.currentTimeMillis());
 
         if(currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
-            List<Comment> allMessages = commentdatasource.getAllComments();
+            List<Message> allMessages = contentdatasource.getAllMessages();
             boolean isImage = false;
 
             int rand = random.nextInt(allMessages.size());
-            Comment randComment = allMessages.get(rand);
-            String intentMessage = randComment.getComment();
-            long timestamp = randComment.getTimestamp();
+            Message randMessage = allMessages.get(rand);
+            String intentMessage = randMessage.getMessage();
+            long timestamp = randMessage.getTimestamp();
 
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
             Calendar timestampCalendar = Calendar.getInstance();
@@ -147,13 +133,13 @@ public class MainScreen extends Activity {
 
             startActivity(intent);
         } else {
-            List<Content> allImages = contentdatasource.getAllContents();
+            List<Image> allImages = contentdatasource.getAllImages();
             boolean isImage = true;
 
             int rand = random.nextInt(allImages.size());
-            Content randContent = allImages.get(rand);
-            byte[] intentImage = randContent.getImage();
-            long timestamp = randContent.getTimestamp();
+            Image randImage = allImages.get(rand);
+            byte[] intentImage = randImage.getImage();
+            long timestamp = randImage.getTimestamp();
 
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
             Calendar timestampCalendar = Calendar.getInstance();
@@ -173,8 +159,8 @@ public class MainScreen extends Activity {
 
 
 //        int rand = random.nextInt(allMessages.size());
-//        Comment randComment = allMessages.get(rand);
-//        String intentMessage = randComment.getComment();
+//        Message randComment = allMessages.get(rand);
+//        String intentMessage = randComment.getMessage();
 //        long timestamp = randComment.getTimestamp();
 
         //String message = Integer.toString(allMessages.size());
@@ -251,8 +237,8 @@ public class MainScreen extends Activity {
         currentCalendar.setTimeInMillis(currentTime);
         timestampCalendar.setTimeInMillis(timestampTime);
 
-        if(((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && !commentdatasource.isEmpty())
-                || (currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && !contentdatasource.isEmpty()))
+        if(((currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && !contentdatasource.isMessagesEmpty())
+                || (currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && !contentdatasource.isImagesEmpty()))
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
             Intent intent = new Intent(this, NotifyService.class);

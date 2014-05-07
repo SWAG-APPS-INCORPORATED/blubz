@@ -189,6 +189,7 @@ public class MainScreen extends Activity {
         return super.onCreateOptionsMenu(menu);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
@@ -198,9 +199,6 @@ public class MainScreen extends Activity {
                 return true;
             case R.id.action_about:
                 openAbout();
-                return true;
-            case R.id.action_delete:
-                deleteSavedBlubz();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -216,12 +214,6 @@ public class MainScreen extends Activity {
     public void openAbout(){
 
         Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
-    }
-
-    public void deleteSavedBlubz(){
-
-        Intent intent = new Intent(this, DeleteSavedBlubz.class);
         startActivity(intent);
     }
 

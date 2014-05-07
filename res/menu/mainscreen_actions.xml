@@ -2,17 +2,28 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Settings, should always be in the overflow -->
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     <item android:id="@+id/action_about"
           android:icon="@drawable/question"
           android:title="@string/action_about"
           android:showAsAction="ifRoom"/>
     <item android:id="@+id/action_settings"
           android:title="@string/action_settings"
+<<<<<<< Updated upstream
           android:icon="@drawable/clock"
           android:showAsAction="ifRoom" />
     <item android:id="@+id/action_delete"
           android:title="@string/action_delete"
           android:icon="@drawable/question"
           android:showAsAction="never" />
+=======
+          android:icon="@drawable/settings"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_delete"
+          android:showAsAction="ifRoom" />
+>>>>>>> Stashed changes
 </menu>

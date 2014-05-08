@@ -35,15 +35,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returncontent2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returncontentbox2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/returncontentbox3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/trash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/secretbutton.png" afterPath="$PROJECT_DIR$/res/drawable/secretbutton.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/ReturnContent.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/ReturnContent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main_screen_layout.xml" afterPath="$PROJECT_DIR$/res/layout/main_screen_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/returned_content.xml" afterPath="$PROJECT_DIR$/res/layout/returned_content.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -137,7 +129,7 @@
       <file leaf-file-name="main_screen_layout.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="10" selection-start="843" selection-end="843" vertical-scroll-proportion="0.66027397" vertical-offset="119" max-vertical-offset="705">
+            <state line="6" column="14" selection-start="237" selection-end="237" vertical-scroll-proportion="0.24657534" vertical-offset="0" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -796,7 +788,7 @@
       <workItem from="1399420550627" duration="5128000" />
       <workItem from="1399485229867" duration="16409000" />
       <workItem from="1399579990635" duration="2751000" />
-      <workItem from="1399587893737" duration="1062000" />
+      <workItem from="1399587893737" duration="1134000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -894,11 +886,15 @@
       <created>1399573491978</created>
       <updated>1399573491978</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added two versions for return content page">
+      <created>1399589024598</created>
+      <updated>1399589024598</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222574000" />
+    <option name="totallyTimeSpent" value="222646000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1022,7 +1018,8 @@
     <MESSAGE value="Add in missing classes" />
     <MESSAGE value="Trying to fix the repository" />
     <MESSAGE value="Trying to fix the repository&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to fix the repository&#10;" />
+    <MESSAGE value="added two versions for return content page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added two versions for return content page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1301,13 +1298,6 @@
         <state line="16" column="0" selection-start="593" selection-end="593" vertical-scroll-proportion="0.46201232" vertical-offset="0" max-vertical-offset="487" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="43" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="930">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="0" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.37" vertical-offset="400" max-vertical-offset="900">
@@ -1377,9 +1367,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="43" selection-start="1062" selection-end="1072" vertical-scroll-proportion="0.6818182" vertical-offset="0" max-vertical-offset="930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="10" selection-start="843" selection-end="843" vertical-scroll-proportion="0.66027397" vertical-offset="119" max-vertical-offset="705">
+        <state line="6" column="14" selection-start="237" selection-end="237" vertical-scroll-proportion="0.24657534" vertical-offset="0" max-vertical-offset="705">
           <folding />
         </state>
       </provider>

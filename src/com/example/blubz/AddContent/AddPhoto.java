@@ -5,7 +5,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
@@ -17,6 +19,7 @@ import com.example.blubz.R;
 import com.example.blubz.TimeHelper;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.Calendar;
 
 
@@ -113,8 +116,6 @@ public class AddPhoto extends Activity {
 	private void dispatchTakePictureIntent(int actionCode) {
 
 		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //MediaStore.MEDIA_IGNORE_FILENAME;
-
 		startActivityForResult(takePictureIntent, actionCode);
 	}
 
@@ -136,6 +137,7 @@ public class AddPhoto extends Activity {
 	}
 
 	// Some lifecycle callbacks so that the image can survive orientation change
+
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		outState.putParcelable(BITMAP_STORAGE_KEY, mImageBitmap);
@@ -153,6 +155,7 @@ public class AddPhoto extends Activity {
                         ImageView.VISIBLE : ImageView.INVISIBLE
         );
 	}
+
 
     private void setDateText(){
         long dateInMillis = System.currentTimeMillis();

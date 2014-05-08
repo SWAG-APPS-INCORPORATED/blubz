@@ -31,7 +31,7 @@
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
         <activity android:name=".ReturnContent.ReturnContent"
-                  android:label="ReturnContent"
+                  android:label="blub from the past"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
         <activity android:name=".BlubChoiceActivity"

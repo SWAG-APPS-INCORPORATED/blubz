@@ -58,7 +58,7 @@ public class AlarmService extends IntentService {
     private void setAlarm(String notificationType, long notificationTime, int id, long interval){
         Intent intent = new Intent(this, NotifyService.class);
         intent.putExtra("notifType", notificationType);
-        PendingIntent pendingIntent = PendingIntent.getService(this, (int)notificationTime, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getService(this, id, intent, 0);
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, notificationTime, interval, pendingIntent);
 

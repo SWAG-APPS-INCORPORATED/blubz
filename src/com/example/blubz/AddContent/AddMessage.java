@@ -19,6 +19,9 @@ import com.example.blubz.MainScreen;
 import com.example.blubz.R;
 import com.example.blubz.TimeHelper;
 
+import android.widget.*;
+import com.example.blubz.*;
+
 import java.util.Calendar;
 
 /**
@@ -103,8 +106,6 @@ public class AddMessage extends Activity {
         editText.setText(null);
         editText.setHint("See you tomorrow!");
 
-            //button.setEnabled(false);
-
     }
 
 //Source: http://akashkubavat.wordpress.com/2012/06/08/hide-virtual-keyboard-when-touch-out-side-edittext-in-android/
@@ -161,6 +162,13 @@ public class AddMessage extends Activity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton("OK", onClick);
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                finish();
+
+            }
+        });
 
         AlertDialog dialog = builder.create();
 

@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="ENTER"
             android:id="@+id/button"
-            android:onClick="setNotification"
+            android:onClick="setNotificationTime"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:scaleX="1.3"

@@ -18,20 +18,25 @@ public class BlubChoiceActivity extends Activity {
     }
 
     public void goToMessage(View view) {
-        Intent intent = new Intent(this, AddMessage.class);
-        startActivityForResult(intent, 0);
+        goTo(AddMessage.class);
     }
 
     public void goToPicture(View view) {
-        Intent intent = new Intent(this, AddPhoto.class);
-        startActivityForResult(intent, 0);
+        goTo(AddPhoto.class);
     }
+
+    public void goTo(Class<?> destinationClass){
+
+        Intent intent = new Intent(this, destinationClass);
+        startActivityForResult(intent, 0);
+
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 0)
-        {
+        if(requestCode == 0){
             finish();
         }
     }

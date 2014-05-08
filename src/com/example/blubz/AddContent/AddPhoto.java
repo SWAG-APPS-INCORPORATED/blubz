@@ -22,6 +22,7 @@ import java.util.Calendar;
 
 //A significant amount of the following code was taken from the Android Developer website for camera implementation
 
+
 public class AddPhoto extends Activity {
 
 	private static final int ACTION_TAKE_PHOTO_B = 1;

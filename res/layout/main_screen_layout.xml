@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:scaleType="fitXY"
-        android:src="@drawable/flowerfields"
+        android:src="@drawable/whiteflower"
         android:id="@+id/imageviewmain"
         android:background="@null"
         />
@@ -34,7 +34,7 @@
             android:scaleType="centerCrop"
             android:layout_marginTop="256dp"
             android:layout_centerHorizontal="true"
-            android:visibility="invisible"
+            android:visibility="visible"
             android:background="@null"
             />
 

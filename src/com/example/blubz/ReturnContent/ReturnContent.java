@@ -20,6 +20,8 @@ public class ReturnContent extends Activity{
 
     ImageView image;
     TextView textView2;
+    private ImageView backgroundImage;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,7 @@ public class ReturnContent extends Activity{
 
         if (isImage) {
             byte[] imageArray = intent.getByteArrayExtra(MainScreen.INTENT_IMAGE);
+            backgroundImage = (ImageView) findViewById(R.id.camerareturnimage);
 
             Bitmap bmp = BitmapFactory.decodeByteArray(imageArray, 0, imageArray.length);
 
@@ -45,7 +48,7 @@ public class ReturnContent extends Activity{
 
         } else {
             String message = intent.getStringExtra(MainScreen.INTENT_MESSAGE);
-
+            backgroundImage = (ImageView) findViewById(R.id.returnimage);
             textView2.setText(message);
         }
 

@@ -43,5 +43,14 @@
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
         <service android:name=".ReturnContent.NotifyService" android:label="NotifyService"/>
+        <service android:name=".ReturnContent.AlarmService"/>
+        <receiver android:name=".BootReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name ="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
     </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                     android:maxSdkVersion="18" />
 </manifest>

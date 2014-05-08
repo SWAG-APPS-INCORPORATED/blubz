@@ -1,9 +1,7 @@
 package com.example.blubz;
 
 import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,14 +10,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import com.example.blubz.Database.ContentDataSource;
 import com.example.blubz.Database.Image;
 import com.example.blubz.Database.Message;
 import com.example.blubz.Preferences.SettingsActivity;
-import com.example.blubz.ReturnContent.NotifyService;
+import com.example.blubz.ReturnContent.AlarmService;
 import com.example.blubz.ReturnContent.ReturnContent;
 
 import java.text.SimpleDateFormat;
@@ -37,18 +34,23 @@ public class MainScreen extends Activity {
     public final static String INTENT_DATE = "com.example.blubz.DATE";
     public final static String INTENT_BOOLEAN = "com.example.blubz.BOOLEAN";
     public final static String INTENT_IMAGE = "com.example.blubz.IMAGE";
+
+
     private ContentDataSource contentdatasource;
     private SharedPreferences sharedPrefs;
 
     private Random random;
     private ImageButton secretButton;
-    Button button;
-    ImageView backgroundImage;
+    private ImageView backgroundImage;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
         changeLayout();
+
+        random = new Random();
+
+
 
         contentdatasource = new ContentDataSource(this);
         contentdatasource.open();
@@ -57,17 +59,17 @@ public class MainScreen extends Activity {
 
         secretButton = (ImageButton)findViewById(R.id.secretButton);
 
-        if(SharedPreferencesHelper.getValue(sharedPrefs, "notification")==0){
-            setInitialNotificationTime();
+
+        if(SharedPreferencesHelper.getValue(sharedPrefs, "notification")==0){ //on first use
+            setInitialNotifications();
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
-
         }
 
         if(!contentdatasource.isImagesEmpty() || !contentdatasource.isMessagesEmpty()){
             secretButtonCheck();
         }
-        random = new Random();
+
     }
 
     public void changeLayout() {
@@ -86,6 +88,17 @@ public class MainScreen extends Activity {
 
     }
 
+    public void goToSettings(){
+
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToAbout(){
+
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
 
     public void goToBlubChoice(View view) {
 
@@ -96,10 +109,7 @@ public class MainScreen extends Activity {
             return;
         }
 
-
-
         Intent intent = new Intent(this, BlubChoiceActivity.class);
-
         startActivity(intent);
     }
 
@@ -157,28 +167,6 @@ public class MainScreen extends Activity {
             startActivity(intent);
         }
 
-
-//        int rand = random.nextInt(allMessages.size());
-//        Message randComment = allMessages.get(rand);
-//        String intentMessage = randComment.getMessage();
-//        long timestamp = randComment.getTimestamp();
-
-        //String message = Integer.toString(allMessages.size());
-
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-//        Calendar timestampCalendar = Calendar.getInstance();
-//        timestampCalendar.setTimeInMillis(timestamp);
-//        String intentDate = simpleDateFormat.format(timestampCalendar.getTime());
-//
-//        intent.putExtra(INTENT_MESSAGE, intentMessage);
-//        intent.putExtra(INTENT_DATE, intentDate);
-//        secretButton.setVisibility(View.GONE);
-//
-//        long currentTime = System.currentTimeMillis();
-//        SharedPreferencesHelper.setValue(sharedPrefs, "secretButton", currentTime);
-//
-//        startActivity(intent);
-
     }
 
     //Code below from android tutorial on action bar http://developer.android.com/training/basics/actionbar/setting-up.html
@@ -195,10 +183,10 @@ public class MainScreen extends Activity {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_settings:
-                openSettings();
+                goToSettings();
                 return true;
             case R.id.action_about:
-                openAbout();
+                goToAbout();
                 return true;
             case R.id.action_delete:
                 deleteSavedBlubz();
@@ -208,18 +196,6 @@ public class MainScreen extends Activity {
         }
     }
 
-    public void openSettings(){
-
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
-
-    public void openAbout(){
-
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
-    }
-
     public void deleteSavedBlubz(){
 
         Intent intent = new Intent(this, DeleteSavedBlubz.class);
@@ -227,7 +203,6 @@ public class MainScreen extends Activity {
     }
 
     private void secretButtonCheck(){
-
 
         long currentTime = System.currentTimeMillis();
         long timestampTime = SharedPreferencesHelper.getValue(sharedPrefs, "secretButton");
@@ -242,39 +217,26 @@ public class MainScreen extends Activity {
                 || (currentCalendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && !contentdatasource.isImagesEmpty()))
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
-            Intent intent = new Intent(this, NotifyService.class);
-            intent.putExtra("notifType", "secret");
-            startService(intent); 
+
         }
     }
 
-    private void setInitialNotificationTime(){
+    private void setInitialNotifications(){
 
-        Calendar calendar = Calendar.getInstance();
+        Calendar notificationTime = Calendar.getInstance();
 
-        calendar.set(Calendar.HOUR_OF_DAY, 18);
-        calendar.set(Calendar.MINUTE, 0);
+        notificationTime.set(Calendar.HOUR_OF_DAY, 18);
+        notificationTime.set(Calendar.MINUTE, 0);
 
-        setNotificationTime(calendar);
+        long dailyNotificationTime = notificationTime.getTimeInMillis() + 1000 * 60 * 60 * 24;
 
-
-    }
-
-    public void setNotificationTime(Calendar notificationTime){
-
-        Intent intent = new Intent(this, NotifyService.class);
-        intent.putExtra("notifType", "daily");
-        PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        long dailyNotificationTime = notificationTime.getTimeInMillis();
-        if(notificationTime.getTimeInMillis()-System.currentTimeMillis() < 0){
-            dailyNotificationTime += 1000 * 60 * 60 * 24;
-        }
-
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, dailyNotificationTime, 1000 * 60 * 60 * 24, pendingIntent);
 
         SharedPreferencesHelper.setValue(sharedPrefs, "notification", dailyNotificationTime);
+
+        Intent startAlarmServiceIntent = new Intent(this, AlarmService.class);
+        startAlarmServiceIntent.putExtra("notifType", "all");
+        startService(startAlarmServiceIntent);
+
 
     }
 
@@ -292,6 +254,7 @@ public class MainScreen extends Activity {
         dialog.show();
 
     }
+
 
 
 }

@@ -19,6 +19,9 @@ import com.example.blubz.MainScreen;
 import com.example.blubz.R;
 import com.example.blubz.TimeHelper;
 
+import android.widget.*;
+import com.example.blubz.*;
+
 import java.util.Calendar;
 
 /**
@@ -72,9 +75,9 @@ public class AddMessage extends Activity {
         if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
             showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id){
-                    Intent intent = new Intent(AddMessage.this, MainScreen.class);
-                    startActivity(intent);
-                            }
+                        Intent intent = new Intent(AddMessage.this, MainScreen.class);
+                        startActivity(intent);
+                    }
                 });
             editText.setHint("See you tomorrow!");
             return;
@@ -102,8 +105,6 @@ public class AddMessage extends Activity {
 
         editText.setText(null);
         editText.setHint("See you tomorrow!");
-
-            //button.setEnabled(false);
 
     }
 
@@ -161,6 +162,13 @@ public class AddMessage extends Activity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton("OK", onClick);
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                finish();
+
+            }
+        });
 
         AlertDialog dialog = builder.create();
 

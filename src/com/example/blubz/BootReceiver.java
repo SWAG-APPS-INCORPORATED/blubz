@@ -1,8 +1,7 @@
 package com.example.blubz;
 
 import android.content.*;
-import android.util.Log;
-import com.example.blubz.returncontent.AlarmService;
+import com.example.blubz.ReturnContent.AlarmService;
 
 /**
  * Created by Nathan on 5/6/14.

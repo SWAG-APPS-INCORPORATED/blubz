@@ -22,7 +22,7 @@
                   android:label="@string/add_picture"
                   android:parentActivityName=".BlubChoiceActivity"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".returncontent.ViewMessage"
+        <activity android:name=".ReturnContent.ViewMessage"
                   android:label="@string/view_message"
                   android:parentActivityName=".AddContent.AddMessage"
                   android:screenOrientation="portrait"/>
@@ -30,7 +30,7 @@
                   android:label="settings"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".returncontent.ReturnContent"
+        <activity android:name=".ReturnContent.ReturnContent"
                   android:label="ReturnContent"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
@@ -42,8 +42,8 @@
                   android:label="about blubz"
                   android:parentActivityName=".MainScreen"
                   android:screenOrientation="portrait"/>
-        <service android:name=".returncontent.NotifyService" android:label="NotifyService"/>
-        <service android:name=".returncontent.AlarmService"/>
+        <service android:name=".ReturnContent.NotifyService" android:label="NotifyService"/>
+        <service android:name=".ReturnContent.AlarmService"/>
         <receiver android:name=".BootReceiver" android:enabled="true">
             <intent-filter>
                 <action android:name ="android.intent.action.BOOT_COMPLETED"></action>

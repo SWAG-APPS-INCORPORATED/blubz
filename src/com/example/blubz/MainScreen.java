@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ import com.example.blubz.Preferences.SettingsActivity;
 import com.example.blubz.returncontent.AlarmService;
 import com.example.blubz.returncontent.ReturnContent;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -183,10 +185,10 @@ public class MainScreen extends Activity {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_settings:
-                openSettings();
+                goToSettings();
                 return true;
             case R.id.action_about:
-                openAbout();
+                goToAbout();
                 return true;
             case R.id.action_delete:
                 deleteSavedBlubz();
@@ -194,19 +196,6 @@ public class MainScreen extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    public void openSettings(){
-
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
-
-    public void openAbout(){
-
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
-
     }
 
     public void deleteSavedBlubz(){

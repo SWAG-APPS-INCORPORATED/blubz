@@ -113,6 +113,7 @@ public class AddPhoto extends Activity {
 	private void dispatchTakePictureIntent(int actionCode) {
 
 		Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        //MediaStore.MEDIA_IGNORE_FILENAME;
 
 		startActivityForResult(takePictureIntent, actionCode);
 	}
@@ -173,6 +174,13 @@ public class AddPhoto extends Activity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton("OK", onClick);
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                finish();
+
+            }
+        });
 
         AlertDialog dialog = builder.create();
 

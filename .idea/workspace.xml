@@ -35,14 +35,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/blubz/BootReceiver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/BlubChoiceActivity.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/BlubChoiceActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/settings.xml" afterPath="$PROJECT_DIR$/res/layout/settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -98,6 +94,23 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" line="96" class="com.example.blubz.AddContent.AddMessage" package="com.example.blubz.AddContent">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -110,7 +123,7 @@
       <file leaf-file-name="AlarmService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/returncontent/AlarmService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="0" selection-start="3266" selection-end="3266" vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="1564">
+            <state line="90" column="0" selection-start="3266" selection-end="3266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
               <folding />
             </state>
           </provider>
@@ -119,7 +132,7 @@
       <file leaf-file-name="Method.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Android/android-sdk/sources/android-19/java/lang/reflect/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="510" column="0" selection-start="18386" selection-end="18386" vertical-scroll-proportion="0.0" vertical-offset="8670" max-vertical-offset="10081">
+            <state line="510" column="0" selection-start="18386" selection-end="18386" vertical-scroll-proportion="0.0" vertical-offset="7769" max-vertical-offset="9282">
               <folding />
             </state>
           </provider>
@@ -137,8 +150,15 @@
       <file leaf-file-name="AddMessage.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="27" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="3111">
-              <folding />
+            <state line="164" column="8" selection-start="6131" selection-end="6331" vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="2703">
+              <folding>
+                <element signature="e#2579#2864#0" expanded="true" />
+                <element signature="e#2845#2846#0" expanded="true" />
+                <element signature="e#3420#3692#0" expanded="true" />
+                <element signature="e#3681#3682#0" expanded="true" />
+                <element signature="e#6159#6331#0" expanded="true" />
+                <element signature="e#6320#6321#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,8 +166,11 @@
       <file leaf-file-name="AddPhoto.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="3179">
-              <folding />
+            <state line="115" column="10" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2924">
+              <folding>
+                <element signature="e#5868#6040#0" expanded="true" />
+                <element signature="e#6029#6030#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,7 +178,7 @@
       <file leaf-file-name="MainScreen.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="65" selection-start="8549" selection-end="8549" vertical-scroll-proportion="10.09375" vertical-offset="561" max-vertical-offset="4267">
+            <state line="224" column="4" selection-start="7956" selection-end="7956" vertical-scroll-proportion="0.2125" vertical-offset="3315" max-vertical-offset="4046">
               <folding />
             </state>
           </provider>
@@ -164,9 +187,11 @@
       <file leaf-file-name="NotifyService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/returncontent/NotifyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="90" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2669">
+            <state line="147" column="24" selection-start="4416" selection-end="4416" vertical-scroll-proportion="0.0" vertical-offset="2125" max-vertical-offset="2720">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2702#2727#0" expanded="true" />
+                <element signature="e#3044#3069#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,7 +200,7 @@
       <file leaf-file-name="ContentDataSource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Database/ContentDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="3145">
+            <state line="129" column="53" selection-start="4303" selection-end="4303" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="3026">
               <folding>
                 <marker date="1399479286098" expanded="true" signature="316:356" placeholder="/**...*/" />
                 <marker date="1399479286098" expanded="false" signature="3324:3333" placeholder="&lt;~&gt;" />
@@ -184,19 +209,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BootReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/BootReceiver.java">
+      <file leaf-file-name="ContentSQLiteHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Database/ContentSQLiteHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="55" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="493">
+            <state line="10" column="13" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="BootReceiver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/BootReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="92" selection-start="2721" selection-end="2721" vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1020">
+            <state line="17" column="55" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -248,13 +273,13 @@
         <option value="$PROJECT_DIR$/res/layout/settings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/NotifyService.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/AlarmService.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/BootReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blubz/returncontent/NotifyService.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/returncontent/AlarmService.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/blubz/returncontent/NotifyService.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" />
       </list>
     </option>
@@ -534,6 +559,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Coolest" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -1012,7 +1038,7 @@
       <workItem from="1399317442032" duration="4745000" />
       <workItem from="1399401901910" duration="10359000" />
       <workItem from="1399420550627" duration="5128000" />
-      <workItem from="1399485229867" duration="4620000" />
+      <workItem from="1399485229867" duration="10808000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -1094,11 +1120,15 @@
       <created>1399050034274</created>
       <updated>1399050034274</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Notifications work after reboot">
+      <created>1399507885129</created>
+      <updated>1399507885129</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206972000" />
+    <option name="totallyTimeSpent" value="213160000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1127,6 +1157,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4493464" sideWeight="0.49848944" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25869894" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.49924472" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1134,7 +1165,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4003268" sideWeight="0.50453174" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4019608" sideWeight="0.50377643" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.49773413" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1149,7 +1180,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35457516" sideWeight="0.49622357" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25869894" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1217,7 +1247,8 @@
     <MESSAGE value="Added some images" />
     <MESSAGE value="Added WIP secret button notification" />
     <MESSAGE value="Notifications work after reboot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Notifications work after reboot" />
+    <MESSAGE value="Fixed bug that caused app to crash after closing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug that caused app to crash after closing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1227,13 +1258,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="92" selection-start="2721" selection-end="2721" vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="118" column="50" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.0" vertical-offset="2006" max-vertical-offset="4386">
@@ -1430,23 +1454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="40" selection-start="367" selection-end="367" vertical-scroll-proportion="8.8" vertical-offset="373" max-vertical-offset="799">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/mainscreen_actions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/settings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="32" selection-start="1990" selection-end="1990" vertical-scroll-proportion="-8.36" vertical-offset="607" max-vertical-offset="969">
@@ -1509,13 +1516,6 @@
         <state line="414" column="0" selection-start="17122" selection-end="17122" vertical-scroll-proportion="0.0" vertical-offset="6303" max-vertical-offset="13940" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="92" selection-start="2721" selection-end="2721" vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/BootReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="55" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
@@ -1523,49 +1523,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/android-sdk/sources/android-19/java/lang/reflect/Method.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="510" column="0" selection-start="18386" selection-end="18386" vertical-scroll-proportion="0.0" vertical-offset="7769" max-vertical-offset="9282">
+        <state line="50" column="60" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Database/ContentDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="3026">
-          <folding>
-            <marker date="1399479286098" expanded="true" signature="316:356" placeholder="/**...*/" />
-            <marker date="1399479286098" expanded="false" signature="3324:3333" placeholder="&lt;~&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="27" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="2352" max-vertical-offset="2907">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" vertical-offset="2236" max-vertical-offset="2788">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/returncontent/NotifyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="90" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2669">
+        <state line="164" column="8" selection-start="6131" selection-end="6331" vertical-scroll-proportion="0.0" vertical-offset="2210" max-vertical-offset="2703">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2579#2864#0" expanded="true" />
+            <element signature="e#2845#2846#0" expanded="true" />
+            <element signature="e#3420#3692#0" expanded="true" />
+            <element signature="e#3681#3682#0" expanded="true" />
+            <element signature="e#6159#6331#0" expanded="true" />
+            <element signature="e#6320#6321#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java">
+    <entry file="file://$PROJECT_DIR$/res/menu/mainscreen_actions.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="60" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+        <state line="9" column="7" selection-start="344" selection-end="344" vertical-scroll-proportion="0.51342285" vertical-offset="0" max-vertical-offset="374">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_screen_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="40" selection-start="367" selection-end="367" vertical-scroll-proportion="2.68" vertical-offset="220" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="21" selection-start="3011" selection-end="3011" vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1054">
           <folding />
         </state>
       </provider>
@@ -1577,9 +1575,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/android-sdk/sources/android-19/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="510" column="0" selection-start="18386" selection-end="18386" vertical-scroll-proportion="0.0" vertical-offset="7769" max-vertical-offset="9282">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/returncontent/NotifyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="24" selection-start="4416" selection-end="4416" vertical-scroll-proportion="0.0" vertical-offset="2125" max-vertical-offset="2720">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2702#2727#0" expanded="true" />
+            <element signature="e#3044#3069#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="10" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2924">
+          <folding>
+            <element signature="e#5868#6040#0" expanded="true" />
+            <element signature="e#6029#6030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Database/ContentDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="53" selection-start="4303" selection-end="4303" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="3026">
+          <folding>
+            <marker date="1399479286098" expanded="true" signature="316:356" placeholder="/**...*/" />
+            <marker date="1399479286098" expanded="false" signature="3324:3333" placeholder="&lt;~&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Database/ContentSQLiteHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="65" selection-start="8549" selection-end="8549" vertical-scroll-proportion="10.09375" vertical-offset="561" max-vertical-offset="4267">
+        <state line="224" column="4" selection-start="7956" selection-end="7956" vertical-scroll-proportion="0.2125" vertical-offset="3315" max-vertical-offset="4046">
           <folding />
         </state>
       </provider>

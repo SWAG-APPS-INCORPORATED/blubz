@@ -75,9 +75,9 @@ public class AddMessage extends Activity {
         if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
             showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id){
-                    Intent intent = new Intent(AddMessage.this, MainScreen.class);
-                    startActivity(intent);
-                            }
+                        Intent intent = new Intent(AddMessage.this, MainScreen.class);
+                        startActivity(intent);
+                    }
                 });
             editText.setHint("See you tomorrow!");
             return;

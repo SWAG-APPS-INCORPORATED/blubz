@@ -176,4 +176,9 @@ public class ContentDataSource {
                 messagesColumns, null, null, null, null, null);
         return(cursor.getCount() == 0);
     }
+
+    public void clearDatabases() {
+        database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_IMAGES);
+        database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_MESSAGES);
+    }
 }

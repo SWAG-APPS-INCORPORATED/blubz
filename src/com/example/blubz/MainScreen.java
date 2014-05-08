@@ -64,7 +64,7 @@ public class MainScreen extends Activity {
 
         }
 
-        if(!contentdatasource.isMessagesEmpty() || !contentdatasource.isImagesEmpty()){
+        if(!contentdatasource.isImagesEmpty() || !contentdatasource.isMessagesEmpty()){
             secretButtonCheck();
         }
         random = new Random();

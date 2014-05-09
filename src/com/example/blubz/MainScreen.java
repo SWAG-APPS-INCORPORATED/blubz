@@ -106,6 +106,11 @@ public class MainScreen extends Activity {
         showDialogBox("Delete...", "Are you sure you want to delete all saved Blubz?", DIALOG_TYPE_YES_NO, new DialogInterface.OnClickListener()  {
             public void onClick(DialogInterface dialog,int id){
                 contentdatasource.clearDatabases();
+                showDialogBox("Deleted!", "All of your Blubz are deleted!", DIALOG_TYPE_OK, new DialogInterface.OnClickListener()  {
+                    public void onClick(DialogInterface dialog,int id){
+                        //Do nothing
+                    }
+                });
             }
         });
     }

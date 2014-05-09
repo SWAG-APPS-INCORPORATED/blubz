@@ -178,7 +178,9 @@ public class ContentDataSource {
     }
 
     public void clearDatabases() {
-        database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_IMAGES);
-        database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_MESSAGES);
+        database.delete(ContentSQLiteHelper.TABLE_MESSAGES, null, new String[0]);
+        database.delete(ContentSQLiteHelper.TABLE_IMAGES, null, new String[0]);
+        //database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_IMAGES);
+        //database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_MESSAGES);
     }
 }

@@ -4,7 +4,7 @@
     <!-- Settings, should always be in the overflow -->
 
     <item android:id="@+id/action_about"
-          android:icon="@drawable/question"
+          android:icon="@drawable/questionbutton"
           android:title="@string/action_about"
           android:showAsAction="ifRoom"/>
     <item android:id="@+id/action_settings"

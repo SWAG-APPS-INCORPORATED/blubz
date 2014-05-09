@@ -78,8 +78,8 @@ public class MainScreen extends Activity {
 
         backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
 
-        List<Integer> backgroundList = Arrays.asList(R.drawable.whiteflower,R.drawable.pathway,R.drawable.flowerfields,
-                R.drawable.purpleflower,R.drawable.mosaic,R.drawable.cloudfield);
+        List<Integer> backgroundList = Arrays.asList(R.drawable.mainscreenwhiteflower,R.drawable.mainscreenpathway,R.drawable.mainscreenflowerfields,
+                R.drawable.mainscreenpurpleflower,R.drawable.mainscreenmosaic,R.drawable.mainscreencloudfield);
 
         double divisor = 24.0 / backgroundList.size();
         double backgroundIndex = (double)currentTime.get(Calendar.HOUR_OF_DAY) / divisor;

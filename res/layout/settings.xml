@@ -8,13 +8,14 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/linearLayout">
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout">
     </LinearLayout>
 
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"
+            android:id="@+id/settingsImage"
             android:scaleType="fitXY"
             android:layout_centerInParent="true"
             android:src="@drawable/blubsplain"/>

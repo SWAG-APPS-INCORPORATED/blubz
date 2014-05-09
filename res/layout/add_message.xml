@@ -9,6 +9,7 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="centerCrop"
+               android:id="@+id/blubbackgroundimage"
                android:src="@drawable/blubhereback"/>
 
     <ImageButton
@@ -49,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/blubbox"
-            android:src="@drawable/blubherebox2"
+            android:src="@drawable/blubherebox"
             android:scaleType="fitCenter"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"

@@ -8,6 +8,7 @@
                android:layout_height="match_parent"
                android:layout_centerInParent="true"
                android:scaleType="centerCrop"
+               android:id="@+id/blubbackgroundimage"
                android:src="@drawable/blubhereback"/>
 
     <ImageButton
@@ -42,24 +43,6 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="15dip"
             />
-
-<!--    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_alignParentBottom="true"
-            >
-        <Button android:text="@string/btnIntend" android:id="@+id/btnIntend"
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="1" />
-        <Button android:text="Blub!"
-                android:id="@+id/photoBlub"
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:onClick="addPhoto"/>
-    </LinearLayout>-->
 
     <ImageButton
             android:layout_height="match_parent"

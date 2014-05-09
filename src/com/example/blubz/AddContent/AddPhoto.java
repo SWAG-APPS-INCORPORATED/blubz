@@ -23,8 +23,7 @@ import java.io.File;
 import java.util.Calendar;
 
 
-//A significant amount of the following code was taken from the Android Developer website for camera implementation
-
+//Source: http://developer.android.com/training/camera/photobasics.html#TaskPhotoView
 
 public class AddPhoto extends Activity {
 
@@ -111,7 +110,7 @@ public class AddPhoto extends Activity {
 
 	}
 
-//Take Photo Activity
+//Take photo activity
 
 	private void dispatchTakePictureIntent(int actionCode) {
 

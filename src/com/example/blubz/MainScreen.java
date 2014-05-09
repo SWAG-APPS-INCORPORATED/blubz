@@ -34,6 +34,8 @@ public class MainScreen extends Activity {
     public final static String INTENT_DATE = "com.example.blubz.DATE";
     public final static String INTENT_BOOLEAN = "com.example.blubz.BOOLEAN";
     public final static String INTENT_IMAGE = "com.example.blubz.IMAGE";
+    public final static int DIALOG_TYPE_YES_NO = 1;
+    public final static int DIALOG_TYPE_OK = 2;
 
 
     private ContentDataSource contentdatasource;
@@ -100,12 +102,24 @@ public class MainScreen extends Activity {
         startActivity(intent);
     }
 
+    public void deleteSavedBlubz(){
+        showDialogBox("Delete...", "Are you sure you want to delete all saved Blubz?", DIALOG_TYPE_YES_NO, new DialogInterface.OnClickListener()  {
+            public void onClick(DialogInterface dialog,int id){
+                contentdatasource.clearDatabases();
+            }
+        });
+    }
+
     public void goToBlubChoice(View view) {
 
         long lastTimestamp = contentdatasource.getMostRecentTimestamp();
 
         if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
-            showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.");
+            showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.", DIALOG_TYPE_OK, new DialogInterface.OnClickListener()  {
+                public void onClick(DialogInterface dialog,int id){
+                    //Do nothing
+                }
+            });
             return;
         }
 
@@ -196,12 +210,6 @@ public class MainScreen extends Activity {
         }
     }
 
-    public void deleteSavedBlubz(){
-
-        Intent intent = new Intent(this, DeleteSavedBlubz.class);
-        startActivity(intent);
-    }
-
     private void secretButtonCheck(){
 
         long currentTime = System.currentTimeMillis();
@@ -240,20 +248,38 @@ public class MainScreen extends Activity {
 
     }
 
-    private void showDialogBox(String title, String message){
+    private void showDialogBox(String title, String message, int type, DialogInterface.OnClickListener onClick){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(title);
         builder.setMessage(message);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked OK button
+
+        if(type == DIALOG_TYPE_YES_NO){
+        builder.setPositiveButton("YES", onClick);
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener()  {
+                public void onClick(DialogInterface dialog,int id){
+                    //Do nothing
+                }
+            });
+        }
+
+        if(type == DIALOG_TYPE_OK){
+        builder.setPositiveButton("OK", onClick);
+        }
+
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                finish();
+
             }
         });
+
         AlertDialog dialog = builder.create();
 
         dialog.show();
 
     }
+
 
 
 

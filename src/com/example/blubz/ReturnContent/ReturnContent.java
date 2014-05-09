@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.blubz.MainScreen;
@@ -20,7 +22,6 @@ public class ReturnContent extends Activity{
 
     ImageView image;
     TextView textView2;
-    private ImageView backgroundImage;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -37,10 +38,10 @@ public class ReturnContent extends Activity{
 
         image = (ImageView) findViewById(R.id.messageImageView);
         textView2 = (TextView) findViewById(R.id.messageTextView);
+        ImageButton blubbox = (ImageButton) findViewById(R.id.blubbox);
 
         if (isImage) {
             byte[] imageArray = intent.getByteArrayExtra(MainScreen.INTENT_IMAGE);
-            backgroundImage = (ImageView) findViewById(R.id.camerareturnimage);
 
             Bitmap bmp = BitmapFactory.decodeByteArray(imageArray, 0, imageArray.length);
 
@@ -48,7 +49,7 @@ public class ReturnContent extends Activity{
 
         } else {
             String message = intent.getStringExtra(MainScreen.INTENT_MESSAGE);
-            backgroundImage = (ImageView) findViewById(R.id.returnimage);
+            blubbox.setVisibility(View.VISIBLE);
             textView2.setText(message);
         }
 

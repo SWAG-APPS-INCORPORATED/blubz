@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Dan Voss on 3/11/14.
+ * Created by Swag Apps on 3/11/14.
  */
 public class ContentDataSource {
 
@@ -40,14 +40,7 @@ public class ContentDataSource {
         long insertId = database.insert(ContentSQLiteHelper.TABLE_IMAGES, null,
                 values);
 
-        /**
-        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                imagesColumns, ContentSQLiteHelper.COLUMN_ID + " = " + insertId, null,
-                null, null, null);
-        **/
-
-        Image newImage = new Image(); //cursorToImage(cursor);
-        //cursor.close();
+        Image newImage = new Image();
         return newImage;
     }
 
@@ -61,22 +54,6 @@ public class ContentDataSource {
         Image newImage = new Image();
         return newImage;
     }
-
-/*    public Image getContent(String name){
-        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                imagesColumns, ContentSQLiteHelper.COLUMN_IMAGE + " = \'" + name + "\'", null,
-                null, null, null);
-        cursor.moveToLast();
-        return cursorToImage(cursor);
-
-    }*/
-
-/*    public void deleteContent(Image content){
-        long id = content.getId();
-        System.out.println("Image deleted with id: " + id);
-        database.delete(ContentSQLiteHelper.TABLE_CONTENT, ContentSQLiteHelper.COLUMN_ID +
-                " = " + id, null);
-    }*/
 
     public List<Image> getAllImages(){
         List<Image> images = new ArrayList<Image>();
@@ -141,14 +118,6 @@ public class ContentDataSource {
             return messageTimeStamp;
     }
 
- /*   public boolean isCount(Integer count){
-        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_CONTENT,
-                imagesColumns, null, null, null, null, null);
-        return(cursor.getCount() == count);
-        //return(cursor.getCount()); //TODO: make a better implementation
-        //return false;
-    }*/
-
     private Image cursorToImage(Cursor cursor){
         Image image = new Image();
         image.setId(cursor.getLong(0));
@@ -180,7 +149,5 @@ public class ContentDataSource {
     public void clearDatabases() {
         database.delete(ContentSQLiteHelper.TABLE_MESSAGES, null, new String[0]);
         database.delete(ContentSQLiteHelper.TABLE_IMAGES, null, new String[0]);
-        //database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_IMAGES);
-        //database.execSQL("DROP TABLE IF EXISTS " + ContentSQLiteHelper.TABLE_MESSAGES);
     }
 }

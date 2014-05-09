@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by macalester on 2/19/14.
+ * Created by Swag Apps on 2/19/14.
  */
 public class MainScreen extends Activity {
 
@@ -51,8 +51,6 @@ public class MainScreen extends Activity {
         changeLayout();
 
         random = new Random();
-
-
 
         contentdatasource = new ContentDataSource(this);
         contentdatasource.open();

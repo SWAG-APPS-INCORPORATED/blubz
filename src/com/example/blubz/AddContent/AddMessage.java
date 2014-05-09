@@ -25,13 +25,14 @@ import com.example.blubz.*;
 import java.util.Calendar;
 
 /**
- * Created by macalester on 2/19/14.
+ * Created by Swag Apps Incorporated on 2/19/14.
  */
 public class AddMessage extends Activity {
 
-    // I used the following tutorial to learn how to create Java Objects that
-    // can be used to control SQL Queries.
-    // http://www.vogella.com/tutorials/AndroidSQLite/article.html
+/*
+     We used the following tutorial to learn how to create Java Objects that can be used to control SQL Queries.
+     Source: http://www.vogella.com/tutorials/AndroidSQLite/article.html
+*/
 
     private ContentDataSource datasource;
     public final static String INTENT_MESSAGE = "com.example.DatabaseTest.MESSAGE";
@@ -48,7 +49,6 @@ public class AddMessage extends Activity {
 
         datasource = new ContentDataSource(this);
         datasource.open();
-
 
         dateText = (TextView) findViewById(R.id.date);
         editText = (EditText) findViewById(R.id.messageEditText);
@@ -70,7 +70,6 @@ public class AddMessage extends Activity {
         String message = editText.getText().toString();
         long timestamp = System.currentTimeMillis();
 
-
         long lastTimestamp = datasource.getMostRecentTimestamp();
         if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
             showDialogBox("You've already blubbed today!", "Sorry, but you have to wait until tomorrow to blub again.",new DialogInterface.OnClickListener() {
@@ -83,6 +82,7 @@ public class AddMessage extends Activity {
             return;
 
         }
+
         if(message.isEmpty()){
             showDialogBox("Empty blub!", "Please enter something real in your blub, bub.", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog,int id){
@@ -109,6 +109,7 @@ public class AddMessage extends Activity {
     }
 
 //Source: http://akashkubavat.wordpress.com/2012/06/08/hide-virtual-keyboard-when-touch-out-side-edittext-in-android/
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         View view = getCurrentFocus();
@@ -146,7 +147,9 @@ public class AddMessage extends Activity {
 
         dateText.setText(date);
     }
+
 //Source: http://stackoverflow.com/questions/3013791/live-character-count-for-edittext-android
+
     private final TextWatcher mTextEditorWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }

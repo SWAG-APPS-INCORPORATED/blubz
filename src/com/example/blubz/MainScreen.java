@@ -45,6 +45,7 @@ public class MainScreen extends Activity {
     private ImageButton secretButton;
     private ImageView backgroundImage;
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_layout);
@@ -70,6 +71,13 @@ public class MainScreen extends Activity {
             secretButtonCheck();
         }
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        changeLayout();
+        secretButtonCheck();
     }
 
     public void changeLayout() {

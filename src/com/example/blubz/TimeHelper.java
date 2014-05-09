@@ -3,7 +3,7 @@ package com.example.blubz;
 import java.util.Calendar;
 
 /**
- * Created by Nathan on 4/30/14.
+ * Created by Swag Apps on 4/30/14.
  */
 public class TimeHelper {
 

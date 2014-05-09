@@ -11,7 +11,7 @@ import com.example.blubz.SharedPreferencesHelper;
 import java.util.Calendar;
 
 /**
- * Created by Nathan on 5/4/14.
+ * Created by Swag Apps on 5/4/14.
  */
 public class AlarmService extends IntentService {
 
@@ -33,14 +33,12 @@ public class AlarmService extends IntentService {
         if(myIntent.hasExtra("notifType")){
             notifType = myIntent.getStringExtra("notifType");
         }else{
-            notifType = "";
+            return;
         }
         sharedPrefs = getSharedPreferences("myPrefs",0);
 
         if(notifType.equals("daily")){
             setAlarm("daily",SharedPreferencesHelper.getValue(sharedPrefs,"notification"), DAILY_ID, AlarmManager.INTERVAL_DAY);
-            //SharedPreferencesHelper.setValue(sharedPrefs,"notification",
-                    //SharedPreferencesHelper.getValue(sharedPrefs,"notification")+AlarmManager.INTERVAL_DAY);
         }else if(notifType.equals("monday")){
             setAlarm("secret",getNotificationTime(Calendar.MONDAY), MONDAY_ID, AlarmManager.INTERVAL_DAY*7);
         }else if(notifType.equals("friday")){
@@ -55,14 +53,6 @@ public class AlarmService extends IntentService {
         return null;
     }
 
-    private void setAlarm(String notificationType, long notificationTime, int id, long interval){
-        Intent intent = new Intent(this, NotifyService.class);
-        intent.putExtra("notifType", notificationType);
-        PendingIntent pendingIntent = PendingIntent.getService(this, id, intent, 0);
-
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, notificationTime, interval, pendingIntent);
-
-    }
 
     private long getNotificationTime(int calendarDayOfWeek){
         Calendar calendar = Calendar.getInstance();
@@ -82,6 +72,7 @@ public class AlarmService extends IntentService {
 
     }
 
+
     private void setAllAlarms(){
 
         long dailyNotificationTime = SharedPreferencesHelper.getValue(sharedPrefs,"notification");
@@ -95,4 +86,15 @@ public class AlarmService extends IntentService {
 
 
     }
+
+
+    private void setAlarm(String notificationType, long notificationTime, int id, long interval){
+        Intent intent = new Intent(this, NotifyService.class);
+        intent.putExtra("notifType", notificationType);
+        PendingIntent pendingIntent = PendingIntent.getService(this, id, intent, 0);
+
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, notificationTime, interval, pendingIntent);
+
+    }
+
 }

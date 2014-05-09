@@ -3,7 +3,7 @@ package com.example.blubz;
 import android.content.SharedPreferences;
 
 /**
- * Created by Nathan on 4/22/14.
+ * Created by Swag Apps on 4/22/14.
  */
 public class SharedPreferencesHelper {
 

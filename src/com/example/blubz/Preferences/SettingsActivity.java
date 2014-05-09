@@ -1,7 +1,7 @@
 package com.example.blubz.Preferences;
 
 /**
- * Created by Nathan on 2/27/14.
+ * Created by Swag Apps on 2/27/14.
  */
 import android.app.Activity;
 import android.content.Intent;
@@ -32,8 +32,6 @@ public class SettingsActivity extends Activity {
         sharedPrefs = getSharedPreferences("myPrefs", 0);
 
         setTimePicker();
-
-
     }
 
     public void setTimePicker(){

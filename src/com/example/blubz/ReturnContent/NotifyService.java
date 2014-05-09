@@ -16,7 +16,7 @@ import com.example.blubz.*;
 import java.util.Calendar;
 
 /**
- * Created by Nathan on 2/27/14.
+ * Created by Swag Apps on 2/27/14.
  */
 public class NotifyService extends Service {
 
@@ -43,35 +43,18 @@ public class NotifyService extends Service {
         sharedPrefs = getSharedPreferences("myPrefs",0);
 
         Notif notif = null;
-        String notifType = null;
+        String notifType;
 
         if(!myIntent.hasExtra("notifType")){
             return 0;
-
         }
+
         notifType = myIntent.getStringExtra("notifType");
 
-        int today = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
-
         if(notifType.equals("daily")){
-
-            dataSource = new ContentDataSource(this);
-            dataSource.open();
-
-            long lastTimestamp = dataSource.getMostRecentTimestamp();
-            if(TimeHelper.isSameDay(lastTimestamp, System.currentTimeMillis())){
-                return 0;
-            }
-
             notif = dailyNotification();
-
         }else if(notifType.equals("secret")){
-            if((today==Calendar.FRIDAY && !dataSource.isImagesEmpty()) ||
-                    (today==Calendar.MONDAY && !dataSource.isMessagesEmpty())
-                        && !TimeHelper.isSameDay(SharedPreferencesHelper.getValue(sharedPrefs,"secret"),Calendar.getInstance().getTimeInMillis())){
-                notif = secretButtonNotification();
-
-            }
+            notif = secretButtonNotification();
         }
 
         notifyNow(notif);
@@ -84,12 +67,10 @@ public class NotifyService extends Service {
         Intent startAlarmServiceIntent = new Intent(this, AlarmService.class);
         startAlarmServiceIntent.putExtra("notifType", "daily");
 
-
         long lastTimestamp = dataSource.getMostRecentTimestamp();
         if(TimeHelper.isSameDay(lastTimestamp, System.currentTimeMillis())){
             return null;
         }
-
 
         Notif notif = new Notif();
         notif.message = "Time to enter a blub for the day!";
@@ -97,34 +78,31 @@ public class NotifyService extends Service {
         notif.smallIcon = R.drawable.blubiconsmall;
         notif.intent = new Intent(this , BlubChoiceActivity.class);
 
-
-
         return notif;
 
     }
 
     private Notif secretButtonNotification(){
-        Notif notif = new Notif();
-        notif.message = "The portal to your past awaits.";
-        notif.title = getString(R.string.title);
-        notif.smallIcon = R.drawable.secretbuttonsmall;
-        notif.intent = new Intent(this , MainScreen.class);
 
-        Intent startAlarmServiceIntent = new Intent(this, AlarmService.class);
+        int today = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 
-        Calendar today = Calendar.getInstance();
-        String secretButtonDay = "";
+        //Checks to make sure that there is something to show if the secret button is pressed, and that
+        //the secret button is actually visible before sending notification
+        if((today==Calendar.FRIDAY && !dataSource.isImagesEmpty()) ||
+                (today==Calendar.MONDAY && !dataSource.isMessagesEmpty())
+                        && !TimeHelper.isSameDay(SharedPreferencesHelper.getValue(sharedPrefs,"secret"),
+                        Calendar.getInstance().getTimeInMillis())){
 
-        if(today.get(Calendar.DAY_OF_WEEK)==Calendar.MONDAY){
-            secretButtonDay = "monday";
-        }else if(today.get(Calendar.DAY_OF_WEEK)==Calendar.FRIDAY){
-            secretButtonDay = "friday";
+            Notif notif = new Notif();
+            notif.message = "The portal to your past awaits.";
+            notif.title = getString(R.string.title);
+            notif.smallIcon = R.drawable.secretbuttonsmall;
+            notif.intent = new Intent(this , MainScreen.class);
+
+            return notif;
+        }else{
+            return null;
         }
-
-        startAlarmServiceIntent.putExtra("notifType", secretButtonDay);
-        //startService(startAlarmServiceIntent);
-
-        return notif;
     }
 
     private void notifyNow(Notif notif){

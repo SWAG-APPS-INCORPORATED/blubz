@@ -22,10 +22,6 @@
                   android:label="@string/add_picture"
                   android:parentActivityName=".BlubChoiceActivity"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".ReturnContent.ViewMessage"
-                  android:label="@string/view_message"
-                  android:parentActivityName=".AddContent.AddMessage"
-                  android:screenOrientation="portrait"/>
         <activity android:name=".Preferences.SettingsActivity"
                   android:label="settings"
                   android:parentActivityName=".MainScreen"

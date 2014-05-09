@@ -4,7 +4,7 @@ import android.content.*;
 import com.example.blubz.ReturnContent.AlarmService;
 
 /**
- * Created by Nathan on 5/6/14.
+ * Created by Swag Apps on 5/6/14.
  * Inspired by http://stackoverflow.com/questions/11527581/how-to-ensure-alarmmanager-survives-phone-restart-and-application-kill
  */
 public class BootReceiver extends BroadcastReceiver {

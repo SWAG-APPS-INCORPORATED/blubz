@@ -13,15 +13,14 @@ import com.example.blubz.MainScreen;
 import com.example.blubz.R;
 
 /**
- * Created by Danyshi on 3/2/14.
+ * Created by Swag Apps on 3/2/14.
  */
 
 public class ReturnContent extends Activity{
 
-    // Button resetButton=(Button)findViewById(R.id.secretButton);
-
     ImageView image;
     TextView textView2;
+    ImageButton blubbox;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -38,13 +37,11 @@ public class ReturnContent extends Activity{
 
         image = (ImageView) findViewById(R.id.messageImageView);
         textView2 = (TextView) findViewById(R.id.messageTextView);
-        ImageButton blubbox = (ImageButton) findViewById(R.id.blubbox);
+        blubbox = (ImageButton) findViewById(R.id.blubbox);
 
         if (isImage) {
             byte[] imageArray = intent.getByteArrayExtra(MainScreen.INTENT_IMAGE);
-
             Bitmap bmp = BitmapFactory.decodeByteArray(imageArray, 0, imageArray.length);
-
             image.setImageBitmap(bmp);
 
         } else {
@@ -58,7 +55,6 @@ public class ReturnContent extends Activity{
     @Override
     protected void onPause() {
         super.onPause();
-
         finish();
     }
 }

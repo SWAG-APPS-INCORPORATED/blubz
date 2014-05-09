@@ -10,6 +10,8 @@ An easily understandable system for storing text or pictures once each day with 
 
 blubz uses a SQLite database to store images and messages. Additionally, it uses SharedPreferences to store dynamic information about users' notification preferences.
 
+<img src="res/drawable/blubdiagram.png" width="652" height="483">
+
 ## Client Development
 
 All code was created on IntelliJ with an Android SDK of API Level 19.

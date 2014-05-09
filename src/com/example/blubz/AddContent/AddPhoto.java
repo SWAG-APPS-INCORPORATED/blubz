@@ -22,8 +22,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.Calendar;
 
+/**
+ * Created by Swag Apps Incorporated on 2/19/14.
+ */
 
-//Source: http://developer.android.com/training/camera/photobasics.html#TaskPhotoView
+/*
+     We used the following tutorial to learn how to implement the camera function in Blubz.
+     Source: http://developer.android.com/training/camera/photobasics.html#TaskPhotoView
+*/
 
 public class AddPhoto extends Activity {
 
@@ -39,7 +45,6 @@ public class AddPhoto extends Activity {
     private TextView dateText;
     private boolean imageExists;
 
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,6 +128,7 @@ public class AddPhoto extends Activity {
     }
 
 //Get the thumbnail
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			if (resultCode == RESULT_OK) {
@@ -154,7 +160,6 @@ public class AddPhoto extends Activity {
                         ImageView.VISIBLE : ImageView.INVISIBLE
         );
 	}
-
 
     private void setDateText(){
         long dateInMillis = System.currentTimeMillis();

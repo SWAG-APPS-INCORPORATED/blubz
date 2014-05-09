@@ -1,7 +1,7 @@
 package com.example.blubz.Database;
 
 /**
- * Created by macalester on 2/19/14.
+ * Created by Swag Apps on 2/19/14.
  */
 
 public class Message {

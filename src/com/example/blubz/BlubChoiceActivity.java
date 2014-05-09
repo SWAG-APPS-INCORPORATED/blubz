@@ -8,7 +8,7 @@ import com.example.blubz.AddContent.AddMessage;
 import com.example.blubz.AddContent.AddPhoto;
 
 /**
- * Created by carinalei on 3/24/14.
+ * Created by Swag Apps on 3/24/14.
  */
 public class BlubChoiceActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,6 @@ public class BlubChoiceActivity extends Activity {
         startActivityForResult(intent, 0);
 
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

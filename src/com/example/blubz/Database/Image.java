@@ -1,7 +1,7 @@
 package com.example.blubz.Database;
 
 /**
- * Created by veritoff on 3/11/14.
+ * Created by Swag Apps on 3/11/14.
  */
 public class Image {
 

@@ -16,4 +16,4 @@ Alarm service is used by MainScreen, Settings, and BootReceiver to set alarms th
 
 ## Client Development
 
-All code was created on IntelliJ with an Android SDK of API Level 19.
+All code was created on IntelliJ with a min Android SDK of API Level 17.

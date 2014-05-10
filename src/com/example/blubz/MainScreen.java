@@ -80,20 +80,30 @@ public class MainScreen extends Activity {
         secretButtonCheck();
     }
 
-    public void changeLayout() {
+    //Code below from android tutorial on action bar http://developer.android.com/training/basics/actionbar/setting-up.html
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mainscreen_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-        Calendar currentTime = Calendar.getInstance();
-
-        backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
-
-        List<Integer> backgroundList = Arrays.asList(R.drawable.mainscreenwhiteflower,R.drawable.mainscreenpathway,R.drawable.mainscreenflowerfields,
-                R.drawable.mainscreenpurpleflower,R.drawable.mainscreenmosaic,R.drawable.mainscreencloudfield);
-
-        double divisor = 24.0 / backgroundList.size();
-        double backgroundIndex = (double)currentTime.get(Calendar.HOUR_OF_DAY) / divisor;
-
-        backgroundImage.setImageResource(backgroundList.get((int)backgroundIndex));
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                goToSettings();
+                return true;
+            case R.id.action_about:
+                goToAbout();
+                return true;
+            case R.id.action_delete:
+                deleteSavedBlubz();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void goToSettings(){
@@ -106,19 +116,6 @@ public class MainScreen extends Activity {
 
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
-    }
-
-    public void deleteSavedBlubz(){
-        showDialogBox("Delete...", "Are you sure you want to delete all saved Blubz?", DIALOG_TYPE_YES_NO, new DialogInterface.OnClickListener()  {
-            public void onClick(DialogInterface dialog,int id){
-                contentdatasource.clearDatabases();
-                showDialogBox("Deleted!", "All of your Blubz are deleted!", DIALOG_TYPE_OK, new DialogInterface.OnClickListener()  {
-                    public void onClick(DialogInterface dialog,int id){
-                        //Do nothing
-                    }
-                });
-            }
-        });
     }
 
     public void goToBlubChoice(View view) {
@@ -194,31 +191,20 @@ public class MainScreen extends Activity {
 
     }
 
-    //Code below from android tutorial on action bar http://developer.android.com/training/basics/actionbar/setting-up.html
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items for use in the action bar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.mainscreen_actions, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+    public void changeLayout() {
 
+        Calendar currentTime = Calendar.getInstance();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                goToSettings();
-                return true;
-            case R.id.action_about:
-                goToAbout();
-                return true;
-            case R.id.action_delete:
-                deleteSavedBlubz();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        backgroundImage = (ImageView) findViewById(R.id.imageviewmain);
+
+        List<Integer> backgroundList = Arrays.asList(R.drawable.mainscreenwhiteflower,R.drawable.mainscreenpathway,R.drawable.mainscreenflowerfields,
+                R.drawable.mainscreenpurpleflower,R.drawable.mainscreenmosaic,R.drawable.mainscreencloudfield);
+
+        double divisor = 24.0 / backgroundList.size();
+        double backgroundIndex = (double)currentTime.get(Calendar.HOUR_OF_DAY) / divisor;
+
+        backgroundImage.setImageResource(backgroundList.get((int)backgroundIndex));
+
     }
 
     private void secretButtonCheck(){
@@ -237,6 +223,8 @@ public class MainScreen extends Activity {
                 && (timestampCalendar.get(Calendar.DATE) != currentCalendar.get(Calendar.DATE))) {
             secretButton.setVisibility(View.VISIBLE);
 
+        }else{
+            secretButton.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -257,6 +245,19 @@ public class MainScreen extends Activity {
         startService(startAlarmServiceIntent);
 
 
+    }
+
+    public void deleteSavedBlubz(){
+        showDialogBox("Delete...", "Are you sure you want to delete all saved blubz?", DIALOG_TYPE_YES_NO, new DialogInterface.OnClickListener()  {
+            public void onClick(DialogInterface dialog,int id){
+                contentdatasource.clearDatabases();
+                showDialogBox("Deleted!", "All of your blubz are deleted!", DIALOG_TYPE_OK, new DialogInterface.OnClickListener()  {
+                    public void onClick(DialogInterface dialog,int id){
+                        //Do nothing
+                    }
+                });
+            }
+        });
     }
 
     private void showDialogBox(String title, String message, int type, DialogInterface.OnClickListener onClick){

@@ -76,7 +76,7 @@ public class NotifyService extends Service {
         notif.message = "Time to enter a blub for the day!";
         notif.title = getString(R.string.title);
         notif.smallIcon = R.drawable.blubiconsmall;
-        notif.intent = new Intent(this , BlubChoiceActivity.class);
+        notif.intent = new Intent(this , MainScreen.class);
 
         return notif;
 

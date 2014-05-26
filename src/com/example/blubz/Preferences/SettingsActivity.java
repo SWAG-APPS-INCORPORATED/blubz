@@ -3,12 +3,15 @@ package com.example.blubz.Preferences;
 /**
  * Created by Swag Apps on 2/27/14.
  */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.TimePicker;
+import com.example.blubz.Database.ContentDataSource;
 import com.example.blubz.MainScreen;
 import com.example.blubz.R;
 import com.example.blubz.ReturnContent.AlarmService;
@@ -21,6 +24,8 @@ public class SettingsActivity extends Activity {
 
     private SharedPreferences sharedPrefs;
     private TimePicker timePicker;
+    private ContentDataSource contentdatasource;
+    private TextView countsView;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +35,10 @@ public class SettingsActivity extends Activity {
 
         timePicker = (TimePicker) findViewById(R.id.notifTime);
         sharedPrefs = getSharedPreferences("myPrefs", 0);
+        countsView = (TextView) findViewById(R.id.countView);
 
         setTimePicker();
+        setContentCounts();
     }
 
     public void setTimePicker(){
@@ -43,6 +50,16 @@ public class SettingsActivity extends Activity {
         timePicker.setCurrentHour(notificationTime.get(Calendar.HOUR_OF_DAY));
         timePicker.setCurrentMinute(notificationTime.get(Calendar.MINUTE));
 
+    }
+
+    public void setContentCounts() {
+        int messageCount, imageCount;
+
+        messageCount = contentdatasource.getMessageCount();
+        imageCount = contentdatasource.getImageCount();
+
+        countsView.setText("you have made " + messageCount + " text blubz, and "
+                    + imageCount + " photo blubz!");
     }
 
     public void setNotificationTime(View view){

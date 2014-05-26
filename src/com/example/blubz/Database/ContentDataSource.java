@@ -55,6 +55,38 @@ public class ContentDataSource {
         return newImage;
     }
 
+    public int getImageCount() {
+        int count = 0;
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_IMAGES,
+                imagesColumns, null, null, null, null, null);
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            count++;
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+        return count;
+    }
+
+    public int getMessageCount() {
+        int count = 0;
+        Cursor cursor = database.query(ContentSQLiteHelper.TABLE_MESSAGES,
+                messagesColumns, null, null, null, null, null);
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            count++;
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+        return count;
+    }
+
     public List<Image> getAllImages(){
         List<Image> images = new ArrayList<Image>();
 

@@ -29,20 +29,21 @@ public class AlarmService extends IntentService {
     public void onHandleIntent (Intent myIntent) {
 
         alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        sharedPrefs = getSharedPreferences("myPrefs",0);
+
         String notifType;
         if(myIntent.hasExtra("notifType")){
             notifType = myIntent.getStringExtra("notifType");
         }else{
             return;
         }
-        sharedPrefs = getSharedPreferences("myPrefs",0);
 
         if(notifType.equals("daily")){
             setAlarm("daily",SharedPreferencesHelper.getValue(sharedPrefs,"notification"), DAILY_ID, AlarmManager.INTERVAL_DAY);
         }else if(notifType.equals("monday")){
-            setAlarm("secret",getNotificationTime(Calendar.MONDAY), MONDAY_ID, AlarmManager.INTERVAL_DAY*7);
+            setAlarm("secret",getSecretButtonNotificationTime(Calendar.MONDAY), MONDAY_ID, AlarmManager.INTERVAL_DAY*7);
         }else if(notifType.equals("friday")){
-            setAlarm("secret",getNotificationTime(Calendar.FRIDAY), FRIDAY_ID, AlarmManager.INTERVAL_DAY*7);
+            setAlarm("secret",getSecretButtonNotificationTime(Calendar.FRIDAY), FRIDAY_ID, AlarmManager.INTERVAL_DAY*7);
         }else if(notifType.equals("all")){
             setAllAlarms();
         }
@@ -54,7 +55,7 @@ public class AlarmService extends IntentService {
     }
 
 
-    private long getNotificationTime(int calendarDayOfWeek){
+    private long getSecretButtonNotificationTime(int calendarDayOfWeek){
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_WEEK,calendarDayOfWeek);
         calendar.set(Calendar.HOUR_OF_DAY, 12);
@@ -73,18 +74,30 @@ public class AlarmService extends IntentService {
     }
 
 
-    private void setAllAlarms(){
 
-        long dailyNotificationTime = SharedPreferencesHelper.getValue(sharedPrefs,"notification");
-        if(dailyNotificationTime < System.currentTimeMillis()){
-            dailyNotificationTime += 1000 * 60 * 60 * 24;
+    private long findNextNotificationTime(long notificationTimestamp){
+        Calendar oldNotificationCal = Calendar.getInstance();
+        oldNotificationCal.setTimeInMillis(notificationTimestamp);
+
+        Calendar nextNotificationCal = Calendar.getInstance();
+        nextNotificationCal.set(Calendar.HOUR_OF_DAY,oldNotificationCal.get(Calendar.HOUR_OF_DAY));
+        nextNotificationCal.set(Calendar.MINUTE, oldNotificationCal.get(Calendar.MINUTE));
+
+        notificationTimestamp = nextNotificationCal.getTimeInMillis();
+        if(notificationTimestamp < System.currentTimeMillis()){
+            notificationTimestamp += 1000 * 60 * 60 * 24;
         }
 
-        setAlarm("daily",dailyNotificationTime, DAILY_ID, AlarmManager.INTERVAL_DAY);
-        setAlarm("secret",getNotificationTime(Calendar.MONDAY), MONDAY_ID, AlarmManager.INTERVAL_DAY*7);
-        setAlarm("secret",getNotificationTime(Calendar.FRIDAY), FRIDAY_ID, AlarmManager.INTERVAL_DAY*7);
+        return notificationTimestamp;
+
+    }
 
 
+    private void setAllAlarms(){
+        setAlarm("daily",findNextNotificationTime(SharedPreferencesHelper.getValue(sharedPrefs,"notification")),
+                DAILY_ID, AlarmManager.INTERVAL_DAY);
+        setAlarm("secret",getSecretButtonNotificationTime(Calendar.MONDAY), MONDAY_ID, AlarmManager.INTERVAL_DAY*7);
+        setAlarm("secret",getSecretButtonNotificationTime(Calendar.FRIDAY), FRIDAY_ID, AlarmManager.INTERVAL_DAY*7);
     }
 
 

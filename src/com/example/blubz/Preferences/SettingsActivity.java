@@ -24,7 +24,7 @@ public class SettingsActivity extends Activity {
 
     private SharedPreferences sharedPrefs;
     private TimePicker timePicker;
-    private ContentDataSource contentdatasource;
+    private ContentDataSource dataSource;
     private TextView countsView;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -36,9 +36,14 @@ public class SettingsActivity extends Activity {
         timePicker = (TimePicker) findViewById(R.id.notifTime);
         sharedPrefs = getSharedPreferences("myPrefs", 0);
         countsView = (TextView) findViewById(R.id.countView);
+        dataSource = new ContentDataSource(this);
+        dataSource.open();
+
 
         setTimePicker();
-        setContentCounts();
+        if(!dataSource.isMessagesEmpty() || !dataSource.isImagesEmpty()){
+            setContentCounts();
+        }
     }
 
     public void setTimePicker(){
@@ -55,8 +60,8 @@ public class SettingsActivity extends Activity {
     public void setContentCounts() {
         int messageCount, imageCount;
 
-        messageCount = contentdatasource.getMessageCount();
-        imageCount = contentdatasource.getImageCount();
+        messageCount = dataSource.getMessageCount();
+        imageCount = dataSource.getImageCount();
 
         countsView.setText("you have made " + messageCount + " text blubz, and "
                     + imageCount + " photo blubz!");

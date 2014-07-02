@@ -35,9 +35,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb3d100-a525-4378-9c4c-eb69cde70c28" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/AlarmService.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/AlarmService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/NotifyService.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/NotifyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/blubz/SharedPreferencesHelper.java" afterPath="$PROJECT_DIR$/src/com/example/blubz/SharedPreferencesHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blubz.iws" />
@@ -94,7 +93,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" line="96" class="com.example.blubz.AddContent.AddMessage" package="com.example.blubz.AddContent">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" line="113" class="com.example.blubz.AddContent.AddMessage" package="com.example.blubz.AddContent">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -128,28 +127,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="12" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.7589286" vertical-offset="204" max-vertical-offset="1326">
+            <state line="24" column="4" selection-start="610" selection-end="648" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1326">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/TimeHelper.java">
+      <file leaf-file-name="Message.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Database/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="23" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="561">
+            <state line="6" column="13" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPhoto.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java">
+      <file leaf-file-name="AddMessage.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="191" column="76" selection-start="6196" selection-end="6196" vertical-scroll-proportion="0.0" vertical-offset="3247" max-vertical-offset="3434">
+            <state line="30" column="46" selection-start="881" selection-end="881" vertical-scroll-proportion="0.2735632" vertical-offset="0" max-vertical-offset="2907">
+              <folding>
+                <element signature="e#3953#4225#0" expanded="true" />
+                <element signature="e#4214#4215#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SharedPreferencesHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blubz/SharedPreferencesHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
@@ -158,7 +169,7 @@
       <file leaf-file-name="NotifyService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/ReturnContent/NotifyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="104" selection-start="733" selection-end="733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2193">
+            <state line="25" column="104" selection-start="733" selection-end="733" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="2414">
               <folding />
             </state>
           </provider>
@@ -194,7 +205,7 @@
       <file leaf-file-name="BlubChoiceActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blubz/BlubChoiceActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="74" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="799">
+            <state line="20" column="74" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
               <folding />
             </state>
           </provider>
@@ -241,19 +252,19 @@
         <option value="$PROJECT_DIR$/src/com/example/blubz/BlubChoiceActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/SecretButtonAlarmService.java" />
         <option value="$PROJECT_DIR$/res/layout/settings.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/returncontent/NotifyService.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/returncontent/AlarmService.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddPhoto.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/BootReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/ReturnContent.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blubz/SharedPreferencesHelper.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/TimeHelper.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/MainScreen.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/AlarmService.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/ReturnContent/NotifyService.java" />
         <option value="$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blubz/SharedPreferencesHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java" />
       </list>
     </option>
   </component>
@@ -294,6 +305,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -506,7 +518,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -525,13 +536,14 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="FA33AS504569" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Coolest" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -1018,7 +1030,9 @@
       <workItem from="1399740397500" duration="5058000" />
       <workItem from="1399826007147" duration="2457000" />
       <workItem from="1401128740580" duration="2121000" />
-      <workItem from="1401131495951" duration="1634000" />
+      <workItem from="1401131495951" duration="3019000" />
+      <workItem from="1403902603163" duration="1185000" />
+      <workItem from="1404277826174" duration="1814000" />
     </task>
     <task id="LOCAL-00001" summary="Images added to welcome, add messages, and view messages screens. Icon image also incorportaed into manifest.">
       <created>1393461593200</created>
@@ -1128,11 +1142,15 @@
       <created>1399743964720</created>
       <updated>1399743964720</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Removed notification bugs">
+      <created>1401133266092</created>
+      <updated>1401133266092</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235072000" />
+    <option name="totallyTimeSpent" value="239456000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1155,7 +1173,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1232,7 +1250,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixed view id bugs and added settings and notifications." />
     <MESSAGE value="Fixed empty database bugs" />
     <MESSAGE value="New path through app works" />
     <MESSAGE value="Added pop-ups if blub is empty or if you've already entered a blub that day" />
@@ -1257,7 +1274,8 @@
     <MESSAGE value="Some alarm updates" />
     <MESSAGE value="Clean up returncontent classes" />
     <MESSAGE value="Improved secret button invisibility/visibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved secret button invisibility/visibility" />
+    <MESSAGE value="Removed notification bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed notification bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1267,13 +1285,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="50" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/blub_choice.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="23" selection-start="1610" selection-end="1610" vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="850">
@@ -1496,13 +1507,6 @@
         <state line="414" column="0" selection-start="17122" selection-end="17122" vertical-scroll-proportion="0.0" vertical-offset="6303" max-vertical-offset="13940" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="8" selection-start="6131" selection-end="6331" vertical-scroll-proportion="0.0" vertical-offset="2210" max-vertical-offset="2703">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/mainscreen_actions.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="7" selection-start="344" selection-end="344" vertical-scroll-proportion="0.51342285" vertical-offset="0" max-vertical-offset="374">
@@ -1528,11 +1532,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/ReturnContent/ReturnContent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="23" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/SharedPreferencesHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="98" selection-end="98" vertical-scroll-proportion="0.14991182" vertical-offset="0" max-vertical-offset="567" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/TimeHelper.java">
@@ -1570,13 +1569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="0" selection-start="3708" selection-end="3708" vertical-scroll-proportion="0.0" vertical-offset="691" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/BootReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="23" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
@@ -1591,18 +1583,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/BlubChoiceActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="74" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/android-sdk/sources/android-19/com/android/internal/os/ZygoteInit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="590" column="105" selection-start="20870" selection-end="20870" vertical-scroll-proportion="0.15263158" vertical-offset="9224" max-vertical-offset="12835">
-          <folding />
-        </state>
+        <state line="590" column="105" selection-start="20870" selection-end="20870" vertical-scroll-proportion="0.15263158" vertical-offset="9224" max-vertical-offset="12835" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/ReturnContent/NotifyService.java">
@@ -1612,10 +1595,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Database/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blubz/Preferences/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="12" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.7589286" vertical-offset="204" max-vertical-offset="1326">
+        <state line="24" column="4" selection-start="610" selection-end="648" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1326">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/BlubChoiceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="74" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/MainScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="0" selection-start="3708" selection-end="3708" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="4488">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/SharedPreferencesHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blubz/AddContent/AddMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="46" selection-start="881" selection-end="881" vertical-scroll-proportion="0.2735632" vertical-offset="0" max-vertical-offset="2907">
+          <folding>
+            <element signature="e#3953#4225#0" expanded="true" />
+            <element signature="e#4214#4215#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

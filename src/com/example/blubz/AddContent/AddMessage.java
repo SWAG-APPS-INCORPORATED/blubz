@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -41,6 +42,7 @@ public class AddMessage extends Activity {
     private TextView dateText;
     private TextView characterView;
     private EditText characterText;
+    private SharedPreferences sharedPrefs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,9 +63,24 @@ public class AddMessage extends Activity {
         characterText.addTextChangedListener(mTextEditorWatcher);
 
         long lastTimestamp = datasource.getMostRecentTimestamp();
+
+        sharedPrefs = getSharedPreferences("myPrefs",0);
+
+        String draftText = SharedPreferencesHelper.getString(sharedPrefs,"draft");
+        if(draftText !=  null){
+            editText.setText(draftText);
+        }
+
         if(TimeHelper.isSameDay(lastTimestamp,System.currentTimeMillis())){
             editText.setHint("See you tomorrow!");
         }
+    }
+
+    @Override
+    public void onPause(){
+        String draftText = editText.getText().toString();
+        SharedPreferencesHelper.setString(sharedPrefs, "draft", draftText);
+        super.onPause();
     }
 
     public void addMessage(View view){
@@ -147,6 +164,7 @@ public class AddMessage extends Activity {
 
         dateText.setText(date);
     }
+
 
 //Source: http://stackoverflow.com/questions/3013791/live-character-count-for-edittext-android
 

@@ -86,15 +86,11 @@ public class NotifyService extends Service {
 
         int today = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 
-        if(TimeHelper.isSameDay(SharedPreferencesHelper.getValue(sharedPrefs,"secret"), System.currentTimeMillis())){
-            return null;
-        }
-
         //Checks to make sure that there is something to show if the secret button is pressed, and that
         //the secret button is actually visible before sending notification
         if((today==Calendar.FRIDAY && !dataSource.isImagesEmpty()) ||
                 (today==Calendar.MONDAY && !dataSource.isMessagesEmpty())
-                        && !TimeHelper.isSameDay(SharedPreferencesHelper.getValue(sharedPrefs,"secret"),
+                        && !TimeHelper.isSameDay(SharedPreferencesHelper.getValue(sharedPrefs,"secretButton"),
                         Calendar.getInstance().getTimeInMillis())){
 
             Notif notif = new Notif();

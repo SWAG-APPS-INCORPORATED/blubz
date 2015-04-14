@@ -7,9 +7,10 @@
     <string name="date">today\'s date</string>
     <string name="add_picture">capture a blub</string>
     <string name="title">blubz</string>
-    <string name="action_settings">settings</string>
+    <string name="action_settings">notification time</string>
     <string name="action_about">about</string>
     <string name="action_delete">Delete Saved Blubz</string>
+    <string name="action_status">Blubz Status</string>
     <string name="your_content">your content</string>
     <string name="camera_name">take photo</string>
     <string name="btnIntend">take picture</string>

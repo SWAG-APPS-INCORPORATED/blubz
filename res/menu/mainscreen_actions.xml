@@ -11,6 +11,9 @@
           android:title="@string/action_settings"
           android:icon="@drawable/clock"
           android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_status"
+          android:title="@string/action_status"
+          android:showAsAction="never" />
     <item android:id="@+id/action_delete"
           android:title="@string/action_delete"
           android:showAsAction="never" />

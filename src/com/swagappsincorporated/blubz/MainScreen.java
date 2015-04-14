@@ -95,6 +95,9 @@ public class MainScreen extends Activity {
             case R.id.action_settings:
                 goToSettings();
                 return true;
+            case R.id.action_status:
+                goToStatus();
+                return true;
             case R.id.action_about:
                 goToAbout();
                 return true;
@@ -104,6 +107,12 @@ public class MainScreen extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void goToStatus(){
+
+        Intent intent = new Intent(this, StatusActivity.class);
+        startActivity(intent);
     }
 
     public void goToSettings(){

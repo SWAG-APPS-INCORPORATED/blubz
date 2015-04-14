@@ -9,9 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.TimePicker;
-import com.swagappsincorporated.blubz.Database.ContentDataSource;
 import com.swagappsincorporated.blubz.MainScreen;
 import com.swagappsincorporated.blubz.R;
 import com.swagappsincorporated.blubz.ReturnContent.AlarmService;
@@ -24,8 +22,7 @@ public class SettingsActivity extends Activity {
 
     private SharedPreferences sharedPrefs;
     private TimePicker timePicker;
-    private ContentDataSource dataSource;
-    private TextView countsView;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,15 +32,10 @@ public class SettingsActivity extends Activity {
 
         timePicker = (TimePicker) findViewById(R.id.notifTime);
         sharedPrefs = getSharedPreferences("myPrefs", 0);
-        countsView = (TextView) findViewById(R.id.countView);
-        dataSource = new ContentDataSource(this);
-        dataSource.open();
 
 
         setTimePicker();
-        if(!dataSource.isMessagesEmpty() || !dataSource.isImagesEmpty()){
-            setContentCounts();
-        }
+
     }
 
     public void setTimePicker(){
@@ -57,15 +49,7 @@ public class SettingsActivity extends Activity {
 
     }
 
-    public void setContentCounts() {
-        int messageCount, imageCount;
 
-        messageCount = dataSource.getMessageCount();
-        imageCount = dataSource.getImageCount();
-
-        countsView.setText("you have made " + messageCount + " text blubz, and "
-                    + imageCount + " photo blubz!");
-    }
 
     public void setNotificationTime(View view){
 
